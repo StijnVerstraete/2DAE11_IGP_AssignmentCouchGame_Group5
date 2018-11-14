@@ -475,7 +475,8 @@ MonoBehaviour:
   - {fileID: 2026000342}
   - {fileID: 952702630}
   - {fileID: 957651933}
-  _switchSpeed: 5
+  _switchSpeed: 10
+  _diagonalMovement: 0
 --- !u!1 &2026000342
 GameObject:
   m_ObjectHideFlags: 0

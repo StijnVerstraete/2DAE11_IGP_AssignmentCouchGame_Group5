@@ -10,7 +10,13 @@ public class PositionSwitch : MonoBehaviour
     [SerializeField]
     private float _switchSpeed;
 
+
     private int _actualPosition;
+
+    private int _destinationPosition;
+
+    [SerializeField]
+    private bool _diagonalMovement = false;
 
     void Start ()
     {
@@ -28,39 +34,64 @@ public class PositionSwitch : MonoBehaviour
                 _actualPosition = i;
             }
         }
-
+        if (_actualPosition == _destinationPosition)
+        {
+            SetDestination();
+        }
+        else
+        {
+            transform.position = Vector3.MoveTowards(transform.position, _objectPositions[_destinationPosition].transform.position, _switchSpeed * Time.deltaTime);
+        }
+        
+    }
+    private void SetDestination()
+    {
+        #region diagonalmovement
         //diagionals
-        if (Input.GetAxis("Vertical") < 0 && Input.GetAxis("Horizontal") < 0)
+        if (_diagonalMovement == true)
         {
-            transform.position = Vector3.Lerp(transform.position, _objectPositions[0].transform.position, _switchSpeed * Time.deltaTime);
+            if (Input.GetAxis("Vertical") < 0 && Input.GetAxis("Horizontal") < 0)
+            {
+                _destinationPosition = 0;
+            }
+            if (Input.GetAxis("Vertical") < 0 && Input.GetAxis("Horizontal") > 0)
+            {
+                _destinationPosition = 1;
+            }
+            if (Input.GetAxis("Vertical") > 0 && Input.GetAxis("Horizontal") < 0)
+            {
+                _destinationPosition = 2;
+            }
+            if (Input.GetAxis("Vertical") > 0 && Input.GetAxis("Horizontal") > 0)
+            {
+                _destinationPosition = 3;
+            }
         }
-        if (Input.GetAxis("Vertical") < 0 && Input.GetAxis("Horizontal") > 0)
+
+        #endregion diagonalmovement
+        #region verticalhorizontamovement
+        if (_diagonalMovement == false)
         {
-            transform.position = Vector3.Lerp(transform.position, _objectPositions[1].transform.position, _switchSpeed * Time.deltaTime);
+            //horizontal
+            if ((_actualPosition == 0 || _actualPosition == 2) && Input.GetAxis("Horizontal") > 0)
+            {
+                _destinationPosition = _actualPosition + 1;
+            }
+            if ((_actualPosition == 1 || _actualPosition == 3) && Input.GetAxis("Horizontal") < 0)
+            {
+                _destinationPosition = _actualPosition - 1;
+            }
+            //vertical
+            if ((_actualPosition == 0 || _actualPosition == 1) && Input.GetAxis("Vertical") > 0)
+            {
+                _destinationPosition = _actualPosition + 2;
+            }
+            if ((_actualPosition == 2 || _actualPosition == 3) && Input.GetAxis("Vertical") < 0)
+            {
+                _destinationPosition = _actualPosition - 2;
+            }
         }
-        if (Input.GetAxis("Vertical") > 0 && Input.GetAxis("Horizontal") < 0)
-        {
-            transform.position = Vector3.Lerp(transform.position, _objectPositions[2].transform.position, _switchSpeed * Time.deltaTime);
-        }
-        if (Input.GetAxis("Vertical") > 0 && Input.GetAxis("Horizontal") > 0)
-        {
-            transform.position = Vector3.Lerp(transform.position, _objectPositions[3].transform.position, _switchSpeed * Time.deltaTime);
-        }
-        //horizontal/vertical
-        if (Input.GetAxis("Horizontal")!=0 && Input.GetAxis("Vertical")==0)
-        {
-            int pos = _actualPosition +(int)Mathf.Sign(Input.GetAxis("Horizontal"));
-            pos %= 3;
-            if (pos < 0) { pos = 0; }
-            
-            transform.position = Vector3.Lerp(transform.position, _objectPositions[pos].transform.position, _switchSpeed * Time.deltaTime);
-        }
-        if (Input.GetAxis("Vertical") != 0 && Input.GetAxis("Horizontal") == 0)
-        {
-            int pos = _actualPosition + ((int)Mathf.Sign(Input.GetAxis("Horizontal"))*2);
-            pos %= 3;
-            if (pos < 0) { pos = 0; }
-            transform.position = Vector3.Lerp(transform.position, _objectPositions[pos].transform.position, _switchSpeed * Time.deltaTime);
-        }
+
+        #endregion verticalhorizontamovement
     }
 }
