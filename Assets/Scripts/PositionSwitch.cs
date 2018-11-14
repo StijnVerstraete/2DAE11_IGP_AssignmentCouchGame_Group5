@@ -10,6 +10,8 @@ public class PositionSwitch : MonoBehaviour
     [SerializeField]
     private float _switchSpeed;
 
+    private int _actualPosition;
+
     void Start ()
     {
 
@@ -18,6 +20,15 @@ public class PositionSwitch : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
+        //check what the current position is
+        for (int i = 0; i < _objectPositions.Length; i++)
+        {
+            if (transform.position == _objectPositions[i].transform.position)
+            {
+                _actualPosition = i;
+            }
+        }
+
         //diagionals
         if (Input.GetAxis("Vertical") < 0 && Input.GetAxis("Horizontal") < 0)
         {
@@ -38,7 +49,18 @@ public class PositionSwitch : MonoBehaviour
         //horizontal/vertical
         if (Input.GetAxis("Horizontal")!=0 && Input.GetAxis("Vertical")==0)
         {
-            transform.position = Vector3.Lerp(transform.position,_objectPositions)
+            int pos = _actualPosition +(int)Mathf.Sign(Input.GetAxis("Horizontal"));
+            pos %= 3;
+            if (pos < 0) { pos = 0; }
+            
+            transform.position = Vector3.Lerp(transform.position, _objectPositions[pos].transform.position, _switchSpeed * Time.deltaTime);
+        }
+        if (Input.GetAxis("Vertical") != 0 && Input.GetAxis("Horizontal") == 0)
+        {
+            int pos = _actualPosition + ((int)Mathf.Sign(Input.GetAxis("Horizontal"))*2);
+            pos %= 3;
+            if (pos < 0) { pos = 0; }
+            transform.position = Vector3.Lerp(transform.position, _objectPositions[pos].transform.position, _switchSpeed * Time.deltaTime);
         }
     }
 }
