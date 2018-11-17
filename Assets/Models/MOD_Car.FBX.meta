@@ -10,6 +10,14 @@ ModelImporter:
     100008: Wheel001
     100010: Wheel002
     100012: Wheel003
+    100014: Seat
+    100016: Seat001
+    100018: Pedal
+    100020: Pedal001
+    100022: SteeringWheel
+    100024: Pedal002
+    100026: Pedal1
+    100028: Pedal2
     400000: //RootNode
     400002: CarChassis
     400004: Windows
@@ -17,8 +25,18 @@ ModelImporter:
     400008: Wheel001
     400010: Wheel002
     400012: Wheel003
+    400014: Seat
+    400016: Seat001
+    400018: Pedal
+    400020: Pedal001
+    400022: SteeringWheel
+    400024: Pedal002
+    400026: Pedal1
+    400028: Pedal2
     2100000: 'Material #28'
     2100002: No Name
+    2100004: MAT_YellowMaterial
+    2100006: MAT_Windows
     2300000: //RootNode
     2300002: CarChassis
     2300004: Windows
@@ -26,6 +44,14 @@ ModelImporter:
     2300008: Wheel001
     2300010: Wheel002
     2300012: Wheel003
+    2300014: Seat
+    2300016: Seat001
+    2300018: Pedal
+    2300020: Pedal001
+    2300022: SteeringWheel
+    2300024: Pedal002
+    2300026: Pedal1
+    2300028: Pedal2
     3300000: //RootNode
     3300002: CarChassis
     3300004: Windows
@@ -33,12 +59,28 @@ ModelImporter:
     3300008: Wheel001
     3300010: Wheel002
     3300012: Wheel003
+    3300014: Seat
+    3300016: Seat001
+    3300018: Pedal
+    3300020: Pedal001
+    3300022: SteeringWheel
+    3300024: Pedal002
+    3300026: Pedal1
+    3300028: Pedal2
     4300000: CarChassis
     4300002: Windows
     4300004: Wheel
     4300006: Wheel001
     4300008: Wheel002
     4300010: Wheel003
+    4300012: Seat
+    4300014: Seat001
+    4300016: Pedal
+    4300018: Pedal001
+    4300020: SteeringWheel
+    4300022: Pedal002
+    4300024: Pedal1
+    4300026: Pedal2
   externalObjects: {}
   materials:
     importMaterials: 1
