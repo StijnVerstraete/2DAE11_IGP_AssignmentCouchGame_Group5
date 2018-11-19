@@ -46,6 +46,18 @@ public class PositionSwitch : MonoBehaviour
     }
     private void SetDestination()
     {
+        #region tryout code lucas
+        //TEMP CODE
+        float angle;
+        //angle = Mathf.Rad2Deg * Mathf.Atan(Input.GetAxis("Vertical") / Input.GetAxis("Horizontal"));
+        //angle = Vector2.Angle(Vector2.right, new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"))) * (Input.GetAxis("Vertical") > 0 ? 1 : -1);
+        if (Input.GetAxis("Vertical")>=0)
+        angle = Vector2.Angle(Vector2.right, new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")));
+        else
+            angle = Vector2.Angle(Vector2.left, new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"))) +180;
+        Debug.Log(angle);
+        #endregion
+
         #region diagonalmovement
         //diagionals
         if (_diagonalMovement == true)
