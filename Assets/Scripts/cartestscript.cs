@@ -11,10 +11,6 @@ public class AxleInfo
     public bool steering;
 }
 
-//public enum PlayerPosition
-//{
-//    SteeringWheelLeft, SteeringWheelRight, Gas, Brake
-//}
 
 public class cartestscript : MonoBehaviour
 {

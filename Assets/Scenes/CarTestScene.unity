@@ -851,6 +851,14 @@ Prefab:
       propertyPath: m_Name
       value: Accelerate
       objectReference: {fileID: 0}
+    - target: {fileID: 1460391459109688, guid: c2a19190435a06c4ab86e03ee79a05df, type: 2}
+      propertyPath: m_Name
+      value: SteerRight
+      objectReference: {fileID: 0}
+    - target: {fileID: 1266948488450672, guid: c2a19190435a06c4ab86e03ee79a05df, type: 2}
+      propertyPath: m_Name
+      value: SteerLeft
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2a19190435a06c4ab86e03ee79a05df, type: 2}
   m_IsPrefabAsset: 0
@@ -1089,7 +1097,7 @@ GameObject:
   - component: {fileID: 1348529058}
   - component: {fileID: 1348529057}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: PlayerTemp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1405,14 +1413,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11859d098fc5e4a4693acd5c0fcb5dfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectPositions:
-  - {fileID: 1135549467}
-  - {fileID: 1135549466}
-  - {fileID: 1135549465}
-  - {fileID: 1135549464}
   _players:
   - {fileID: 1348529056}
   _switchSpeed: 0
+  _defaultPositions:
+  - _position: 0
+    _transform: {fileID: 1135549466}
+  - _position: 1
+    _transform: {fileID: 1135549467}
+  - _position: 2
+    _transform: {fileID: 1135549465}
+  - _position: 3
+    _transform: {fileID: 1135549464}
+  _playerPositions:
+  - _position: 0
+    _transform: {fileID: 1348529060}
+  - _position: 1
+    _transform: {fileID: 0}
+  - _position: 2
+    _transform: {fileID: 0}
+  - _position: 3
+    _transform: {fileID: 0}
   _diagonalMovement: 0
 --- !u!4 &1987615750
 Transform:
