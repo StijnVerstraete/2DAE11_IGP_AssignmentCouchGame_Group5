@@ -360,7 +360,7 @@ MonoBehaviour:
   - {fileID: 952702630}
   - {fileID: 957651933}
   _switchSpeed: 10
-  _diagonalMovement: 0
+  _diagonalMovement: 1
 --- !u!1 &2026000342 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1780803191404122, guid: f45af1340ea20354ea27532da685f3f7,
