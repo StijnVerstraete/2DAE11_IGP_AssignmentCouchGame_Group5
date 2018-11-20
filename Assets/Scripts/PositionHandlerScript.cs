@@ -41,6 +41,13 @@ public class PositionHandlerScript : MonoBehaviour {
     // Update is called once per frame
     void Update ()
     {
+        string[] temp = Input.GetJoystickNames();
+        for (int i = 0; i < temp.Length; i++)
+        {
+            Debug.Log("player " + i+ ": " +temp[i].ToString());
+        }
+
+        Debug.Log(temp.Length);
         //for every player
         for (int i = 0; i < _playerPositions.Count; i++)
         {
@@ -50,6 +57,7 @@ public class PositionHandlerScript : MonoBehaviour {
                 //if player is on his position, he can switch
                 if (CheckIfPlayerIsOnRightPosition(i))
                 {
+                    //Debug.Log("player " + i + " set dest");
                     SetDestination(i);
                     //SetPosition(i);
                 }
@@ -99,35 +107,78 @@ public class PositionHandlerScript : MonoBehaviour {
             Debug.Log(angle);
 
             //tell the player where togo
-            if (angle >= 0 && angle < 90f)
+            Position pos = _playerPositions[playerNumber]._position;
+            if (angle >= 315 || angle < 45f) //go right
             {
+                if(pos== Position.SteerLeft)
                 _playerPositions[playerNumber]._position = Position.SteerRight;
-                Debug.Log("go steerright");
+                if(pos == Position.Brake)
+                    _playerPositions[playerNumber]._position = Position.Gas;
+                Debug.Log("player " + playerNumber + "go right");
             }
             else
             {
-                if (angle >= 90 && angle < 180f)
+                if (angle >= 135 && angle < 225f) //go left
                 {
-                    Debug.Log("go steerleft");
-                    _playerPositions[playerNumber]._position = Position.SteerLeft;
+                    Debug.Log("player " + playerNumber + "go left");
+                    if (pos == Position.SteerRight)
+                        _playerPositions[playerNumber]._position = Position.SteerLeft;
+                    if (pos == Position.Gas)
+                        _playerPositions[playerNumber]._position = Position.Brake;
                 }
                 else
                 {
-                    if (angle >= 180 && angle < 270f)
+                    if (angle >= 225 && angle < 315f) //go down
                     {
-                        Debug.Log("go brake");
-                        _playerPositions[playerNumber]._position = Position.Brake;
+                        Debug.Log("player " + playerNumber + "go down");
+                        if (pos == Position.SteerLeft)
+                            _playerPositions[playerNumber]._position = Position.Brake;
+                        if (pos == Position.SteerRight)
+                            _playerPositions[playerNumber]._position = Position.Gas;
                     }
                     else
                     {
-                        if (angle >= 270 && angle < 360f)
+                        if (angle >= 45 && angle < 135f) //go up
                         {
-                            Debug.Log("go gas");
-                            _playerPositions[playerNumber]._position = Position.Gas;
+                            Debug.Log("player " + playerNumber + "go up");
+                            if (pos == Position.Brake)
+                                _playerPositions[playerNumber]._position = Position.SteerLeft;
+                            if (pos == Position.Gas)
+                                _playerPositions[playerNumber]._position = Position.SteerRight;
                         }
                     }
                 }
             }
+
+            //if (angle >= 0 && angle < 90f)
+            //{
+            //    _playerPositions[playerNumber]._position = Position.SteerRight;
+            //    Debug.Log("go steerright");
+            //}
+            //else
+            //{
+            //    if (angle >= 90 && angle < 180f)
+            //    {
+            //        Debug.Log("go steerleft");
+            //        _playerPositions[playerNumber]._position = Position.SteerLeft;
+            //    }
+            //    else
+            //    {
+            //        if (angle >= 180 && angle < 270f)
+            //        {
+            //            Debug.Log("go brake");
+            //            _playerPositions[playerNumber]._position = Position.Brake;
+            //        }
+            //        else
+            //        {
+            //            if (angle >= 270 && angle < 360f)
+            //            {
+            //                Debug.Log("go gas");
+            //                _playerPositions[playerNumber]._position = Position.Gas;
+            //            }
+            //        }
+            //    }
+            //}
         }
             
         //if(angle>337.5f || angle <= 22.5f)
