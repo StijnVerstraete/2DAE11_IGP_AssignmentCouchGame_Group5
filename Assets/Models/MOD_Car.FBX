@@ -8,11 +8,11 @@ FBXHeaderExtension:  {
 		Version: 1000
 		Year: 2018
 		Month: 11
-		Day: 20
-		Hour: 12
-		Minute: 16
-		Second: 40
-		Millisecond: 133
+		Day: 17
+		Hour: 21
+		Minute: 2
+		Second: 21
+		Millisecond: 664
 	}
 	Creator: "FBX SDK/FBX Plugins version 2019.0"
 	SceneInfo: "SceneInfo::GlobalInfo", "UserData" {
@@ -34,13 +34,13 @@ FBXHeaderExtension:  {
 			P: "Original|ApplicationVendor", "KString", "", "", "Autodesk"
 			P: "Original|ApplicationName", "KString", "", "", "3ds Max"
 			P: "Original|ApplicationVersion", "KString", "", "", "2019"
-			P: "Original|DateTime_GMT", "DateTime", "", "", "20/11/2018 11:16:40.132"
+			P: "Original|DateTime_GMT", "DateTime", "", "", "17/11/2018 20:02:21.664"
 			P: "Original|FileName", "KString", "", "", "E:\IGP\Semester 3\Game Prototyping 1\2DAE11_IGP_AssignmentCouchGame_VerstraeteStijn\2DAE11_IGP_AssignmentCouchGame_Group5\Assets\Models\MOD_Car.FBX"
 			P: "LastSaved", "Compound", "", ""
 			P: "LastSaved|ApplicationVendor", "KString", "", "", "Autodesk"
 			P: "LastSaved|ApplicationName", "KString", "", "", "3ds Max"
 			P: "LastSaved|ApplicationVersion", "KString", "", "", "2019"
-			P: "LastSaved|DateTime_GMT", "DateTime", "", "", "20/11/2018 11:16:40.132"
+			P: "LastSaved|DateTime_GMT", "DateTime", "", "", "17/11/2018 20:02:21.664"
 			P: "Original|ApplicationActiveProject", "KString", "", "", "C:\Users\Stijn Verstraete\Documents\3dsMax"
 			P: "Original|ApplicationNativeFile", "KString", "", "", "E:\IGP\Semester 3\Game Prototyping 1\2DAE11_IGP_AssignmentCouchGame_VerstraeteStijn\Assets\3d models\MOD_Car.max"
 		}
@@ -77,7 +77,7 @@ GlobalSettings:  {
 
 Documents:  {
 	Count: 1
-	Document: 1480048049376, "", "Scene" {
+	Document: 2124050095216, "", "Scene" {
 		Properties70:  {
 			P: "SourceObject", "object", "", ""
 			P: "ActiveAnimStackName", "KString", "", "", ""
@@ -227,7 +227,7 @@ Definitions:  {
 ;------------------------------------------------------------------
 
 Objects:  {
-	Geometry: 1480048647952, "Geometry::", "Mesh" {
+	Geometry: 2124268557264, "Geometry::", "Mesh" {
 		Properties70:  {
 			P: "Color", "ColorRGB", "Color", "",0.337254901960784,0.337254901960784,0.337254901960784
 		}
@@ -378,7 +378,7 @@ Objects:  {
 			}
 		}
 	}
-	Geometry: 1480048632176, "Geometry::", "Mesh" {
+	Geometry: 2124268536048, "Geometry::", "Mesh" {
 		Properties70:  {
 			P: "Color", "ColorRGB", "Color", "",0,0,0
 		}
@@ -426,7 +426,7 @@ Objects:  {
 			}
 		}
 	}
-	Geometry: 1480048633264, "Geometry::", "Mesh" {
+	Geometry: 2124268544752, "Geometry::", "Mesh" {
 		Properties70:  {
 			P: "Color", "ColorRGB", "Color", "",0,0,0
 		}
@@ -474,7 +474,7 @@ Objects:  {
 			}
 		}
 	}
-	Geometry: 1480048656656, "Geometry::", "Mesh" {
+	Geometry: 2124268558352, "Geometry::", "Mesh" {
 		Properties70:  {
 			P: "Color", "ColorRGB", "Color", "",0,0,0
 		}
@@ -522,7 +522,7 @@ Objects:  {
 			}
 		}
 	}
-	Geometry: 1480048648496, "Geometry::", "Mesh" {
+	Geometry: 2124268542032, "Geometry::", "Mesh" {
 		Properties70:  {
 			P: "Color", "ColorRGB", "Color", "",0,0,0
 		}
@@ -570,7 +570,7 @@ Objects:  {
 			}
 		}
 	}
-	Geometry: 1480048652848, "Geometry::", "Mesh" {
+	Geometry: 2124268547472, "Geometry::", "Mesh" {
 		Properties70:  {
 			P: "Color", "ColorRGB", "Color", "",0.450980392156863,0.450980392156863,0.450980392156863
 		}
@@ -650,7 +650,7 @@ Objects:  {
 			}
 		}
 	}
-	Geometry: 1480048656112, "Geometry::", "Mesh" {
+	Geometry: 2124268549648, "Geometry::", "Mesh" {
 		Properties70:  {
 			P: "Color", "ColorRGB", "Color", "",0.694117647058824,0.345098039215686,0.105882352941176
 		}
@@ -723,7 +723,7 @@ Objects:  {
 			}
 		}
 	}
-	Geometry: 1480048636528, "Geometry::", "Mesh" {
+	Geometry: 2124268550736, "Geometry::", "Mesh" {
 		Properties70:  {
 			P: "Color", "ColorRGB", "Color", "",0.694117647058824,0.345098039215686,0.105882352941176
 		}
@@ -786,7 +786,7 @@ Objects:  {
 			}
 		}
 	}
-	Geometry: 1480048649040, "Geometry::", "Mesh" {
+	Geometry: 2124268551824, "Geometry::", "Mesh" {
 		Properties70:  {
 			P: "Color", "ColorRGB", "Color", "",0.694117647058824,0.345098039215686,0.105882352941176
 		}
@@ -859,7 +859,7 @@ Objects:  {
 			}
 		}
 	}
-	Geometry: 1480048649584, "Geometry::", "Mesh" {
+	Geometry: 2124268553456, "Geometry::", "Mesh" {
 		Properties70:  {
 			P: "Color", "ColorRGB", "Color", "",0.694117647058824,0.345098039215686,0.105882352941176
 		}
@@ -958,7 +958,7 @@ Objects:  {
 			}
 		}
 	}
-	Geometry: 1480048658288, "Geometry::", "Mesh" {
+	Geometry: 2125750193456, "Geometry::", "Mesh" {
 		Properties70:  {
 			P: "Color", "ColorRGB", "Color", "",0.694117647058824,0.345098039215686,0.105882352941176
 		}
@@ -1021,7 +1021,7 @@ Objects:  {
 			}
 		}
 	}
-	Model: 1480048877040, "Model::CarChassis", "Mesh" {
+	Model: 2125264872656, "Model::CarChassis", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "PreRotation", "Vector3D", "Vector", "",-90,-0,0
@@ -1037,7 +1037,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 1480048868272, "Model::Wheel", "Mesh" {
+	Model: 2126122718800, "Model::Wheel", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "PreRotation", "Vector3D", "Vector", "",-90,-0,0
@@ -1053,7 +1053,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 1480048861696, "Model::Wheel001", "Mesh" {
+	Model: 2126122720992, "Model::Wheel001", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "PreRotation", "Vector3D", "Vector", "",-90,-0,0
@@ -1069,7 +1069,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 1480048872656, "Model::Wheel002", "Mesh" {
+	Model: 2126122734144, "Model::Wheel002", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "PreRotation", "Vector3D", "Vector", "",-90,-0,0
@@ -1085,7 +1085,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 1480048863888, "Model::Wheel003", "Mesh" {
+	Model: 2126122731952, "Model::Wheel003", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "PreRotation", "Vector3D", "Vector", "",-90,-0,0
@@ -1101,7 +1101,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 1480048874848, "Model::Windows", "Mesh" {
+	Model: 2126122736336, "Model::Windows", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "PreRotation", "Vector3D", "Vector", "",-90,-0,0
@@ -1116,7 +1116,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 1480048879232, "Model::Seat", "Mesh" {
+	Model: 2126122742912, "Model::Seat", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "PreRotation", "Vector3D", "Vector", "",-90,-0,0
@@ -1131,7 +1131,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 1480050429920, "Model::Pedal1", "Mesh" {
+	Model: 2126122723184, "Model::Pedal1", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "PreRotation", "Vector3D", "Vector", "",-90,-0,0
@@ -1148,7 +1148,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 1480050432112, "Model::Seat001", "Mesh" {
+	Model: 2126122714416, "Model::Seat001", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "PreRotation", "Vector3D", "Vector", "",-90,-0,0
@@ -1163,7 +1163,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 1480050434304, "Model::SteeringWheel", "Mesh" {
+	Model: 2126122738528, "Model::SteeringWheel", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "PreRotation", "Vector3D", "Vector", "",-90,-0,0
@@ -1178,7 +1178,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 1480050440880, "Model::Pedal2", "Mesh" {
+	Model: 2126122727568, "Model::Pedal2", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "PreRotation", "Vector3D", "Vector", "",-90,-0,0
@@ -1195,7 +1195,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Material: 1479688583008, "Material::MAT_YellowMaterial", "" {
+	Material: 2124122838704, "Material::MAT_YellowMaterial", "" {
 		Version: 102
 		ShadingModel: "phong"
 		MultiLayer: 0
@@ -1217,7 +1217,7 @@ Objects:  {
 			P: "Reflectivity", "double", "Number", "",0
 		}
 	}
-	Material: 1479688585888, "Material::MAT_Windows", "" {
+	Material: 2124122838224, "Material::MAT_Windows", "" {
 		Version: 102
 		ShadingModel: "phong"
 		MultiLayer: 0
@@ -1247,74 +1247,74 @@ Objects:  {
 Connections:  {
 	
 	;Model::CarChassis, Model::RootNode
-	C: "OO",1480048877040,0
+	C: "OO",2125264872656,0
 	
 	;Model::Wheel, Model::RootNode
-	C: "OO",1480048868272,0
+	C: "OO",2126122718800,0
 	
 	;Model::Wheel001, Model::RootNode
-	C: "OO",1480048861696,0
+	C: "OO",2126122720992,0
 	
 	;Model::Wheel002, Model::RootNode
-	C: "OO",1480048872656,0
+	C: "OO",2126122734144,0
 	
 	;Model::Wheel003, Model::RootNode
-	C: "OO",1480048863888,0
+	C: "OO",2126122731952,0
 	
 	;Model::Windows, Model::RootNode
-	C: "OO",1480048874848,0
+	C: "OO",2126122736336,0
 	
 	;Model::Seat, Model::RootNode
-	C: "OO",1480048879232,0
+	C: "OO",2126122742912,0
 	
 	;Model::Pedal1, Model::RootNode
-	C: "OO",1480050429920,0
+	C: "OO",2126122723184,0
 	
 	;Model::Seat001, Model::RootNode
-	C: "OO",1480050432112,0
+	C: "OO",2126122714416,0
 	
 	;Model::SteeringWheel, Model::RootNode
-	C: "OO",1480050434304,0
+	C: "OO",2126122738528,0
 	
 	;Model::Pedal2, Model::RootNode
-	C: "OO",1480050440880,0
+	C: "OO",2126122727568,0
 	
 	;Geometry::, Model::CarChassis
-	C: "OO",1480048647952,1480048877040
+	C: "OO",2124268557264,2125264872656
 	
 	;Material::MAT_YellowMaterial, Model::CarChassis
-	C: "OO",1479688583008,1480048877040
+	C: "OO",2124122838704,2125264872656
 	
 	;Geometry::, Model::Wheel
-	C: "OO",1480048632176,1480048868272
+	C: "OO",2124268536048,2126122718800
 	
 	;Geometry::, Model::Wheel001
-	C: "OO",1480048633264,1480048861696
+	C: "OO",2124268544752,2126122720992
 	
 	;Geometry::, Model::Wheel002
-	C: "OO",1480048656656,1480048872656
+	C: "OO",2124268558352,2126122734144
 	
 	;Geometry::, Model::Wheel003
-	C: "OO",1480048648496,1480048863888
+	C: "OO",2124268542032,2126122731952
 	
 	;Geometry::, Model::Windows
-	C: "OO",1480048652848,1480048874848
+	C: "OO",2124268547472,2126122736336
 	
 	;Material::MAT_Windows, Model::Windows
-	C: "OO",1479688585888,1480048874848
+	C: "OO",2124122838224,2126122736336
 	
 	;Geometry::, Model::Seat
-	C: "OO",1480048656112,1480048879232
+	C: "OO",2124268549648,2126122742912
 	
 	;Geometry::, Model::Pedal1
-	C: "OO",1480048636528,1480050429920
+	C: "OO",2124268550736,2126122723184
 	
 	;Geometry::, Model::Seat001
-	C: "OO",1480048649040,1480050432112
+	C: "OO",2124268551824,2126122714416
 	
 	;Geometry::, Model::SteeringWheel
-	C: "OO",1480048649584,1480050434304
+	C: "OO",2124268553456,2126122738528
 	
 	;Geometry::, Model::Pedal2
-	C: "OO",1480048658288,1480050440880
+	C: "OO",2125750193456,2126122727568
 }

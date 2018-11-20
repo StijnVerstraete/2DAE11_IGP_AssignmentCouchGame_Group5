@@ -1413,7 +1413,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11859d098fc5e4a4693acd5c0fcb5dfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _switchSpeed: 2
+  _players:
+  - {fileID: 1348529056}
+  _switchSpeed: 0
   _defaultPositions:
   - _position: 0
     _transform: {fileID: 1135549466}
@@ -1432,6 +1434,7 @@ MonoBehaviour:
     _transform: {fileID: 0}
   - _position: 3
     _transform: {fileID: 0}
+  _diagonalMovement: 0
 --- !u!4 &1987615750
 Transform:
   m_ObjectHideFlags: 0
