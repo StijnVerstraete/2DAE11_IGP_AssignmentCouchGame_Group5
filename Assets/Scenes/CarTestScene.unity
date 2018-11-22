@@ -1579,15 +1579,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _switchSpeed: 10
+  _maxAmountOfPlayersOnPosition: 2
   _defaultPositions:
   - _position: 0
     _transform: {fileID: 1135549466}
+    _amountOfPLayers: 0
   - _position: 1
     _transform: {fileID: 1135549467}
+    _amountOfPLayers: 0
   - _position: 2
     _transform: {fileID: 1135549465}
+    _amountOfPLayers: 0
   - _position: 3
     _transform: {fileID: 1135549464}
+    _amountOfPLayers: 0
   _playerPositions:
   - _position: 0
     _transform: {fileID: 1348529060}

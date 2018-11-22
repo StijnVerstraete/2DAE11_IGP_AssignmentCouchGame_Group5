@@ -16,13 +16,22 @@ public class PlayerPosition
     public Transform _transform;
 }
 
+[System.Serializable]
+public class DefaultPosition:PlayerPosition
+{
+    public int _amountOfPLayers;
+}
+
 public class PositionHandlerScript : MonoBehaviour {
 
     [SerializeField]
     private float _switchSpeed;
 
     [SerializeField]
-    private List<PlayerPosition> _defaultPositions;
+    private int _maxAmountOfPlayersOnPosition;
+
+    [SerializeField]
+    private List<DefaultPosition> _defaultPositions;
 
     [SerializeField]
     private List<PlayerPosition> _playerPositions;
@@ -32,22 +41,27 @@ public class PositionHandlerScript : MonoBehaviour {
         //set players to right positions
         for (int i = 0; i < _playerPositions.Count; i++)
         {
-            if(_playerPositions[i]._transform!=null)
-            _playerPositions[i]._transform.position = _defaultPositions[i]._transform.position;
+            if (_playerPositions[i]._transform != null)
+            {
+                _playerPositions[i]._transform.position = _defaultPositions[i]._transform.position;
+
+                //set how many players are on position
+                ++_defaultPositions[i]._amountOfPLayers;
+            }
         }
+
     }
 
 
     // Update is called once per frame
     void Update ()
     {
-        string[] temp = Input.GetJoystickNames();
-        for (int i = 0; i < temp.Length; i++)
-        {
-            Debug.Log("player " + i+ ": " +temp[i].ToString());
-        }
+        //string[] temp = Input.GetJoystickNames();
+        //for (int i = 0; i < temp.Length; i++)
+        //{
+        //    Debug.Log("player " + i+ ": " +temp[i].ToString());
+        //}
 
-        Debug.Log(temp.Length);
         //for every player
         for (int i = 0; i < _playerPositions.Count; i++)
         {
@@ -106,14 +120,15 @@ public class PositionHandlerScript : MonoBehaviour {
                 angle = Vector2.Angle(Vector2.left, new Vector2(Input.GetAxis(xAxis), Input.GetAxis(yAxis))) + 180;
             Debug.Log(angle);
 
+
             //tell the player where togo
             Position pos = _playerPositions[playerNumber]._position;
             if (angle >= 315 || angle < 45f) //go right
             {
-                if(pos== Position.SteerLeft)
-                _playerPositions[playerNumber]._position = Position.SteerRight;
+                if (pos == Position.SteerLeft)
+                    SwitchPosition(playerNumber, pos, Position.SteerRight);
                 if(pos == Position.Brake)
-                    _playerPositions[playerNumber]._position = Position.Gas;
+                    SwitchPosition(playerNumber, pos, Position.Gas);
                 Debug.Log("player " + playerNumber + "go right");
             }
             else
@@ -122,9 +137,9 @@ public class PositionHandlerScript : MonoBehaviour {
                 {
                     Debug.Log("player " + playerNumber + "go left");
                     if (pos == Position.SteerRight)
-                        _playerPositions[playerNumber]._position = Position.SteerLeft;
+                        SwitchPosition(playerNumber, pos, Position.SteerLeft);
                     if (pos == Position.Gas)
-                        _playerPositions[playerNumber]._position = Position.Brake;
+                        SwitchPosition(playerNumber, pos, Position.Brake); 
                 }
                 else
                 {
@@ -132,9 +147,9 @@ public class PositionHandlerScript : MonoBehaviour {
                     {
                         Debug.Log("player " + playerNumber + "go down");
                         if (pos == Position.SteerLeft)
-                            _playerPositions[playerNumber]._position = Position.Brake;
+                            SwitchPosition(playerNumber, pos, Position.Brake);
                         if (pos == Position.SteerRight)
-                            _playerPositions[playerNumber]._position = Position.Gas;
+                            SwitchPosition(playerNumber, pos, Position.Gas);
                     }
                     else
                     {
@@ -142,43 +157,13 @@ public class PositionHandlerScript : MonoBehaviour {
                         {
                             Debug.Log("player " + playerNumber + "go up");
                             if (pos == Position.Brake)
-                                _playerPositions[playerNumber]._position = Position.SteerLeft;
+                                SwitchPosition(playerNumber, pos, Position.SteerLeft);
                             if (pos == Position.Gas)
-                                _playerPositions[playerNumber]._position = Position.SteerRight;
+                                SwitchPosition(playerNumber, pos, Position.SteerRight);
                         }
                     }
                 }
             }
-
-            //if (angle >= 0 && angle < 90f)
-            //{
-            //    _playerPositions[playerNumber]._position = Position.SteerRight;
-            //    Debug.Log("go steerright");
-            //}
-            //else
-            //{
-            //    if (angle >= 90 && angle < 180f)
-            //    {
-            //        Debug.Log("go steerleft");
-            //        _playerPositions[playerNumber]._position = Position.SteerLeft;
-            //    }
-            //    else
-            //    {
-            //        if (angle >= 180 && angle < 270f)
-            //        {
-            //            Debug.Log("go brake");
-            //            _playerPositions[playerNumber]._position = Position.Brake;
-            //        }
-            //        else
-            //        {
-            //            if (angle >= 270 && angle < 360f)
-            //            {
-            //                Debug.Log("go gas");
-            //                _playerPositions[playerNumber]._position = Position.Gas;
-            //            }
-            //        }
-            //    }
-            //}
         }
             
         //if(angle>337.5f || angle <= 22.5f)
@@ -239,6 +224,37 @@ public class PositionHandlerScript : MonoBehaviour {
         //    }
         //}
     }
+
+    private void SwitchPosition(int playerNumber, Position currentPosition, Position targetPosition)
+    {
+        for (int i = 0; i < _defaultPositions.Count; i++)
+        {
+            //get the target position
+            if (_defaultPositions[i]._position == targetPosition)
+            {
+                //check if there is space for the player
+                if (_defaultPositions[i]._amountOfPLayers < _maxAmountOfPlayersOnPosition)
+                {
+                    //set the position of the player
+                    _playerPositions[playerNumber]._position = _defaultPositions[i]._position;
+
+                    //subtract 1 player from the old position
+                    for (int j = 0; j < _defaultPositions.Count; j++)
+                    {
+                        if (_defaultPositions[j]._position == currentPosition)
+                        {
+                            if (_defaultPositions[j]._amountOfPLayers != 0)
+                                --_defaultPositions[j]._amountOfPLayers;
+                        }
+                    }
+
+                    //add 1 player to the new position
+                    ++_defaultPositions[i]._amountOfPLayers;
+                }
+            }
+        }
+    }
+
     private void SetPosition(int playerNumber)
     {
         for (int i = 0; i < _defaultPositions.Count; i++)
