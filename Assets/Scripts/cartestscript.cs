@@ -23,7 +23,7 @@ public class cartestscript : MonoBehaviour
     {
         float motor = maxMotorTorque * Input.GetAxis("Vertical");
         float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
-
+        //for both the front and back axle
         foreach (AxleInfo axleInfo in axleInfos)
         {
             if (axleInfo.steering)
