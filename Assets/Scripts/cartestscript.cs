@@ -12,7 +12,7 @@ public class AxleInfo
     public bool isSteering;
 }
 
-
+[RequireComponent(typeof(Rigidbody))]
 public class cartestscript : MonoBehaviour
 {
     public List<AxleInfo> axleInfos;

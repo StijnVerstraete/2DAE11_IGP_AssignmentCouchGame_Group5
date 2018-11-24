@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4036658726815816}
   - component: {fileID: 33304961595432824}
   - component: {fileID: 23099950668267612}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SteeringWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4036236988338662}
   - component: {fileID: 146533686817799894}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Front_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,13 +57,13 @@ GameObject:
   - component: {fileID: 124670385758909890}
   - component: {fileID: 81155192069547216}
   - component: {fileID: 114043534615901198}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Edge Detection Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1208715217990254
 GameObject:
   m_ObjectHideFlags: 1
@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 4062163646179094}
   - component: {fileID: 33867698363242892}
   - component: {fileID: 23381873638337618}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Windows
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 4595511797091138}
   - component: {fileID: 33820007757078180}
   - component: {fileID: 23208581505376842}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cylinder (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4502953996416176}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wheels_root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4731064333309702}
   - component: {fileID: 146083394569071398}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Back_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,7 +137,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4871383989588260}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SteerLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,7 +152,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4406849931483432}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wheel (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 4377040282405794}
   - component: {fileID: 33231239043278884}
   - component: {fileID: 23629741383922690}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cylinder (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +187,7 @@ GameObject:
   - component: {fileID: 54773274489633224}
   - component: {fileID: 114973687699360108}
   - component: {fileID: 65597369213108522}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PREF_Car
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -204,7 +204,7 @@ GameObject:
   - component: {fileID: 4744702669168658}
   - component: {fileID: 33465329345407892}
   - component: {fileID: 23870876746351422}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Seat001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 33491354430995510}
   - component: {fileID: 23583177187485012}
   - component: {fileID: 65748343739748108}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PlayerTemp (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -237,7 +237,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4262634840088030}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Brake
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -254,7 +254,7 @@ GameObject:
   - component: {fileID: 4990341621933202}
   - component: {fileID: 33970006880922362}
   - component: {fileID: 23689210650123134}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,7 +271,7 @@ GameObject:
   - component: {fileID: 4111151936107258}
   - component: {fileID: 33271004978012684}
   - component: {fileID: 23834690611245344}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wheel002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -286,7 +286,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4399865195633270}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wheel (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -301,7 +301,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4535802858234248}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Accelerate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -319,7 +319,7 @@ GameObject:
   - component: {fileID: 33715376555667148}
   - component: {fileID: 23099775455339598}
   - component: {fileID: 65058076711508082}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PlayerTemp (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -334,7 +334,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4843927822040106}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SteerRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -350,7 +350,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4707721164521238}
   - component: {fileID: 146993180051851404}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Front_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -367,7 +367,7 @@ GameObject:
   - component: {fileID: 4451174309440132}
   - component: {fileID: 33391689411785348}
   - component: {fileID: 23672678586809234}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wheel003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -382,7 +382,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4612614011830116}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Positions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -399,7 +399,7 @@ GameObject:
   - component: {fileID: 4936962366601672}
   - component: {fileID: 33541347498829124}
   - component: {fileID: 23889179351707826}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Seat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -415,7 +415,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4751468245848230}
   - component: {fileID: 20092162595787048}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Depth Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -432,7 +432,7 @@ GameObject:
   - component: {fileID: 4826021840416212}
   - component: {fileID: 33647932565101394}
   - component: {fileID: 23586719361054762}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pedal2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -447,7 +447,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4872316180260234}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PREF_CarModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -464,7 +464,7 @@ GameObject:
   - component: {fileID: 4293911167456934}
   - component: {fileID: 33820176536736126}
   - component: {fileID: 23200428813003330}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wheel001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -482,7 +482,7 @@ GameObject:
   - component: {fileID: 33539247422697980}
   - component: {fileID: 23760551569846442}
   - component: {fileID: 65816942689468368}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PlayerTemp (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -497,7 +497,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4255387816832626}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wheel (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -515,7 +515,7 @@ GameObject:
   - component: {fileID: 33206384581078932}
   - component: {fileID: 23165921643598632}
   - component: {fileID: 65609092317350992}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PlayerTemp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -531,7 +531,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4462969890824678}
   - component: {fileID: 146155434598940700}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Back_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -546,7 +546,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4454645571304654}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -563,7 +563,7 @@ GameObject:
   - component: {fileID: 4268737977301300}
   - component: {fileID: 33611800146912926}
   - component: {fileID: 23992235684297924}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CarChassis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -580,7 +580,7 @@ GameObject:
   - component: {fileID: 4372325760161392}
   - component: {fileID: 33065037332989178}
   - component: {fileID: 23953365153928658}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pedal1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -597,7 +597,7 @@ GameObject:
   - component: {fileID: 4654731459654496}
   - component: {fileID: 33856981343491948}
   - component: {fileID: 23835568763913678}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cylinder (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -612,7 +612,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4976857648948550}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MOD_Car
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -628,7 +628,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4444284280121464}
   - component: {fileID: 20935378306351318}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Normals Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -645,7 +645,7 @@ GameObject:
   - component: {fileID: 4629039950768082}
   - component: {fileID: 33463099109532896}
   - component: {fileID: 23341413967485450}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -729,7 +729,7 @@ Transform:
   m_LocalScale: {x: 0.19999999, y: 0.19999999, z: 0.19999999}
   m_Children: []
   m_Father: {fileID: 4254254208732420}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4254254208732420
 Transform:
@@ -738,15 +738,15 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1329794082157910}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.03, z: 0}
+  m_LocalPosition: {x: 0, y: -11.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4872316180260234}
   - {fileID: 4502953996416176}
   - {fileID: 4001182886408744}
-  - {fileID: 4342455309435640}
   - {fileID: 4555283821284722}
   - {fileID: 4180825123965346}
+  - {fileID: 4342455309435640}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -814,7 +814,7 @@ Transform:
   m_LocalScale: {x: 0.19999999, y: 0.19999999, z: 0.19999999}
   m_Children: []
   m_Father: {fileID: 4254254208732420}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4372325760161392
 Transform:
@@ -965,7 +965,7 @@ Transform:
   m_LocalScale: {x: 0.19999999, y: 0.19999999, z: 0.19999999}
   m_Children: []
   m_Father: {fileID: 4254254208732420}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4595511797091138
 Transform:
