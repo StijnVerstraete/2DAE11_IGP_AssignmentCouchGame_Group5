@@ -18,9 +18,6 @@ ModelImporter:
     100024: Pedal002
     100026: Pedal1
     100028: Pedal2
-    100030: Mirror
-    100032: MirrorBox
-    100034: Window
     400000: //RootNode
     400002: CarChassis
     400004: Windows
@@ -36,9 +33,6 @@ ModelImporter:
     400024: Pedal002
     400026: Pedal1
     400028: Pedal2
-    400030: Mirror
-    400032: MirrorBox
-    400034: Window
     2100000: 'Material #28'
     2100002: No Name
     2100004: MAT_YellowMaterial
@@ -58,9 +52,6 @@ ModelImporter:
     2300024: Pedal002
     2300026: Pedal1
     2300028: Pedal2
-    2300030: Mirror
-    2300032: MirrorBox
-    2300034: Window
     3300000: //RootNode
     3300002: CarChassis
     3300004: Windows
@@ -76,9 +67,6 @@ ModelImporter:
     3300024: Pedal002
     3300026: Pedal1
     3300028: Pedal2
-    3300030: Mirror
-    3300032: MirrorBox
-    3300034: Window
     4300000: CarChassis
     4300002: Windows
     4300004: Wheel
@@ -93,9 +81,6 @@ ModelImporter:
     4300022: Pedal002
     4300024: Pedal1
     4300026: Pedal2
-    4300028: Window
-    4300030: MirrorBox
-    4300032: Mirror
   externalObjects: {}
   materials:
     importMaterials: 1

@@ -28,7 +28,7 @@ public class ControllerRumble : MonoBehaviour {
         }
         Debug.Log(_rumbleLength);
     }
-    private void OnCollisionStay(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
         //rumble
         if (collision.gameObject.tag == "Rumble")
