@@ -21,6 +21,7 @@ ModelImporter:
     100030: Mirror
     100032: MirrorBox
     100034: Window
+    100036: MotorHatch
     400000: //RootNode
     400002: CarChassis
     400004: Windows
@@ -39,6 +40,7 @@ ModelImporter:
     400030: Mirror
     400032: MirrorBox
     400034: Window
+    400036: MotorHatch
     2100000: 'Material #28'
     2100002: No Name
     2100004: MAT_YellowMaterial
@@ -61,6 +63,7 @@ ModelImporter:
     2300030: Mirror
     2300032: MirrorBox
     2300034: Window
+    2300036: MotorHatch
     3300000: //RootNode
     3300002: CarChassis
     3300004: Windows
@@ -79,6 +82,7 @@ ModelImporter:
     3300030: Mirror
     3300032: MirrorBox
     3300034: Window
+    3300036: MotorHatch
     4300000: CarChassis
     4300002: Windows
     4300004: Wheel
@@ -96,6 +100,7 @@ ModelImporter:
     4300028: Window
     4300030: MirrorBox
     4300032: Mirror
+    4300034: MotorHatch
   externalObjects: {}
   materials:
     importMaterials: 1

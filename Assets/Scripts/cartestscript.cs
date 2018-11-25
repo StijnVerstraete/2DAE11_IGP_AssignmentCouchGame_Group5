@@ -86,7 +86,7 @@ public class cartestscript : MonoBehaviour
         {
             _carRigidbody.velocity = _carRigidbody.velocity.normalized * _maxSpeed;
         }
-        Debug.Log(_carRigidbody.velocity);
+        //Debug.Log(_carRigidbody.velocity);
     }
 
     // finds the corresponding visual wheel
