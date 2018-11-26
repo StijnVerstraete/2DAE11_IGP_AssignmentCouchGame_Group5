@@ -35,7 +35,7 @@ public class OponentController : MonoBehaviour {
         Vector3 targetDir = _agent.nextPosition - transform.position;
         _steeringAngle = Vector3.Angle(targetDir, -transform.right);
         Debug.Log(_steeringAngle);
-        Debug.Log(" x: "+targetDir.x+ " y: " + targetDir.y+ " z: " + targetDir.z);
+        Debug.Log(" x: "+ _agent.nextPosition.x+ " y: " + _agent.nextPosition .y+ " z: " + _agent.nextPosition.z);
         //_steeringAngle = Vector3.Angle(new Vector3(transform.position.x,0,transform.position.z), new Vector3(_agent.nextPosition.x,0, _agent.nextPosition.z));
 
         //for both the front and back axle

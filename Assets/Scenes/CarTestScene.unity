@@ -872,6 +872,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e5203727d2ae261488cd1fc8b7799c93, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5203727d2ae261488cd1fc8b7799c93, type: 3}
   m_IsPrefabAsset: 0
@@ -2217,7 +2221,6 @@ GameObject:
   - component: {fileID: 786288279}
   - component: {fileID: 786288278}
   - component: {fileID: 786288276}
-  - component: {fileID: 786288280}
   - component: {fileID: 786288277}
   m_Layer: 9
   m_Name: OponentCarTest
@@ -2247,11 +2250,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 786288275}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b19b41ed5a45f554983f9ed66bb99cf5, type: 3}
+  m_Script: {fileID: 11500000, guid: 449ce0278f3aad144a15e758c5a36f68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _agent: {fileID: 786288280}
-  _endPosition: {fileID: 54457890}
   axleInfos:
   - leftWheel: {fileID: 1129140210}
     rightWheel: {fileID: 794741426}
@@ -2266,7 +2267,7 @@ MonoBehaviour:
   _maxMotorTorque: 10000
   _maxBreakTorque: 10000
   _maxSteeringAngle: 30
-  _maxSpeed: 50
+  _maxSpeed: 20
   _carRigidbody: {fileID: 786288278}
 --- !u!54 &786288278
 Rigidbody:
@@ -2300,27 +2301,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!195 &786288280
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 786288275}
-  m_Enabled: 1
-  m_AgentTypeID: -1372625422
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 360
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 1.52
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1 &794741424
 GameObject:
   m_ObjectHideFlags: 0
