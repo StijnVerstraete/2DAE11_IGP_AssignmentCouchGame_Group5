@@ -24,13 +24,19 @@ public class OponentController : MonoBehaviour {
     // Use this for initialization
     void Start () {
         _agent.updatePosition = false;
-        _agent.updateRotation = false;
+        _agent.updateRotation = true;
         _agent.SetDestination(_endPosition.position);
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        float _steeringAngle=0, _motorTorque=0;
+        float _steeringAngle=0, _motorTorque=1000;
+
+        Vector3 targetDir = _agent.nextPosition - transform.position;
+        _steeringAngle = Vector3.Angle(targetDir, -transform.right);
+        Debug.Log(_steeringAngle);
+        Debug.Log(" x: "+targetDir.x+ " y: " + targetDir.y+ " z: " + targetDir.z);
+        //_steeringAngle = Vector3.Angle(new Vector3(transform.position.x,0,transform.position.z), new Vector3(_agent.nextPosition.x,0, _agent.nextPosition.z));
 
         //for both the front and back axle
         foreach (AxleInfo axleInfo in axleInfos)
