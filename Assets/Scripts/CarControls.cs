@@ -31,24 +31,26 @@ public class CarControls : MonoBehaviour
 
     private List<PlayerPosition> _playerPositions;
 
+    float _steerLeft = 0, _steerRight = 0, _brake = 0, _gas = 0;
+
     public void Start()
     {
         _playerPositions = _positionHandler.PlayerPositions;
     }
 
-    public void FixedUpdate()
+    public void Update()
     {
-        float _steerLeft=0, _steerRight=0, _brake=0, _gas=0;
+        _steerLeft = 0; _steerRight = 0; _brake = 0; _gas = 0;
 
-        for (int i = 0; i < PlayerPrefs.GetInt("AmountOfPlayers",0); i++)
+        for (int i = 0; i < PlayerPrefs.GetInt("AmountOfPlayers", 0); i++)
         {
-                switch (_playerPositions[i]._position)
-                {
-                    case Positions.SteerLeft: _steerLeft += _maxSteeringAngle * Input.GetAxis("A" + (i+1) + "_Axis")/2; break;
-                    case Positions.SteerRight: _steerRight += _maxSteeringAngle * Input.GetAxis("A" + (i + 1) + "_Axis") / 2; break;
-                    case Positions.Brake: _brake += _maxMotorTorque * Input.GetAxis("A" + (i + 1) + "_Axis") / 2; break;
-                    case Positions.Gas: _gas += _maxMotorTorque * Input.GetAxis("A" + (i + 1) + "_Axis") / 2; break;
-                }
+            switch (_playerPositions[i]._position)
+            {
+                case Positions.SteerLeft: _steerLeft += _maxSteeringAngle * Input.GetAxis("A" + (i + 1) + "_Axis") / 2; break;
+                case Positions.SteerRight: _steerRight += _maxSteeringAngle * Input.GetAxis("A" + (i + 1) + "_Axis") / 2; break;
+                case Positions.Brake: _brake += _maxMotorTorque * Input.GetAxis("A" + (i + 1) + "_Axis") / 2; break;
+                case Positions.Gas: _gas += _maxMotorTorque * Input.GetAxis("A" + (i + 1) + "_Axis") / 2; break;
+            }
         }
 
         //if (Application.isEditor)
@@ -56,7 +58,10 @@ public class CarControls : MonoBehaviour
         //    _steerRight = _maxSteeringAngle * Input.GetAxis("Horizontal");
         //    _gas = _maxMotorTorque * Input.GetAxis("Vertical");
         //}
+    }
 
+    public void FixedUpdate()
+    {
         //for both the front and back axle
         foreach (AxleInfo axleInfo in axleInfos)
         {
