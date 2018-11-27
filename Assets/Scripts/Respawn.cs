@@ -11,7 +11,7 @@ public class Respawn : MonoBehaviour {
 	void Start ()
     {
         Car.transform.position = RespawnPoint.position;
-        Car.transform.rotation = new Quaternion(RespawnPoint.rotation.x, RespawnPoint.rotation.y, RespawnPoint.rotation.z, RespawnPoint.rotation.w);
+        Car.transform.rotation = RespawnPoint.localRotation;
     }
 	
 	// Update is called once per frame
@@ -20,7 +20,7 @@ public class Respawn : MonoBehaviour {
         if (Input.GetButtonDown("B1_Axis"))
         {
             Car.transform.position = RespawnPoint.position;
-            Car.transform.rotation = new Quaternion(RespawnPoint.rotation.x, RespawnPoint.rotation.y, RespawnPoint.rotation.z,RespawnPoint.rotation.w);
+            Car.transform.rotation = RespawnPoint.localRotation;
             Car.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
             Debug.Log("Respawn");
         }

@@ -9,7 +9,7 @@ public class ConeScript : MonoBehaviour {
 	void Start ()
     {
         _rb = GetComponent<Rigidbody>();
-        _car = GameObject.FindGameObjectWithTag("Car");
+        //_car = GameObject.FindGameObjectWithTag("Car");
 	}
 	
 	// Update is called once per frame
