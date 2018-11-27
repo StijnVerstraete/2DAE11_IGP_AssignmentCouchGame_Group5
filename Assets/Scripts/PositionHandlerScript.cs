@@ -54,12 +54,6 @@ public class PositionHandlerScript : MonoBehaviour {
     // Update is called once per frame
     void Update ()
     {
-        //string[] temp = Input.GetJoystickNames();
-        //for (int i = 0; i < temp.Length; i++)
-        //{
-        //    Debug.Log("player " + i+ ": " +temp[i].ToString());
-        //}
-
         //for every player
         for (int i = 0; i < PlayerPrefs.GetInt("AmountOfPlayers",0); i++)
         {
@@ -257,6 +251,15 @@ public class PositionHandlerScript : MonoBehaviour {
             {
                 PlayerPositions[playerNumber]._transform.position = _defaultPositions[i]._transform.position;
             }
+        }
+    }
+
+    public void ScramblePlayers()
+    {
+        for(int i= 0; i < PlayerPositions.Count;i++)
+        {
+            int rand = UnityEngine.Random.Range(0, _defaultPositions.Count);
+            SwitchPosition(i, PlayerPositions[i]._position, Positions.SteerLeft);
         }
     }
 }
