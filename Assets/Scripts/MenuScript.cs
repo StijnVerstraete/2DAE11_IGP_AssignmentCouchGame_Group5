@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MenuScript : MonoBehaviour {
+
+    [SerializeField]
+    private Image _startImage;
 
     private List<int> _assignedControllers = new List<int>();
 
@@ -15,7 +19,7 @@ public class MenuScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+        _startImage.enabled = false;
         PlayerPrefs.SetInt("AmountOfPlayers", 0);
 
         _panels = FindObjectsOfType<PlayerPanel>().OrderBy(t=> t.PlayerNumber).ToArray();  
@@ -23,36 +27,56 @@ public class MenuScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        // get the length of the controller connected to this pc
+        JoinTheGame();
+        ShowStartImageAfter5Seconds();
+	}
 
+    private void JoinTheGame()
+    {
+        // get the length of the controller connected to this pc
         for (int i = 1; i < Input.GetJoystickNames().Length + 1; i++)
         {
             if (_assignedControllers.Contains(i))
                 continue;
 
+            //control which controller is used and if they click on the A button
             if (Input.GetButtonDown("A" + i + "_XboxButton"))
             {
                 AddPlayerController(i);
-                Debug.Log("A" + i + "_XboxButton");
+                //Debug.Log("A" + i + "_XboxButton");
                 break;
             }
         }
+    }
 
+    private void ShowStartImageAfter5Seconds()
+    {
         if (_assignedControllers.Count() >= 1)
         {
             _timer += Time.deltaTime;
 
-            if (_timer >= 10.0f)
+            if (_timer >= 5.0f)
             {
-                Debug.Log("over 10 sec show start button");
+                Debug.Log("over 5 sec show start button");
                 _timer = 0;
                 _showStartImage = true;
             }
         }
-	}
+
+        if (_showStartImage)
+        {
+            _startImage.enabled = true;
+
+            if (Input.GetButtonDown("Start_XboxButton"))
+            {
+                Debug.Log("Go to level 01");
+            }
+        }
+    }
 
     private void AddPlayerController(int controller)
     {
+        //add the controller to the list
         _assignedControllers.Add(controller);
         PlayerPrefs.SetInt("AmountOfPlayers", PlayerPrefs.GetInt("AmountOfPlayers", 0) + 1);
 
@@ -63,11 +87,8 @@ public class MenuScript : MonoBehaviour {
         //        _panels[i].UpdatePanels(controller);
         //    }
         //}
-
-        if (!_panels[controller - 1].HasControllerAssigned)
-        {
-            _panels[controller - 1].UpdatePanels(controller);
-        }
-        _timer = 0;
+        
+        //update the panels when a controller is joined
+        _panels[controller - 1].UpdatePanels(controller);
     }
 }
