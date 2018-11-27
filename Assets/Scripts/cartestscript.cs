@@ -54,11 +54,11 @@ public class cartestscript : MonoBehaviour
             }
         }
 
-        if (Application.isEditor)
-        {
-            _steerRight = _maxSteeringAngle * Input.GetAxis("Horizontal");
-            _gas = _maxMotorTorque * Input.GetAxis("Vertical");
-        }
+        //if (Application.isEditor)
+        //{
+        //    _steerRight = _maxSteeringAngle * Input.GetAxis("Horizontal");
+        //    _gas = _maxMotorTorque * Input.GetAxis("Vertical");
+        //}
 
         //for both the front and back axle
         foreach (AxleInfo axleInfo in axleInfos)
