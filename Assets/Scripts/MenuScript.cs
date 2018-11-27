@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MenuScript : MonoBehaviour {
@@ -69,6 +70,7 @@ public class MenuScript : MonoBehaviour {
 
             if (Input.GetButtonDown("Start_XboxButton"))
             {
+                SceneManager.LoadScene("Level1");
                 Debug.Log("Go to level 01");
             }
         }
