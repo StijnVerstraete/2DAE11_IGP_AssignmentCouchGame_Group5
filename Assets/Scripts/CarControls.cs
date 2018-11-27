@@ -13,7 +13,7 @@ public class AxleInfo
 }
 
 [RequireComponent(typeof(Rigidbody))]
-public class cartestscript : MonoBehaviour
+public class CarControls : MonoBehaviour
 {
     public List<AxleInfo> axleInfos;
 
@@ -40,10 +40,8 @@ public class cartestscript : MonoBehaviour
     {
         float _steerLeft=0, _steerRight=0, _brake=0, _gas=0;
 
-        for (int i = 0; i < _playerPositions.Count; i++)
+        for (int i = 0; i < PlayerPrefs.GetInt("AmountOfPlayers",0); i++)
         {
-            if (_playerPositions[i]._transform != null)
-            {
                 switch (_playerPositions[i]._position)
                 {
                     case Positions.SteerLeft: _steerLeft += _maxSteeringAngle * Input.GetAxis("A" + (i+1) + "_Axis")/2; break;
@@ -51,7 +49,6 @@ public class cartestscript : MonoBehaviour
                     case Positions.Brake: _brake += _maxMotorTorque * Input.GetAxis("A" + (i + 1) + "_Axis") / 2; break;
                     case Positions.Gas: _gas += _maxMotorTorque * Input.GetAxis("A" + (i + 1) + "_Axis") / 2; break;
                 }
-            }
         }
 
         //if (Application.isEditor)

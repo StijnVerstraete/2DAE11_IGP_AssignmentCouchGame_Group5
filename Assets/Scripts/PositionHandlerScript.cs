@@ -40,15 +40,12 @@ public class PositionHandlerScript : MonoBehaviour {
     void Start ()
     {
         //set players to right positions
-        for (int i = 0; i < PlayerPositions.Count; i++)
+        for (int i = 0; i < PlayerPrefs.GetInt("AmountOfPlayers",0); i++)
         {
-            if (PlayerPositions[i]._transform != null)
-            {
                 PlayerPositions[i]._transform.position = _defaultPositions[i]._transform.position;
 
                 //set how many players are on position
                 ++_defaultPositions[i]._amountOfPlayers;
-            }
         }
 
     }
@@ -64,11 +61,8 @@ public class PositionHandlerScript : MonoBehaviour {
         //}
 
         //for every player
-        for (int i = 0; i < PlayerPositions.Count; i++)
+        for (int i = 0; i < PlayerPrefs.GetInt("AmountOfPlayers",0); i++)
         {
-            //if there is a player playing
-            if(PlayerPositions[i]._transform != null)
-            {
                 //if player is on his position, he can switch
                 if (CheckIfPlayerIsOnRightPosition(i))
                 {
@@ -90,7 +84,6 @@ public class PositionHandlerScript : MonoBehaviour {
                     }
                     
                 }
-            }
         }
         
     }
