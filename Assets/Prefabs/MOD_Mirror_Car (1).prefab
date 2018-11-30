@@ -412,7 +412,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4476348084416032}
   m_Layer: 0
-  m_Name: MOD_Mirror_Car
+  m_Name: MOD_Mirror_Car (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
