@@ -26,7 +26,7 @@ public class ControllerRumble : MonoBehaviour {
             GamePad.SetVibration(PlayerIndex.Three, 0f, 0f);
             GamePad.SetVibration(PlayerIndex.Four, 0f, 0f);
         }
-        Debug.Log(_rumbleLength);
+        //Debug.Log(_rumbleLength);
     }
     private void OnCollisionEnter(Collision collision)
     {

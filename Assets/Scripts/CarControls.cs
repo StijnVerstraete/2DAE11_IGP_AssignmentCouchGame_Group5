@@ -53,11 +53,11 @@ public class CarControls : MonoBehaviour
             }
         }
 
-        //if (Application.isEditor)
-        //{
-        //    _steerRight = _maxSteeringAngle * Input.GetAxis("Horizontal");
-        //    _gas = _maxMotorTorque * Input.GetAxis("Vertical");
-        //}
+        if (Application.isEditor)
+        {
+            _steerRight = _maxSteeringAngle * Input.GetAxis("Horizontal");
+            _gas = _maxMotorTorque * Input.GetAxis("Vertical");
+        }
     }
 
     public void FixedUpdate()
@@ -84,6 +84,7 @@ public class CarControls : MonoBehaviour
             ApplyLocalPositionToVisuals(axleInfo.rightWheel);
         }
 
+        //limit max speed
         if (_carRigidbody.velocity.magnitude > _maxSpeed)
         {
             _carRigidbody.velocity = _carRigidbody.velocity.normalized * _maxSpeed;
