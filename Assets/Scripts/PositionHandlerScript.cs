@@ -215,6 +215,7 @@ public class PositionHandlerScript : MonoBehaviour {
 
     private void SwitchPosition(int playerNumber, Positions currentPosition, Positions targetPosition)
     {
+        //for each position
         for (int i = 0; i < _defaultPositions.Count; i++)
         {
             //get the target position
@@ -256,10 +257,11 @@ public class PositionHandlerScript : MonoBehaviour {
 
     public void ScramblePlayers()
     {
-        for(int i= 0; i < PlayerPositions.Count;i++)
+        //for each player
+        for(int i= 0; i < PlayerPrefs.GetInt("AmountOfPlayers");i++)
         {
             int rand = UnityEngine.Random.Range(0, _defaultPositions.Count);
-            SwitchPosition(i, PlayerPositions[i]._position, Positions.SteerLeft);
+            SwitchPosition(i, PlayerPositions[i]._position, _defaultPositions[rand]._position);
         }
     }
 }

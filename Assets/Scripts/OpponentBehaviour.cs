@@ -49,8 +49,8 @@ public class OpponentBehaviour : MonoBehaviour {
             _angleLeft = Vector3.Angle(_transform.forward, hit.normal);
             _hitPointLeft = hit.point;
         }
-        Debug.Log("_angleRight: "+ _angleRight);
-        Debug.Log("_angleLeft: " + _angleLeft);
+        //Debug.Log("_angleRight: "+ _angleRight);
+        //Debug.Log("_angleLeft: " + _angleLeft);
 
         //bocht die naar links gaat
         if(_angleRight>=90 && _angleLeft <= 90)

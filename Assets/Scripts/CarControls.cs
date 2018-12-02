@@ -25,7 +25,7 @@ public class CarControls : MonoBehaviour
 
     [SerializeField] private float _maxSpeed;
 
-    [SerializeField] private Rigidbody _carRigidbody;
+    private Rigidbody _carRigidbody;
 
     [SerializeField] private PositionHandlerScript _positionHandler;
 
@@ -36,6 +36,7 @@ public class CarControls : MonoBehaviour
     public void Start()
     {
         _playerPositions = _positionHandler.PlayerPositions;
+        _carRigidbody = GetComponent<Rigidbody>();
     }
 
     public void Update()
@@ -53,11 +54,11 @@ public class CarControls : MonoBehaviour
             }
         }
 
-        if (Application.isEditor)
-        {
-            _steerRight = _maxSteeringAngle * Input.GetAxis("Horizontal");
-            _gas = _maxMotorTorque * Input.GetAxis("Vertical");
-        }
+        //if (Application.isEditor)
+        //{
+        //    _steerRight = _maxSteeringAngle * Input.GetAxis("Horizontal");
+        //    _gas = _maxMotorTorque * Input.GetAxis("Vertical");
+        //}
     }
 
     public void FixedUpdate()
