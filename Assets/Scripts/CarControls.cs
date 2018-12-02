@@ -31,12 +31,18 @@ public class CarControls : MonoBehaviour
 
     private List<PlayerPosition> _playerPositions;
 
+    //amount of players doing what - audio related
+    [SerializeField]private int[] _playerActions = new int[4]; //-1 - brake //0 - neutral  //1-accelerate
+    public int AccelerationLevel;
+
     float _steerLeft = 0, _steerRight = 0, _brake = 0, _gas = 0;
 
     public void Start()
     {
         _playerPositions = _positionHandler.PlayerPositions;
         _carRigidbody = GetComponent<Rigidbody>();
+
+
     }
 
     public void Update()
@@ -47,13 +53,44 @@ public class CarControls : MonoBehaviour
         {
             switch (_playerPositions[i]._position)
             {
-                case Positions.SteerLeft: _steerLeft += _maxSteeringAngle * Input.GetAxis("A" + (i + 1) + "_Axis") / 2; break;
-                case Positions.SteerRight: _steerRight += _maxSteeringAngle * Input.GetAxis("A" + (i + 1) + "_Axis") / 2; break;
-                case Positions.Brake: _brake += _maxMotorTorque * Input.GetAxis("A" + (i + 1) + "_Axis") / 2; break;
-                case Positions.Gas: _gas += _maxMotorTorque * Input.GetAxis("A" + (i + 1) + "_Axis") / 2; break;
+                case Positions.SteerLeft:
+                    _steerLeft += _maxSteeringAngle * Input.GetAxis("A" + (i + 1) + "_Axis") / 2;
+                    //set playeractions to neutral - audio related
+                    _playerActions[i] = 0;
+                    break;
+                case Positions.SteerRight:
+                    _steerRight += _maxSteeringAngle * Input.GetAxis("A" + (i + 1) + "_Axis") / 2;
+                    //set playeractions to neutral - audio related
+                    _playerActions[i] = 0;
+                    break;
+                case Positions.Brake:
+                    _brake += _maxMotorTorque * Input.GetAxis("A" + (i + 1) + "_Axis") / 2;
+                    //adjust playeractions accordingly - audio related
+                    if(Input.GetAxis("A" + (i + 1) + "_Axis") != 0)
+                    {
+                        _playerActions[i] = -1;
+                    }
+                    else
+                    {
+                        _playerActions[i] = 0;
+                    }
+                    break;
+                case Positions.Gas:
+                    _gas += _maxMotorTorque * Input.GetAxis("A" + (i + 1) + "_Axis") / 2;
+                    //adjust playeractions accordingly - audio related
+                    if (Input.GetAxis("A" + (i + 1) + "_Axis") != 0)
+                    {
+                        _playerActions[i] = 1;
+                    }
+                    else
+                    {
+                        _playerActions[i] = 0;
+                    }
+                    break;
             }
         }
-
+        //calculate acceleration level - audio related
+        AccelerationLevel = _playerActions[0] + _playerActions[1] + _playerActions[2] + _playerActions[3];
         //if (Application.isEditor)
         //{
         //    _steerRight = _maxSteeringAngle * Input.GetAxis("Horizontal");

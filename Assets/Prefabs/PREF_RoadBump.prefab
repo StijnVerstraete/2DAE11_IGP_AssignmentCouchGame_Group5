@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 65990301641433736}
   m_Layer: 12
   m_Name: PREF_RoadBump
-  m_TagString: Untagged
+  m_TagString: Rumble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,9 +37,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1129611764856770}
-  m_LocalRotation: {x: 0.51236457, y: 0.48732182, z: -0.51236457, w: 0.48732182}
-  m_LocalPosition: {x: 16, y: -19.7, z: 92.6}
-  m_LocalScale: {x: 4, y: 40, z: 4}
+  m_LocalRotation: {x: 0.51236457, y: 0.48732185, z: -0.51236457, w: 0.48732185}
+  m_LocalPosition: {x: -75.92045, y: 3.4115605, z: 271.6575}
+  m_LocalScale: {x: 4, y: 27.909203, z: 3.55764}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -59,7 +59,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c8beb43e85619094caf5f26fd26f4747, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

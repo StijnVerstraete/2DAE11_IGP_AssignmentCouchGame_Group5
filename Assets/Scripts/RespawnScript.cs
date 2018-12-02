@@ -18,7 +18,7 @@ public class RespawnScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (Input.GetButtonDown("B1_Axis"))
+        if (Input.GetButtonDown("B1_Axis") && !_isOpponent)
         {
             Respawn();
         }
