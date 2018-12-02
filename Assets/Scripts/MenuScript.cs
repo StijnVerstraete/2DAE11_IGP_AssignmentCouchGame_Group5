@@ -9,6 +9,10 @@ public class MenuScript : MonoBehaviour {
 
     [SerializeField]
     private Image _startImage;
+    [SerializeField]
+    private Image _rulesGameplayImage;
+    [SerializeField]
+    private Image _rulesGameplayButtonImage;
 
     private List<int> _assignedControllers = new List<int>();
 
@@ -17,10 +21,12 @@ public class MenuScript : MonoBehaviour {
 
     private float _timer = 0;
     private bool _showStartImage = false;
+    private bool _isRulesGameplayImageShow = true;
 
 	// Use this for initialization
 	void Start () {
         _startImage.enabled = false;
+        _rulesGameplayImage.enabled = false;
         PlayerPrefs.SetInt("AmountOfPlayers", 0);
 
         _panels = FindObjectsOfType<PlayerPanel>().OrderBy(t=> t.PlayerNumber).ToArray();  
@@ -29,7 +35,8 @@ public class MenuScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         JoinTheGame();
-        ShowStartImageAfter5Seconds();
+        ShowStartImageAfter2Seconds();
+        ShowRulesGameplay();
 	}
 
     private void JoinTheGame()
@@ -50,13 +57,13 @@ public class MenuScript : MonoBehaviour {
         }
     }
 
-    private void ShowStartImageAfter5Seconds()
+    private void ShowStartImageAfter2Seconds()
     {
         if (_assignedControllers.Count() >= 1)
         {
             _timer += Time.deltaTime;
 
-            if (_timer >= 5.0f)
+            if (_timer >= 2.0f)
             {
                 Debug.Log("over 5 sec show start button");
                 _timer = 0;
@@ -92,5 +99,29 @@ public class MenuScript : MonoBehaviour {
         
         //update the panels when a controller is joined
         _panels[controller - 1].UpdatePanels(controller);
+    }
+
+    private void ShowRulesGameplay()
+    {
+        
+        if (Input.GetButtonDown("Y_XboxButton"))
+        {
+            
+            if (_isRulesGameplayImageShow)
+            {
+                _rulesGameplayButtonImage.enabled = false;
+                _rulesGameplayImage.enabled = true;
+
+                _isRulesGameplayImageShow = false;
+            }
+            else
+            {
+                _rulesGameplayButtonImage.enabled = true;
+                _rulesGameplayImage.enabled = false;
+
+                _isRulesGameplayImageShow = true;
+            }
+            
+        }
     }
 }

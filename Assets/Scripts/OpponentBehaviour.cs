@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(RespawnScript))]
 public class OpponentBehaviour : MonoBehaviour {
 
     public List<AxleInfo> axleInfos;
@@ -21,9 +22,16 @@ public class OpponentBehaviour : MonoBehaviour {
 
     private float _steeringAngle=0;
 
+    private RespawnScript _respawnScript;
+
+    [SerializeField] private float _respawnTime;
+
+    private float _respawntimer = 0;
+
     public void Start()
     {
         _transform = GetComponent<Transform>();
+        _respawnScript = GetComponent<RespawnScript>();
     }
 
     public void FixedUpdate()
@@ -41,8 +49,8 @@ public class OpponentBehaviour : MonoBehaviour {
             _angleLeft = Vector3.Angle(_transform.forward, hit.normal);
             _hitPointLeft = hit.point;
         }
-        Debug.Log("_angleRight: "+ _angleRight);
-        Debug.Log("_angleLeft: " + _angleLeft);
+        //Debug.Log("_angleRight: "+ _angleRight);
+        //Debug.Log("_angleLeft: " + _angleLeft);
 
         //bocht die naar links gaat
         if(_angleRight>=90 && _angleLeft <= 90)
@@ -119,6 +127,16 @@ public class OpponentBehaviour : MonoBehaviour {
             ApplyLocalPositionToVisuals(axleInfo.rightWheel);
         }
 
+        //if car is flying through air
+        if (!CheckIfAnyWheelsAreGrounded())
+        {
+            if (Physics.Raycast(_transform.position, Vector3.down, out hit, 50f, 1 << LayerMask.NameToLayer("Map")))
+            {
+                //_transform.eulerAngles = Vector3.RotateTowards(_transform.eulerAngles, Vector3.Project(hit.normal, _transform.forward),.01f,.01f);
+            }
+        }
+
+        //limit max speed
         if (_carRigidbody.velocity.magnitude > _maxSpeed)
         {
             _carRigidbody.velocity = _carRigidbody.velocity.normalized * _maxSpeed;
@@ -143,6 +161,45 @@ public class OpponentBehaviour : MonoBehaviour {
 
         visualWheel.transform.position = position;
         visualWheel.transform.rotation = rotation;
+    }
+
+    bool CheckIfAnyWheelsAreGrounded()
+    {
+        foreach (AxleInfo axleInfo in axleInfos)
+        {
+            if (axleInfo.leftWheel.isGrounded)
+                return true;
+            if(axleInfo.rightWheel.isGrounded)
+                return true;
+        }
+        return false;
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        _respawntimer += Time.deltaTime;
+
+        if (_respawntimer > _respawnTime)
+        {
+            if (!CheckIfAnyWheelsAreGrounded())
+            {
+                _respawnScript.Respawn();
+            }
+            _respawntimer = 0;
+        }
+
+
+        //temp code, may be removed
+        if (_carRigidbody.velocity.magnitude<2)
+        {
+            _respawnScript.Respawn();
+            _respawntimer = 0;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        _respawntimer = 0;
     }
 
 }

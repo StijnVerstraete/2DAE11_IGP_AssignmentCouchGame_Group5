@@ -800,7 +800,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1329794082157910}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.86, y: -16.17, z: -6.288879}
+  m_LocalPosition: {x: 2.44, y: -16.81, z: -0.37}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4247500965015070}
@@ -2322,7 +2322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RespawnPoint: {fileID: 0}
-  Car: {fileID: 1329794082157910}
+  _isOpponent: 0
 --- !u!114 &114043534615901198
 MonoBehaviour:
   m_ObjectHideFlags: 1

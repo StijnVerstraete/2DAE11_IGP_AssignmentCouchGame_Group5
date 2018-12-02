@@ -182,6 +182,7 @@ GameObject:
   - component: {fileID: 54143610981433606}
   - component: {fileID: 65952504072591104}
   - component: {fileID: 114067467187105028}
+  - component: {fileID: 114235295002197878}
   m_Layer: 9
   m_Name: OponentCarTest
   m_TagString: Untagged
@@ -1022,7 +1023,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1310731198355378}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.86, y: -12.57, z: 0}
+  m_LocalPosition: {x: 15.48, y: -16.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4798766560254246}
@@ -1887,6 +1888,20 @@ MonoBehaviour:
   _maxSteeringAngle: 30
   _maxSpeed: 20
   _carRigidbody: {fileID: 54143610981433606}
+  _respawnTime: 3
+--- !u!114 &114235295002197878
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310731198355378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a236546ea425de4ea6675fb1d3beb55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RespawnPoint: {fileID: 0}
+  _isOpponent: 1
 --- !u!114 &114870384536335252
 MonoBehaviour:
   m_ObjectHideFlags: 1

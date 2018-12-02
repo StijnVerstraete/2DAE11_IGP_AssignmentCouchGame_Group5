@@ -25,7 +25,7 @@ public class CarControls : MonoBehaviour
 
     [SerializeField] private float _maxSpeed;
 
-    [SerializeField] private Rigidbody _carRigidbody;
+    private Rigidbody _carRigidbody;
 
     [SerializeField] private PositionHandlerScript _positionHandler;
 
@@ -36,6 +36,7 @@ public class CarControls : MonoBehaviour
     public void Start()
     {
         _playerPositions = _positionHandler.PlayerPositions;
+        _carRigidbody = GetComponent<Rigidbody>();
     }
 
     public void Update()
@@ -84,6 +85,7 @@ public class CarControls : MonoBehaviour
             ApplyLocalPositionToVisuals(axleInfo.rightWheel);
         }
 
+        //limit max speed
         if (_carRigidbody.velocity.magnitude > _maxSpeed)
         {
             _carRigidbody.velocity = _carRigidbody.velocity.normalized * _maxSpeed;
