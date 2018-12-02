@@ -8,22 +8,6 @@ public class RespawnScript : MonoBehaviour {
 
     [SerializeField] private bool _isOpponent;
 
-	// Use this for initialization
-	void Start ()
-    {
-        //transform.position = RespawnPoint.position;
-        //transform.rotation = RespawnPoint.localRotation;
-    }
-	
-	// Update is called once per frame
-	void Update ()
-    {
-        if (Input.GetButtonDown("B1_Axis") && !_isOpponent)
-        {
-            Respawn();
-        }
-	}
-
     public void Respawn()
     {
         transform.position = RespawnPoint.position;

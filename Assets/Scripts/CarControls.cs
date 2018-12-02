@@ -13,6 +13,7 @@ public class AxleInfo
 }
 
 [RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(RespawnScript))]
 public class CarControls : MonoBehaviour
 {
     public List<AxleInfo> axleInfos;
@@ -37,11 +38,17 @@ public class CarControls : MonoBehaviour
 
     float _steerLeft = 0, _steerRight = 0, _brake = 0, _gas = 0;
 
+    private float _respawnTimer=0;
+
+    [SerializeField] private float _respawnTime;
+
+    private RespawnScript _respawnScript;
+
     public void Start()
     {
         _playerPositions = _positionHandler.PlayerPositions;
         _carRigidbody = GetComponent<Rigidbody>();
-
+        _respawnScript = GetComponent<RespawnScript>();
 
     }
 
@@ -91,11 +98,25 @@ public class CarControls : MonoBehaviour
         }
         //calculate acceleration level - audio related
         AccelerationLevel = _playerActions[0] + _playerActions[1] + _playerActions[2] + _playerActions[3];
+
+
         //if (Application.isEditor)
         //{
         //    _steerRight = _maxSteeringAngle * Input.GetAxis("Horizontal");
         //    _gas = _maxMotorTorque * Input.GetAxis("Vertical");
         //}
+
+        if (CheckIfAllPlayersAreHoldingB())
+        {
+            _respawnTimer += Time.deltaTime;
+
+            if (_respawnTimer > _respawnTime)
+            {
+                _respawnScript.Respawn();
+                _respawnTimer = 0;
+            }
+        }
+        else _respawnTimer = 0;
     }
 
     public void FixedUpdate()
@@ -149,4 +170,13 @@ public class CarControls : MonoBehaviour
         visualWheel.transform.rotation = rotation;
     }
 
+    private bool CheckIfAllPlayersAreHoldingB()
+    {
+        for (int i = 0; i < PlayerPrefs.GetInt("AmountOfPlayers", 0); i++)
+        {
+            if (!Input.GetButton("B" + (i + 1) + "_XboxButton"))
+                return false;
+        }
+        return true;
+    }
 }
