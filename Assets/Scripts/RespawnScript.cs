@@ -10,9 +10,9 @@ public class RespawnScript : MonoBehaviour {
 
     public void Respawn()
     {
+        GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
         transform.position = RespawnPoint.position;
         transform.rotation = RespawnPoint.localRotation;
-        GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
         Debug.Log("Respawn");
     }
 

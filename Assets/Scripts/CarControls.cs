@@ -58,42 +58,48 @@ public class CarControls : MonoBehaviour
 
         for (int i = 0; i < PlayerPrefs.GetInt("AmountOfPlayers", 0); i++)
         {
+            float axisInput = Input.GetAxis("A" + (i + 1) + "_Axis");
+
             switch (_playerPositions[i]._position)
             {
                 case Positions.SteerLeft:
-                    _steerLeft += _maxSteeringAngle * Input.GetAxis("A" + (i + 1) + "_Axis") / 2;
-                    //set playeractions to neutral - audio related
-                    _playerActions[i] = 0;
-                    break;
+                    {
+                        _steerLeft += _maxSteeringAngle * axisInput / 2;
+                        //set playeractions to neutral - audio related
+                        _playerActions[i] = 0;
+                    } break;
                 case Positions.SteerRight:
-                    _steerRight += _maxSteeringAngle * Input.GetAxis("A" + (i + 1) + "_Axis") / 2;
-                    //set playeractions to neutral - audio related
-                    _playerActions[i] = 0;
-                    break;
+                    {
+                        _steerRight += _maxSteeringAngle * axisInput / 2;
+                        //set playeractions to neutral - audio related
+                        _playerActions[i] = 0;
+                    } break;
                 case Positions.Brake:
-                    _brake += _maxMotorTorque * Input.GetAxis("A" + (i + 1) + "_Axis") / 2;
-                    //adjust playeractions accordingly - audio related
-                    if(Input.GetAxis("A" + (i + 1) + "_Axis") != 0)
                     {
-                        _playerActions[i] = -1;
-                    }
-                    else
-                    {
-                        _playerActions[i] = 0;
-                    }
-                    break;
+                        _brake += _maxMotorTorque * axisInput / 2;
+                        //adjust playeractions accordingly - audio related
+                        if (axisInput != 0)
+                        {
+                            _playerActions[i] = -1;
+                        }
+                        else
+                        {
+                            _playerActions[i] = 0;
+                        }
+                    } break;
                 case Positions.Gas:
-                    _gas += _maxMotorTorque * Input.GetAxis("A" + (i + 1) + "_Axis") / 2;
-                    //adjust playeractions accordingly - audio related
-                    if (Input.GetAxis("A" + (i + 1) + "_Axis") != 0)
                     {
-                        _playerActions[i] = 1;
-                    }
-                    else
-                    {
-                        _playerActions[i] = 0;
-                    }
-                    break;
+                        _gas += _maxMotorTorque * axisInput / 2;
+                        //adjust playeractions accordingly - audio related
+                        if (axisInput != 0)
+                        {
+                            _playerActions[i] = 1;
+                        }
+                        else
+                        {
+                            _playerActions[i] = 0;
+                        }
+                    } break;
             }
         }
         //calculate acceleration level - audio related
@@ -106,6 +112,8 @@ public class CarControls : MonoBehaviour
         //    _gas = _maxMotorTorque * Input.GetAxis("Vertical");
         //}
 
+        //if all players are holding "b", start respawntimer
+        //when timer hits respawn time, respawn
         if (CheckIfAllPlayersAreHoldingB())
         {
             _respawnTimer += Time.deltaTime;

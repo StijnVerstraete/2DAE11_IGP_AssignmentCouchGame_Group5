@@ -142,6 +142,7 @@ public class OpponentBehaviour : MonoBehaviour {
                 tempRotation.x = Mathf.LerpAngle(tempRotation.x, groundRotation.eulerAngles.x, .04f);
                 tempRotation.z = Mathf.LerpAngle(tempRotation.z, groundRotation.eulerAngles.z, .04f);
 
+                //set rotation
                 _transform.eulerAngles = tempRotation;
 
                 //_transform.rotation = Quaternion.RotateTowards(_transform.rotation, tempQ, 2f);
@@ -160,7 +161,7 @@ public class OpponentBehaviour : MonoBehaviour {
     }
 
     // finds the corresponding visual wheel
-    // correctly applies the transform
+    // correctly applies the rotation
     public void ApplyLocalPositionToVisuals(WheelCollider collider)
     {
         if (collider.transform.childCount == 0)
@@ -196,20 +197,22 @@ public class OpponentBehaviour : MonoBehaviour {
 
         if (_respawntimer > _respawnTime)
         {
+            //if car is tilted
             if (!CheckIfAnyWheelsAreGrounded())
             {
                 _respawnScript.Respawn();
             }
+            else //if wheels are on ground but car is hitting wall
+            {
+                //temp code, may be removed
+                if (_carRigidbody.velocity.magnitude < 4)
+                {
+                    _respawnScript.Respawn();
+                }
+            }
             _respawntimer = 0;
         }
 
-
-        //temp code, may be removed
-        if (_carRigidbody.velocity.magnitude<2)
-        {
-            //_respawnScript.Respawn();
-            //_respawntimer = 0;
-        }
     }
 
     private void OnCollisionExit(Collision collision)

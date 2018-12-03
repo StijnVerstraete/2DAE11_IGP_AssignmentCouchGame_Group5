@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-    public enum Positions
+public enum Positions
 {
     SteerLeft, SteerRight, Brake, Gas
 }
@@ -94,23 +94,24 @@ public class PositionHandlerScript : MonoBehaviour {
 
     private void SetDestination(int playerNumber)
     {
-        string xAxis = "J" + (playerNumber+1) + "_XboxHorizontal";
-        string yAxis = "J" + (playerNumber+1) + "_XboxVertical";
+        float xAxisInput = Input.GetAxis("J" + (playerNumber + 1) + "_XboxHorizontal");
+        float yAxisInput = Input.GetAxis("J" + (playerNumber + 1) + "_XboxVertical");
 
         //only if player uses joystick
-        if (Input.GetAxis(yAxis)!=0|| Input.GetAxis(xAxis) != 0)
+        if (yAxisInput !=0|| xAxisInput != 0)
         {
             //get the angle from the joystick
             float angle;
-            if (Input.GetAxis(yAxis) >= 0)
-                angle = Vector2.Angle(Vector2.right, new Vector2(Input.GetAxis(xAxis), Input.GetAxis(yAxis)));
+            if (yAxisInput >= 0)
+                angle = Vector2.Angle(Vector2.right, new Vector2(xAxisInput, yAxisInput));
             else
-                angle = Vector2.Angle(Vector2.left, new Vector2(Input.GetAxis(xAxis), Input.GetAxis(yAxis))) + 180;
-            Debug.Log(angle);
+                angle = Vector2.Angle(Vector2.left, new Vector2(xAxisInput, yAxisInput)) + 180;
+            //Debug.Log(angle);
 
 
             //tell the player where togo
             Positions pos = PlayerPositions[playerNumber]._position;
+
             if (angle >= 315 || angle < 45f) //go right
             {
                 if (pos == Positions.SteerLeft)
@@ -153,7 +154,9 @@ public class PositionHandlerScript : MonoBehaviour {
                 }
             }
         }
-            
+       
+        //8-directional code
+
         //if(angle>337.5f || angle <= 22.5f)
         //{
         //    _playersPositions[playerNumber]._positionX = PositionX.Right;
