@@ -793,7 +793,7 @@ Transform:
   m_GameObject: {fileID: 1870367887744876}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.000000059605, y: 46.72, z: 0.00000047684}
-  m_LocalScale: {x: 2.0100646, y: 2.0100646, z: 2.0100646}
+  m_LocalScale: {x: 3.112593, y: 3.112593, z: 3.112593}
   m_Children: []
   m_Father: {fileID: 4254254208732420}
   m_RootOrder: 4
@@ -818,7 +818,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1329794082157910}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.86, y: -16.17, z: -6.288879}
+  m_LocalPosition: {x: -0.86, y: -16.17, z: -5.6600003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4247500965015070}
@@ -2597,7 +2597,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _switchSpeed: 10
   _maxAmountOfPlayersOnPosition: 2
-  _defaultPositions:
+  DefaultPositions:
   - _position: 0
     _transform: {fileID: 4871383989588260}
     _amountOfPlayers: 0
@@ -2671,7 +2671,7 @@ MonoBehaviour:
   _maxMotorTorque: 10000
   _maxBreakTorque: 10000
   _maxSteeringAngle: 15
-  _maxSpeed: 30
+  _maxSpeedDefault: 30
   _positionHandler: {fileID: 114632030574995456}
   _playerActions: 00000000000000000000000000000000
   AccelerationLevel: 0

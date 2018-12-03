@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 [System.Serializable]
 public class AxleInfo
@@ -24,13 +25,16 @@ public class CarControls : MonoBehaviour
 
     [SerializeField] private float _maxSteeringAngle;
 
-    [SerializeField] private float _maxSpeed;
+    [SerializeField] private float _maxSpeedDefault;
+
+    private float _maxSpeed;
 
     private Rigidbody _carRigidbody;
 
     [SerializeField] private PositionHandlerScript _positionHandler;
 
     private List<PlayerPosition> _playerPositions;
+    private List<DefaultPosition> _defaultPositions;
 
     //amount of players doing what - audio related
     [SerializeField]private int[] _playerActions = new int[4]; //-1 - brake //0 - neutral  //1-accelerate
@@ -47,9 +51,11 @@ public class CarControls : MonoBehaviour
     public void Start()
     {
         _playerPositions = _positionHandler.PlayerPositions;
+        _defaultPositions = _positionHandler.DefaultPositions;
         _carRigidbody = GetComponent<Rigidbody>();
         _respawnScript = GetComponent<RespawnScript>();
 
+        _maxSpeed = _maxSpeedDefault;
     }
 
     public void Update()
@@ -152,11 +158,39 @@ public class CarControls : MonoBehaviour
         }
 
         //limit max speed
+        LimitMaxSpeed();
+    }
+
+    private void LimitMaxSpeed()
+    {
+        int playersOnGas = 0;
+
+        for (int i = 0; i < _defaultPositions.Count; i++)
+        {
+            if(_defaultPositions[i]._position== Positions.Gas)
+            {
+                playersOnGas = _defaultPositions[i]._amountOfPlayers;
+                if (playersOnGas == 0) playersOnGas = 1;
+                break;
+            }
+        }
+
+        _maxSpeed = Mathf.Lerp(_maxSpeed, _maxSpeedDefault / 2* playersOnGas, .5f);
+
         if (_carRigidbody.velocity.magnitude > _maxSpeed)
         {
             _carRigidbody.velocity = _carRigidbody.velocity.normalized * _maxSpeed;
         }
-        //Debug.Log(_carRigidbody.velocity);
+    }
+
+    private bool CheckIfAllPlayersAreHoldingB()
+    {
+        for (int i = 0; i < PlayerPrefs.GetInt("AmountOfPlayers", 0); i++)
+        {
+            if (!Input.GetButton("B" + (i + 1) + "_XboxButton"))
+                return false;
+        }
+        return true;
     }
 
     // finds the corresponding visual wheel
@@ -176,15 +210,5 @@ public class CarControls : MonoBehaviour
 
         visualWheel.transform.position = position;
         visualWheel.transform.rotation = rotation;
-    }
-
-    private bool CheckIfAllPlayersAreHoldingB()
-    {
-        for (int i = 0; i < PlayerPrefs.GetInt("AmountOfPlayers", 0); i++)
-        {
-            if (!Input.GetButton("B" + (i + 1) + "_XboxButton"))
-                return false;
-        }
-        return true;
     }
 }

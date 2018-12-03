@@ -33,7 +33,7 @@ public class PositionHandlerScript : MonoBehaviour {
 
     [SerializeField] private int _maxAmountOfPlayersOnPosition;
 
-    [SerializeField] private List<DefaultPosition> _defaultPositions;
+    [SerializeField] public List<DefaultPosition> DefaultPositions;
 
     [SerializeField] public List<PlayerPosition> PlayerPositions;
 
@@ -42,10 +42,10 @@ public class PositionHandlerScript : MonoBehaviour {
         //set players to right positions
         for (int i = 0; i < PlayerPrefs.GetInt("AmountOfPlayers",0); i++)
         {
-                PlayerPositions[i]._transform.position = _defaultPositions[i]._transform.position;
+                PlayerPositions[i]._transform.position = DefaultPositions[i]._transform.position;
 
                 //set how many players are on position
-                ++_defaultPositions[i]._amountOfPlayers;
+                ++DefaultPositions[i]._amountOfPlayers;
         }
 
     }
@@ -67,12 +67,12 @@ public class PositionHandlerScript : MonoBehaviour {
                 else
                 {
                     //else move to the right position
-                    for (int j = 0; j < _defaultPositions.Count; j++)
+                    for (int j = 0; j < DefaultPositions.Count; j++)
                     {
 
-                        if (PlayerPositions[i]._position == _defaultPositions[j]._position)
+                        if (PlayerPositions[i]._position == DefaultPositions[j]._position)
                         {
-                            PlayerPositions[i]._transform.position = Vector3.MoveTowards(PlayerPositions[i]._transform.position, _defaultPositions[j]._transform.position, _switchSpeed * Time.deltaTime);
+                            PlayerPositions[i]._transform.position = Vector3.MoveTowards(PlayerPositions[i]._transform.position, DefaultPositions[j]._transform.position, _switchSpeed * Time.deltaTime);
                         }
                             
                     }
@@ -84,9 +84,9 @@ public class PositionHandlerScript : MonoBehaviour {
 
     private bool CheckIfPlayerIsOnRightPosition(int playerNumber)
     {
-        for(int i=0; i < _defaultPositions.Count; i++)
+        for(int i=0; i < DefaultPositions.Count; i++)
         {
-            if (PlayerPositions[playerNumber]._position == _defaultPositions[i]._position&& PlayerPositions[playerNumber]._transform.position == _defaultPositions[i]._transform.position)
+            if (PlayerPositions[playerNumber]._position == DefaultPositions[i]._position&& PlayerPositions[playerNumber]._transform.position == DefaultPositions[i]._transform.position)
                 return true;
         }
         return false;
@@ -219,29 +219,29 @@ public class PositionHandlerScript : MonoBehaviour {
     private void SwitchPosition(int playerNumber, Positions currentPosition, Positions targetPosition)
     {
         //for each position
-        for (int i = 0; i < _defaultPositions.Count; i++)
+        for (int i = 0; i < DefaultPositions.Count; i++)
         {
             //get the target position
-            if (_defaultPositions[i]._position == targetPosition)
+            if (DefaultPositions[i]._position == targetPosition)
             {
                 //check if there is space for the player
-                if (_defaultPositions[i]._amountOfPlayers < _maxAmountOfPlayersOnPosition)
+                if (DefaultPositions[i]._amountOfPlayers < _maxAmountOfPlayersOnPosition)
                 {
                     //set the position of the player
-                    PlayerPositions[playerNumber]._position = _defaultPositions[i]._position;
+                    PlayerPositions[playerNumber]._position = DefaultPositions[i]._position;
 
                     //subtract 1 player from the old position
-                    for (int j = 0; j < _defaultPositions.Count; j++)
+                    for (int j = 0; j < DefaultPositions.Count; j++)
                     {
-                        if (_defaultPositions[j]._position == currentPosition)
+                        if (DefaultPositions[j]._position == currentPosition)
                         {
-                            if (_defaultPositions[j]._amountOfPlayers != 0)
-                                --_defaultPositions[j]._amountOfPlayers;
+                            if (DefaultPositions[j]._amountOfPlayers != 0)
+                                --DefaultPositions[j]._amountOfPlayers;
                         }
                     }
 
                     //add 1 player to the new position
-                    ++_defaultPositions[i]._amountOfPlayers;
+                    ++DefaultPositions[i]._amountOfPlayers;
                 }
             }
         }
@@ -249,11 +249,11 @@ public class PositionHandlerScript : MonoBehaviour {
 
     private void SetPosition(int playerNumber)
     {
-        for (int i = 0; i < _defaultPositions.Count; i++)
+        for (int i = 0; i < DefaultPositions.Count; i++)
         {
-            if (PlayerPositions[playerNumber]._position == _defaultPositions[i]._position)
+            if (PlayerPositions[playerNumber]._position == DefaultPositions[i]._position)
             {
-                PlayerPositions[playerNumber]._transform.position = _defaultPositions[i]._transform.position;
+                PlayerPositions[playerNumber]._transform.position = DefaultPositions[i]._transform.position;
             }
         }
     }
@@ -263,8 +263,8 @@ public class PositionHandlerScript : MonoBehaviour {
         //for each player
         for(int i= 0; i < PlayerPrefs.GetInt("AmountOfPlayers");i++)
         {
-            int rand = UnityEngine.Random.Range(0, _defaultPositions.Count);
-            SwitchPosition(i, PlayerPositions[i]._position, _defaultPositions[rand]._position);
+            int rand = UnityEngine.Random.Range(0, DefaultPositions.Count);
+            SwitchPosition(i, PlayerPositions[i]._position, DefaultPositions[rand]._position);
         }
     }
 }
