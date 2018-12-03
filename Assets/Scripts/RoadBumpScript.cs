@@ -8,6 +8,7 @@ public class RoadBumpScript : MonoBehaviour {
     {
         if (collision.transform.GetComponent<CarControls>())
         {
+            //get positionhandler (first child)
             collision.transform.GetChild(0).GetComponent<PositionHandlerScript>().ScramblePlayers();
             Debug.Log("scramble");
         }

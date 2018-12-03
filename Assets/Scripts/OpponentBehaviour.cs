@@ -127,12 +127,27 @@ public class OpponentBehaviour : MonoBehaviour {
             ApplyLocalPositionToVisuals(axleInfo.rightWheel);
         }
 
-        //if car is flying through air
+        //rotate car if it's flying through air
         if (!CheckIfAnyWheelsAreGrounded())
         {
-            if (Physics.Raycast(_transform.position, Vector3.down, out hit, 50f, 1 << LayerMask.NameToLayer("Map")))
+            if (Physics.Raycast(_transform.position, Vector3.down, out hit, 100f, 1 << LayerMask.NameToLayer("Map")))
             {
-                //_transform.eulerAngles = Vector3.RotateTowards(_transform.eulerAngles, Vector3.Project(hit.normal, _transform.forward),.01f,.01f);
+                //get the rotation of the ground
+                Quaternion groundRotation = Quaternion.LookRotation(Vector3.Cross(hit.normal, Vector3.down));
+
+                //get current rotation of car
+                Vector3 tempRotation = _transform.eulerAngles;
+
+                //lerp to rotation of ground
+                tempRotation.x = Mathf.LerpAngle(tempRotation.x, groundRotation.eulerAngles.x, .04f);
+                tempRotation.z = Mathf.LerpAngle(tempRotation.z, groundRotation.eulerAngles.z, .04f);
+
+                _transform.eulerAngles = tempRotation;
+
+                //_transform.rotation = Quaternion.RotateTowards(_transform.rotation, tempQ, 2f);
+
+                //Debug.Log("transform x: " + _transform.eulerAngles.x + " y: " + _transform.eulerAngles.y + " z: " + _transform.eulerAngles.z +
+                //    "    plane x: " + groundRotation.eulerAngles.x + " y: " + groundRotation.eulerAngles.y + " z: " + groundRotation.eulerAngles.z);
             }
         }
 
@@ -192,8 +207,8 @@ public class OpponentBehaviour : MonoBehaviour {
         //temp code, may be removed
         if (_carRigidbody.velocity.magnitude<2)
         {
-            _respawnScript.Respawn();
-            _respawntimer = 0;
+            //_respawnScript.Respawn();
+            //_respawntimer = 0;
         }
     }
 
