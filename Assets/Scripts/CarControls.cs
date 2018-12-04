@@ -64,7 +64,7 @@ public class CarControls : MonoBehaviour
 
         for (int i = 0; i < PlayerPrefs.GetInt("AmountOfPlayers", 0); i++)
         {
-            float axisInput = Input.GetAxis("A" + (i + 1) + "_Axis");
+            float axisInput = Input.GetAxis("A" + (i + 1) + "_Axis"); //  PlayerPrefs.GetString("Player")
 
             switch (_playerPositions[i]._position)
             {
