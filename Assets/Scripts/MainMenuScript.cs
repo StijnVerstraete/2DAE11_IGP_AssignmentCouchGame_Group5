@@ -2,11 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public enum Phase
 {
     StartScreen, PlayerSelectionScreen, LevelSelectionScreen
+}
+
+public enum GameMode
+{
+    FreeForAll, Teams
 }
 
 [System.Serializable]
@@ -21,8 +27,8 @@ public class MainMenuScript : MonoBehaviour {
 
     [SerializeField] private List<ScreenPhase> _screens;
     private Phase _currentPhase;
-
-    [Header("Selection Screen Variables")]
+    
+    [Header("Player Selection Screen Variables")]
     private int[] _players = new int[] { 0, 0, 0, 0 };
     private bool[] _hasControllerJoined = new bool[] { false, false, false, false };
 
@@ -32,6 +38,8 @@ public class MainMenuScript : MonoBehaviour {
     [SerializeField] private int _minimumConnectedPlayers;
     private int _connectedPlayers = 0;
     [SerializeField] private Button _goButton;
+
+    private GameMode _currentGameMode;
 
     [Header("Cursor Variables")]
     [SerializeField] private Canvas _canvas;
@@ -85,7 +93,7 @@ public class MainMenuScript : MonoBehaviour {
                             //move cursor
                             float xAxisInput = Input.GetAxis("J" + _players[i] + "_XboxHorizontal");
                             float yAxisInput = Input.GetAxis("J" + _players[i] + "_XboxVertical");
-                            _cursors[i].anchoredPosition += new Vector2(xAxisInput, yAxisInput) * Time.deltaTime*_cursorSpeed;
+                            MoveCursor(_cursors[i], xAxisInput, yAxisInput);
 
 
                             if (Input.GetButtonDown("A" + _players[i] + "_XboxButton"))
@@ -113,7 +121,7 @@ public class MainMenuScript : MonoBehaviour {
                     //move cursor
                     float xAxisInput = Input.GetAxis("J_XboxHorizontal");
                     float yAxisInput = Input.GetAxis("J_XboxVertical");
-                    _levelCursor.anchoredPosition += new Vector2(xAxisInput, yAxisInput) * Time.deltaTime * _cursorSpeed;
+                    MoveCursor(_levelCursor, xAxisInput, yAxisInput);
 
                     //check if a player presses the cursor
                     for (int i = 0; i < _players.Length; i++)
@@ -167,6 +175,12 @@ public class MainMenuScript : MonoBehaviour {
         }
     }
 
+    void MoveCursor(RectTransform cursor, float xAxisInput, float yAxisInput)
+    {
+        Vector2 temp = cursor.anchoredPosition + new Vector2(xAxisInput, yAxisInput) * Time.deltaTime * _cursorSpeed;
+        cursor.anchoredPosition = new Vector2(Mathf.Clamp(temp.x, 0,_canvas.pixelRect.width-cursor.rect.width / 2), Mathf.Clamp(temp.y, cursor.rect.height / 2, _canvas.pixelRect.height)) ;
+    }
+
     void ChangePhase(Phase target)
     {
         //hide all panels except target panel
@@ -209,6 +223,11 @@ public class MainMenuScript : MonoBehaviour {
         {
             _cursors[i].position = _hasJoinedPanels[i].transform.position;
         }
+    }
+
+    public void PlayLevel(string levelName)
+    {
+        SceneManager.LoadScene(levelName);
     }
 
     public void ChangeGameMode()
