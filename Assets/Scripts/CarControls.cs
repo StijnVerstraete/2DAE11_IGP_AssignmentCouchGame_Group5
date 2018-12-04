@@ -48,8 +48,10 @@ public class CarControls : MonoBehaviour
 
     private RespawnScript _respawnScript;
 
+    private List<int> _controllers;
     public void Start()
     {
+        _controllers = _positionHandler.Controllers;
         _playerPositions = _positionHandler.PlayerPositions;
         _defaultPositions = _positionHandler.DefaultPositions;
         _carRigidbody = GetComponent<Rigidbody>();
@@ -62,23 +64,23 @@ public class CarControls : MonoBehaviour
     {
         _steerLeft = 0; _steerRight = 0; _brake = 0; _gas = 0;
 
-        for (int i = 0; i < PlayerPrefs.GetInt("AmountOfPlayers", 0); i++)
+        for (int i = 0; i < _controllers.Count; i++)
         {
-            float axisInput = Input.GetAxis("A" + (i + 1) + "_Axis"); //  PlayerPrefs.GetString("Player")
+            float axisInput = Input.GetAxis("A" + (_controllers[i] + 1) + "_Axis"); //  PlayerPrefs.GetString("Player")
 
-            switch (_playerPositions[i]._position)
+            switch (_playerPositions[_controllers[i]]._position)
             {
                 case Positions.SteerLeft:
                     {
                         _steerLeft += _maxSteeringAngle * axisInput / 2;
                         //set playeractions to neutral - audio related
-                        _playerActions[i] = 0;
+                        _playerActions[_controllers[i]] = 0;
                     } break;
                 case Positions.SteerRight:
                     {
                         _steerRight += _maxSteeringAngle * axisInput / 2;
                         //set playeractions to neutral - audio related
-                        _playerActions[i] = 0;
+                        _playerActions[_controllers[i]] = 0;
                     } break;
                 case Positions.Brake:
                     {
@@ -86,11 +88,11 @@ public class CarControls : MonoBehaviour
                         //adjust playeractions accordingly - audio related
                         if (axisInput != 0)
                         {
-                            _playerActions[i] = -1;
+                            _playerActions[_controllers[i]] = -1;
                         }
                         else
                         {
-                            _playerActions[i] = 0;
+                            _playerActions[_controllers[i]] = 0;
                         }
                     } break;
                 case Positions.Gas:
@@ -99,11 +101,11 @@ public class CarControls : MonoBehaviour
                         //adjust playeractions accordingly - audio related
                         if (axisInput != 0)
                         {
-                            _playerActions[i] = 1;
+                            _playerActions[_controllers[i]] = 1;
                         }
                         else
                         {
-                            _playerActions[i] = 0;
+                            _playerActions[_controllers[i]] = 0;
                         }
                     } break;
             }
@@ -185,9 +187,9 @@ public class CarControls : MonoBehaviour
 
     private bool CheckIfAllPlayersAreHoldingB()
     {
-        for (int i = 0; i < PlayerPrefs.GetInt("AmountOfPlayers", 0); i++)
+        for (int i = 0; i < _controllers.Count; i++)
         {
-            if (!Input.GetButton("B" + (i + 1) + "_XboxButton"))
+            if (!Input.GetButton("B" + (_controllers[i] + 1) + "_XboxButton"))
                 return false;
         }
         return true;

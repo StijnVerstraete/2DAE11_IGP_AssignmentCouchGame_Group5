@@ -35,6 +35,7 @@ public class MainMenuScript : MonoBehaviour {
     [SerializeField] private GameObject[] _hasJoinedPanels;
     //[SerializeField] private GameObject[] _hasNotJoinedPanels;
 
+    [SerializeField] private int _maxPlayers=4;
     [SerializeField] private int _minimumConnectedPlayers;
     private int _connectedPlayers = 0;
     [SerializeField] private Button _goButton;
@@ -55,6 +56,8 @@ public class MainMenuScript : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        PlayerPrefs.SetInt("MaxPlayers", _maxPlayers);
+
         for (int i = 0; i < _hasJoinedPanels.Length; i++)
             _hasJoinedPanels[i].SetActive(false);
 
@@ -227,6 +230,10 @@ public class MainMenuScript : MonoBehaviour {
 
     public void PlayLevel(string levelName)
     {
+        for (int i = 0; i < _players.Length; i++)
+        {
+            PlayerPrefs.SetInt("Player" + i + "Console", _players[i]);
+        }
         SceneManager.LoadScene(levelName);
     }
 
