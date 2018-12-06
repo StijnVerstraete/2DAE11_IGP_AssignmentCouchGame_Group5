@@ -40,6 +40,8 @@ public class PositionHandlerScript : MonoBehaviour {
     void Start ()
     {
         //set players to right positions
+
+
         for (int i = 0; i < PlayerPrefs.GetInt("AmountOfPlayers",0); i++)
         {
                 PlayerPositions[i]._transform.position = DefaultPositions[i]._transform.position;
