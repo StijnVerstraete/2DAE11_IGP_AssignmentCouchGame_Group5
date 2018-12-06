@@ -37,15 +37,26 @@ public class PositionHandlerScript : MonoBehaviour {
 
     [SerializeField] public List<PlayerPosition> PlayerPositions;
 
+    public  List<int> Controllers= new List<int>();
+
     void Start ()
     {
-        //set players to right positions
-        for (int i = 0; i < PlayerPrefs.GetInt("AmountOfPlayers",0); i++)
+        //get used controllers from playerprefs
+        for (int i = 0; i < PlayerPrefs.GetInt("MaxPlayers", 4); i++)
         {
-                PlayerPositions[i]._transform.position = DefaultPositions[i]._transform.position;
+            if (PlayerPrefs.GetInt("Player" + i + "Console", 0) != 0)
+            {
+                Controllers.Add(PlayerPrefs.GetInt("Player" + i + "Console") - 1);
+            }
+        }
+
+        //set players to right positions
+        for (int i = 0; i < Controllers.Count; i++)
+        {
+                PlayerPositions[Controllers[i]]._transform.position = DefaultPositions[Controllers[i]]._transform.position;
 
                 //set how many players are on position
-                ++DefaultPositions[i]._amountOfPlayers;
+                ++DefaultPositions[Controllers[i]]._amountOfPlayers;
         }
 
     }
@@ -54,14 +65,24 @@ public class PositionHandlerScript : MonoBehaviour {
     // Update is called once per frame
     void Update ()
     {
-        //for every player
-        for (int i = 0; i < PlayerPrefs.GetInt("AmountOfPlayers",0); i++)
+        //FOR TESTING PURPOSES
+        if (Application.isEditor && Input.GetButtonDown("Y_XboxButton"))
+        {
+            Controllers = new List<int>();
+            Controllers.Add(0);
+            Controllers.Add(1);
+            Controllers.Add(2);
+            Controllers.Add(3);
+        }
+
+            //for every player
+            for (int i = 0; i < Controllers.Count; i++)
         {
                 //if player is on his position, he can switch
-                if (CheckIfPlayerIsOnRightPosition(i))
+                if (CheckIfPlayerIsOnRightPosition(Controllers[i]))
                 {
                     //Debug.Log("player " + i + " set dest");
-                    SetDestination(i);
+                    SetDestination(Controllers[i]);
                     //SetPosition(i);
                 }
                 else
@@ -70,9 +91,9 @@ public class PositionHandlerScript : MonoBehaviour {
                     for (int j = 0; j < DefaultPositions.Count; j++)
                     {
 
-                        if (PlayerPositions[i]._position == DefaultPositions[j]._position)
+                        if (PlayerPositions[Controllers[i]]._position == DefaultPositions[j]._position)
                         {
-                            PlayerPositions[i]._transform.position = Vector3.MoveTowards(PlayerPositions[i]._transform.position, DefaultPositions[j]._transform.position, _switchSpeed * Time.deltaTime);
+                            PlayerPositions[Controllers[i]]._transform.position = Vector3.MoveTowards(PlayerPositions[Controllers[i]]._transform.position, DefaultPositions[j]._transform.position, _switchSpeed * Time.deltaTime);
                         }
                             
                     }
@@ -261,10 +282,10 @@ public class PositionHandlerScript : MonoBehaviour {
     public void ScramblePlayers()
     {
         //for each player
-        for(int i= 0; i < PlayerPrefs.GetInt("AmountOfPlayers");i++)
+        for(int i= 0; i < Controllers.Count;i++)
         {
             int rand = UnityEngine.Random.Range(0, DefaultPositions.Count);
-            SwitchPosition(i, PlayerPositions[i]._position, DefaultPositions[rand]._position);
+            SwitchPosition(Controllers[i], PlayerPositions[Controllers[i]]._position, DefaultPositions[rand]._position);
         }
     }
 }
