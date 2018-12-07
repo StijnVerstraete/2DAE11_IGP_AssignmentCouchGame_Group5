@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum GameMode
 {
-    FreeForAll, Teams
+    CoOp, Teams
 }
 
 public class GameModeHandler : MonoBehaviour {
@@ -12,8 +12,23 @@ public class GameModeHandler : MonoBehaviour {
     public Transform PlayerCars;
     public Transform OpponentCars;
 
+    private GameMode _gameMode;
+
 	// Use this for initialization
 	void Start () {
+        _gameMode = (GameMode)System.Enum.Parse(typeof(GameMode), PlayerPrefs.GetString("GameMode", "CoOp"));
+
+        switch (_gameMode)
+        {
+            case GameMode.CoOp:
+                {
+
+                }break;
+            case GameMode.Teams:
+                {
+
+                }break;
+        }
 		//set respawn points
         //enable/disable gameobjects
 	}

@@ -19,7 +19,7 @@ public class ScreenPhase
 
 public class MainMenuScript : MonoBehaviour {
 
-
+    [Header("Global Variables")]
     [SerializeField] private List<ScreenPhase> _screens;
     private Phase _currentPhase;
     
@@ -35,7 +35,7 @@ public class MainMenuScript : MonoBehaviour {
     private int _connectedPlayers = 0;
     [SerializeField] private Button _goButton;
 
-    private GameMode _currentGameMode;
+    private GameMode _currentGameMode= GameMode.CoOp;
 
     [Header("Cursor Variables")]
     [SerializeField] private Canvas _canvas;
@@ -111,7 +111,7 @@ public class MainMenuScript : MonoBehaviour {
                         _goButton.interactable = false;
                     }
 
-                    //end of selectionScreenPhase
+                    //end of PlayerSelectionScreenPhase
                 }
                 break;
             case Phase.LevelSelectionScreen:
@@ -225,16 +225,25 @@ public class MainMenuScript : MonoBehaviour {
 
     public void PlayLevel(string levelName)
     {
+        //save players to prefs
+        int _amountOfPLayers=0;
         for (int i = 0; i < _players.Length; i++)
         {
             PlayerPrefs.SetInt("Player" + i + "Console", _players[i]);
+            if (_players[i] != 0)
+                _amountOfPLayers++;
         }
+        PlayerPrefs.SetInt("AmountOfPlayers", _amountOfPLayers);
+
+        PlayerPrefs.SetString("GameMode",_currentGameMode.ToString());
         SceneManager.LoadScene(levelName);
     }
-
+    
     public void ChangeGameMode()
     {
-        Debug.Log("change gamemode");
+        if (_currentGameMode == GameMode.CoOp)
+            _currentGameMode = GameMode.Teams;
+        else _currentGameMode = GameMode.CoOp;
     }
 
     void CheckIfPlayerJoinsOrLeaves()
