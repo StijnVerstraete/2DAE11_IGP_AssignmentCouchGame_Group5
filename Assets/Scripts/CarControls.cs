@@ -31,7 +31,7 @@ public class CarControls : MonoBehaviour
 
     private Rigidbody _carRigidbody;
 
-    [SerializeField] private PositionHandlerScript _positionHandler;
+    private PositionHandlerScript _positionHandler;
 
     private List<PlayerPosition> _playerPositions;
     private List<DefaultPosition> _defaultPositions;
@@ -51,6 +51,7 @@ public class CarControls : MonoBehaviour
     private List<int> _controllers;
     public void Start()
     {
+        _positionHandler = GetComponent<PositionHandlerScript>();
         _controllers = _positionHandler.Controllers;
         _playerPositions = _positionHandler.PlayerPositions;
         _defaultPositions = _positionHandler.DefaultPositions;

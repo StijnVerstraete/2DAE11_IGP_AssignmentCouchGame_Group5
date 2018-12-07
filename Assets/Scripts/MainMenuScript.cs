@@ -10,11 +10,6 @@ public enum Phase
     StartScreen, PlayerSelectionScreen, LevelSelectionScreen
 }
 
-public enum GameMode
-{
-    FreeForAll, Teams
-}
-
 [System.Serializable]
 public class ScreenPhase
 {
