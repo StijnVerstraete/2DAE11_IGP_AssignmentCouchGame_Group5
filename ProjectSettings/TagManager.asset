@@ -7,6 +7,8 @@ TagManager:
   - Car
   - Rumble
   - RespawnPoint
+  - PlayerCar
+  - TutorialText
   layers:
   - Default
   - TransparentFX

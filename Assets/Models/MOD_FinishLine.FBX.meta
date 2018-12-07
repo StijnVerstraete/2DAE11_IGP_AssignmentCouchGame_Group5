@@ -17,7 +17,12 @@ ModelImporter:
     3300002: Stripe and Poles
     4300000: Stripe and Poles
     4300002: Flag
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #25'
+    second: {fileID: 2100000, guid: 21baaaa0333cc344cbb707d1bb3818b0, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
