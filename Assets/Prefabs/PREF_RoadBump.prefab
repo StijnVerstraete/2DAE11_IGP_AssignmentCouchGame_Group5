@@ -24,9 +24,9 @@ GameObject:
   - component: {fileID: 65772271954065694}
   - component: {fileID: 64546525600920780}
   - component: {fileID: 114126860663619990}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: RoadBump
-  m_TagString: Untagged
+  m_TagString: Rumble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4258467544309592}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: PREF_RoadBump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,14 +52,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1129611764856770}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.013698186, y: 0.018148718, z: -0.00024866883, w: 0.99974144}
+  m_LocalPosition: {x: 511.9225, y: -80.76, z: 880.53}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4890022794406574}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 1.57, y: 2.08, z: 0}
 --- !u!4 &4890022794406574
 Transform:
   m_ObjectHideFlags: 1
@@ -152,3 +152,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 928b0802082cc1d45a5d7664f4d31411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _camera: {fileID: 0}

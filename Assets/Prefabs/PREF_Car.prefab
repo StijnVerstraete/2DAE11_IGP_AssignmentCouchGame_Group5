@@ -58,6 +58,7 @@ GameObject:
   - component: {fileID: 81155192069547216}
   - component: {fileID: 114043534615901198}
   - component: {fileID: 114727574328131382}
+  - component: {fileID: 114035681405630916}
   m_Layer: 9
   m_Name: Edge Detection Camera
   m_TagString: MainCamera
@@ -819,8 +820,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1329794082157910}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -158.9, y: 1.8, z: -178.4}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -16.52, z: -9.64}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4804126002770110}
@@ -2534,6 +2535,19 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1104075657525104}
   m_Enabled: 1
+--- !u!114 &114035681405630916
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1104075657525104}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b80e2bcb3e945641b006e3867dbd0f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _camTransform: {fileID: 4761538057965262}
+  _shakeDuration: 2
 --- !u!114 &114041731244242448
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2558,11 +2572,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1db796aa2be3bda4c9b3221b64bfff67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  depthSensitivity: 1
+  depthSensitivity: 0.5
   depthSensitivity2: 0
   normalsSensitivity: 0
   debugMode: 0
-  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineColor: {r: 0, g: 0, b: 0, a: 0.60784316}
   encodedDepthShader: {fileID: 4800000, guid: 37920868d1c5c2742a931c709f018c16, type: 3}
   edgeDetectShader: {fileID: 4800000, guid: 60b5a12a97fcf6945af3f87dffd86102, type: 3}
   depthCapturingCamera: {fileID: 20092162595787048}
