@@ -37,6 +37,10 @@ public class MainMenuScript : MonoBehaviour {
 
     private GameMode _currentGameMode= GameMode.CoOp;
 
+    [SerializeField] int _maxAmountOfBots=4;
+    private int _amountOfBots=0;
+    [SerializeField] private Text _amountOfBotsText;
+
     [Header("Cursor Variables")]
     [SerializeField] private Canvas _canvas;
     GraphicRaycaster m_Raycaster;
@@ -234,6 +238,7 @@ public class MainMenuScript : MonoBehaviour {
                 _amountOfPLayers++;
         }
         PlayerPrefs.SetInt("AmountOfPlayers", _amountOfPLayers);
+        PlayerPrefs.SetInt("AmountOfBots", _amountOfBots);
 
         PlayerPrefs.SetString("GameMode",_currentGameMode.ToString());
         SceneManager.LoadScene(levelName);
@@ -292,5 +297,18 @@ public class MainMenuScript : MonoBehaviour {
                 }
             }
         }
+    }
+
+    public void AddBot()
+    {
+        if (_amountOfBots < _maxAmountOfBots)
+            _amountOfBots++;
+        _amountOfBotsText.text = "Bots: " + _amountOfBots;
+    }
+    public void RemoveBot()
+    {
+        if (_amountOfBots > 0)
+            _amountOfBots--;
+        _amountOfBotsText.text = "Bots: " + _amountOfBots;
     }
 }
