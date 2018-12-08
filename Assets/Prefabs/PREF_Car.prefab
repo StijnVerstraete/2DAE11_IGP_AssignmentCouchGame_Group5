@@ -454,7 +454,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4413205173032808}
   - component: {fileID: 20059203247976512}
-  - component: {fileID: 81330150529296238}
   m_Layer: 0
   m_Name: RenderCamera
   m_TagString: Untagged
@@ -705,7 +704,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4450316597459634}
   - component: {fileID: 20881077014162172}
-  - component: {fileID: 81637691863662038}
   m_Layer: 0
   m_Name: RenderCamera
   m_TagString: Untagged
@@ -791,7 +789,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4892861731850904}
   - component: {fileID: 20514314828987266}
-  - component: {fileID: 81562455911170472}
   m_Layer: 0
   m_Name: RenderCamera
   m_TagString: Untagged
@@ -824,6 +821,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4976857648948550}
+  - component: {fileID: 114340209968652422}
   m_Layer: 9
   m_Name: MOD_Car
   m_TagString: Untagged
@@ -1032,8 +1030,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1329794082157910}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -158.9, y: 1.8, z: -178.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4804126002770110}
@@ -3092,27 +3090,6 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1104075657525104}
   m_Enabled: 1
---- !u!81 &81330150529296238
-AudioListener:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1594930122337882}
-  m_Enabled: 1
---- !u!81 &81562455911170472
-AudioListener:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1892923207620150}
-  m_Enabled: 1
---- !u!81 &81637691863662038
-AudioListener:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1820697501164478}
-  m_Enabled: 1
 --- !u!82 &82078196463911598
 AudioSource:
   m_ObjectHideFlags: 1
@@ -3358,6 +3335,23 @@ MonoBehaviour:
   edgeCombineShader: {fileID: 4800000, guid: 511abb2eb6715b24cbed418dfbb4d492, type: 3}
   normalsShader: {fileID: 4800000, guid: d4ffee9bcfa1ea743a6428c9ac30e12f, type: 3}
   normalsCapturingCamera: {fileID: 20935378306351318}
+--- !u!114 &114340209968652422
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1920303238264724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef9f9d818478cc041be9cd9e95ea4668, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _steer: {fileID: 1010724142266158}
+  _gasPedal: {fileID: 1658060072306792}
+  _brakePedal: {fileID: 1877956154642898}
+  _carControls: {fileID: 114973687699360108}
+  _gasLevel: 0
+  _brakeLevel: 0
 --- !u!114 &114548071014166072
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3464,8 +3458,10 @@ MonoBehaviour:
   _maxBreakTorque: 10000
   _maxSteeringAngle: 15
   _maxSpeedDefault: 30
-  _playerActions: 00000000000000000000000000000000
+  PlayerActionsAcceleration: 00000000000000000000000000000000
+  PlayerActionsSteering: 00000000000000000000000000000000
   AccelerationLevel: 0
+  SteeringLevel: 0
   _respawnTime: 1
 --- !u!124 &124670385758909890
 Behaviour:

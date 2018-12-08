@@ -37,8 +37,10 @@ public class CarControls : MonoBehaviour
     private List<DefaultPosition> _defaultPositions;
 
     //amount of players doing what - audio related
-    [SerializeField]private int[] _playerActions = new int[4]; //-1 - brake //0 - neutral  //1-accelerate
+    public int[] PlayerActionsAcceleration = new int[4]; //-1 - brake //0 - neutral  //1-accelerate
+    public int[] PlayerActionsSteering = new int[4]; //-1 steer left //0 - neutral //1-steerright
     public int AccelerationLevel;
+    public int SteeringLevel;
 
     float _steerLeft = 0, _steerRight = 0, _brake = 0, _gas = 0;
 
@@ -75,13 +77,29 @@ public class CarControls : MonoBehaviour
                     {
                         _steerLeft += _maxSteeringAngle * axisInput / 2;
                         //set playeractions to neutral - audio related
-                        _playerActions[_controllers[i]] = 0;
+                        if (axisInput != 0)
+                        {
+                            PlayerActionsSteering[_controllers[i]] = -1;
+                        }
+                        else
+                        {
+                            PlayerActionsSteering[_controllers[i]] = 0;
+                        }
+                        PlayerActionsAcceleration[_controllers[i]] = 0;
                     } break;
                 case Positions.SteerRight:
                     {
                         _steerRight += _maxSteeringAngle * axisInput / 2;
                         //set playeractions to neutral - audio related
-                        _playerActions[_controllers[i]] = 0;
+                        if (axisInput != 0)
+                        {
+                            PlayerActionsSteering[_controllers[i]] = 1;
+                        }
+                        else
+                        {
+                            PlayerActionsSteering[_controllers[i]] = 0;
+                        }
+                        PlayerActionsAcceleration[_controllers[i]] = 0;
                     } break;
                 case Positions.Brake:
                     {
@@ -89,12 +107,13 @@ public class CarControls : MonoBehaviour
                         //adjust playeractions accordingly - audio related
                         if (axisInput != 0)
                         {
-                            _playerActions[_controllers[i]] = -1;
+                            PlayerActionsAcceleration[_controllers[i]] = -1;
                         }
                         else
                         {
-                            _playerActions[_controllers[i]] = 0;
+                            PlayerActionsAcceleration[_controllers[i]] = 0;
                         }
+                        PlayerActionsSteering[_controllers[i]] = 0;
                     } break;
                 case Positions.Gas:
                     {
@@ -102,18 +121,19 @@ public class CarControls : MonoBehaviour
                         //adjust playeractions accordingly - audio related
                         if (axisInput != 0)
                         {
-                            _playerActions[_controllers[i]] = 1;
+                            PlayerActionsAcceleration[_controllers[i]] = 1;
                         }
                         else
                         {
-                            _playerActions[_controllers[i]] = 0;
+                            PlayerActionsAcceleration[_controllers[i]] = 0;
                         }
+                        PlayerActionsSteering[_controllers[i]] = 0;
                     } break;
             }
         }
         //calculate acceleration level - audio related
-        AccelerationLevel = _playerActions[0] + _playerActions[1] + _playerActions[2] + _playerActions[3];
-
+        AccelerationLevel = PlayerActionsAcceleration[0] + PlayerActionsAcceleration[1] + PlayerActionsAcceleration[2] + PlayerActionsAcceleration[3];
+        SteeringLevel = PlayerActionsSteering[0] + PlayerActionsSteering[1] + PlayerActionsSteering[2] + PlayerActionsSteering[3];
 
         //if (Application.isEditor)
         //{

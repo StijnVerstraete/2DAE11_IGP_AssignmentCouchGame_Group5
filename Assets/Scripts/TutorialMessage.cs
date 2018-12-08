@@ -32,7 +32,7 @@ public class TutorialMessage : MonoBehaviour {
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "TutorialText")
+        if (other.tag == "PlayerCar")
         {
             _textObject.gameObject.SetActive(false);
             _textObject.gameObject.SetActive(false);
