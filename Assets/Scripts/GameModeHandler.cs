@@ -9,8 +9,9 @@ public enum GameMode
 
 public class GameModeHandler : MonoBehaviour {
 
-    public Transform PlayerCars;
-    public Transform OpponentCars;
+    [SerializeField] private Transform _playerCars;
+    [SerializeField] private Transform _botCars;
+    [SerializeField] private Transform _startPositions;
 
     private GameMode _gameMode;
 
@@ -22,8 +23,9 @@ public class GameModeHandler : MonoBehaviour {
         {
             case GameMode.CoOp:
                 {
-
-                }break;
+                    SpawnCars(1, PlayerPrefs.GetInt("AmountOfBots", 0));
+                }
+                break;
             case GameMode.Teams:
                 {
 
@@ -32,6 +34,42 @@ public class GameModeHandler : MonoBehaviour {
 		//set respawn points
         //enable/disable gameobjects
 	}
+
+    void SpawnPlayerCars(int amountOfPlayerCars)
+    {
+        for (int i = 0; i < amountOfPlayerCars; i++)
+        {
+            _playerCars.GetChild(i).position = _startPositions.GetChild(i).position;
+            _playerCars.GetChild(i).gameObject.SetActive(true);
+        }
+    }
+
+    void SpawnBotCars(int amountOfPlayerCars, int amountOfBots)
+    {
+        for (int i = amountOfPlayerCars; i < amountOfBots; i++)
+        {
+            _botCars.GetChild(i-amountOfPlayerCars).position = _startPositions.GetChild(i).position;
+            _botCars.GetChild(i-amountOfPlayerCars).gameObject.SetActive(true);
+        }
+    }
+
+    void SpawnCars(int amountOfPlayerCars, int amountOfBots)
+    {
+        SpawnPlayerCars(amountOfPlayerCars);
+        SpawnBotCars(amountOfPlayerCars,amountOfBots);
+    }
+
+    //void SpawnCars()
+    //{
+    //    int arrayIndex=0;
+    //    for (int i = 0; i < _startPositions.Length; i++)
+    //    {
+    //        for (int j = 0; j < length; j++)
+    //        {
+
+    //        }
+    //    }
+    //}
 	
 	// Update is called once per frame
 	void Update () {
