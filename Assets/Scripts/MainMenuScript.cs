@@ -36,6 +36,7 @@ public class MainMenuScript : MonoBehaviour {
     [SerializeField] private Button _goButton;
 
     private GameMode _currentGameMode= GameMode.CoOp;
+    [SerializeField] private Text _gameModeButtonText;
 
     [SerializeField] int _maxAmountOfBots=4;
     private int _amountOfBots=0;
@@ -57,12 +58,19 @@ public class MainMenuScript : MonoBehaviour {
     void Start () {
         PlayerPrefs.SetInt("MaxPlayers", _maxPlayers);
 
+        //player selection screen
         for (int i = 0; i < _hasJoinedPanels.Length; i++)
             _hasJoinedPanels[i].SetActive(false);
 
+        _goButton.interactable = false;
+        _amountOfBotsText.text = "Bots: " + _amountOfBots;
+        _gameModeButtonText.text= _currentGameMode.ToString();
+
+
+        //set phase
         _currentPhase = Phase.StartScreen;
         ChangePhase(_currentPhase);
-        _goButton.interactable = false;
+
 
         m_Raycaster = GetComponent<GraphicRaycaster>();
         m_EventSystem = GetComponent<EventSystem>();
@@ -249,6 +257,8 @@ public class MainMenuScript : MonoBehaviour {
         if (_currentGameMode == GameMode.CoOp)
             _currentGameMode = GameMode.Teams;
         else _currentGameMode = GameMode.CoOp;
+
+        _gameModeButtonText.text = _currentGameMode.ToString();
     }
 
     void CheckIfPlayerJoinsOrLeaves()
