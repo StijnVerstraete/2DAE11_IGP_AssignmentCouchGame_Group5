@@ -11,6 +11,7 @@ TagManager:
   - TutorialText
   - SpeedUP
   - SpeedDown
+  - RespawnCollision
   layers:
   - Default
   - TransparentFX
@@ -26,7 +27,7 @@ TagManager:
   - Props
   - RoadBumps
   - MiniMapIcon
-  - 
+  - CarRespawn
   - 
   - 
   - 

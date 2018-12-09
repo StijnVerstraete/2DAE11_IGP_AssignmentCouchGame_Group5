@@ -6029,22 +6029,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 428184312}
   m_Mesh: {fileID: 4300000, guid: 82879256d47374f48b12446b36602b71, type: 3}
---- !u!1 &435807610 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1800854869224516, guid: c2a19190435a06c4ab86e03ee79a05df,
-    type: 2}
-  m_PrefabInternal: {fileID: 915948734}
---- !u!122 &435807612
-Halo:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 435807610}
-  m_Enabled: 0
-  m_Color:
-    serializedVersion: 2
-    rgba: 4294491448
-  m_Size: 0.3
 --- !u!1 &438934842
 GameObject:
   m_ObjectHideFlags: 0
@@ -10464,22 +10448,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4956525160439562, guid: 90b7cfb5b1de8de49aad6f0b7f46788c,
     type: 2}
   m_PrefabInternal: {fileID: 772118050}
---- !u!1 &772239427 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1746842991183046, guid: c2a19190435a06c4ab86e03ee79a05df,
-    type: 2}
-  m_PrefabInternal: {fileID: 915948734}
---- !u!122 &772239432
-Halo:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 772239427}
-  m_Enabled: 0
-  m_Color:
-    serializedVersion: 2
-    rgba: 4278255416
-  m_Size: 0.3
 --- !u!1 &772267732
 GameObject:
   m_ObjectHideFlags: 0
@@ -13593,38 +13561,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4254254208732420, guid: c2a19190435a06c4ab86e03ee79a05df,
     type: 2}
   m_PrefabInternal: {fileID: 915948734}
---- !u!1 &915948736 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1428496491345926, guid: c2a19190435a06c4ab86e03ee79a05df,
-    type: 2}
-  m_PrefabInternal: {fileID: 915948734}
---- !u!1 &915948737 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1369418485518342, guid: c2a19190435a06c4ab86e03ee79a05df,
-    type: 2}
-  m_PrefabInternal: {fileID: 915948734}
---- !u!122 &915948738
-Halo:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 915948736}
-  m_Enabled: 1
-  m_Color:
-    serializedVersion: 2
-    rgba: 4278200573
-  m_Size: 0.3
---- !u!122 &915948739
-Halo:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 915948737}
-  m_Enabled: 1
-  m_Color:
-    serializedVersion: 2
-    rgba: 4278255613
-  m_Size: 0.3
 --- !u!1 &917993604
 GameObject:
   m_ObjectHideFlags: 0
