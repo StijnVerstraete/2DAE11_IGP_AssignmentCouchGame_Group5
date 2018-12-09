@@ -160,7 +160,6 @@ public class CarControls : MonoBehaviour
 
     public void FixedUpdate()
     {
-        Debug.Log(_carRigidbody.velocity);
         //for both the front and back axle
         foreach (AxleInfo axleInfo in axleInfos)
         {
