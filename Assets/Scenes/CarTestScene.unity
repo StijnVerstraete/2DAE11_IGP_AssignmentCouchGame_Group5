@@ -7691,6 +7691,22 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 567119256}
   m_Mesh: {fileID: 4300000, guid: 82879256d47374f48b12446b36602b71, type: 3}
+--- !u!1 &567992059 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1800854869224516, guid: c2a19190435a06c4ab86e03ee79a05df,
+    type: 2}
+  m_PrefabInternal: {fileID: 1319419131}
+--- !u!122 &567992064
+Halo:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 567992059}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_Size: 0.3
 --- !u!1 &569496718
 GameObject:
   m_ObjectHideFlags: 0
@@ -8182,6 +8198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 928b0802082cc1d45a5d7664f4d31411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _camera: {fileID: 0}
 --- !u!136 &599068221
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -8589,6 +8606,22 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 629758439}
   m_Mesh: {fileID: 4300000, guid: 82879256d47374f48b12446b36602b71, type: 3}
+--- !u!1 &634149165 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1746842991183046, guid: c2a19190435a06c4ab86e03ee79a05df,
+    type: 2}
+  m_PrefabInternal: {fileID: 1319419131}
+--- !u!122 &634149170
+Halo:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 634149165}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4278255422
+  m_Size: 0.3
 --- !u!1 &636122995
 GameObject:
   m_ObjectHideFlags: 0
@@ -8878,6 +8911,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 928b0802082cc1d45a5d7664f4d31411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _camera: {fileID: 0}
 --- !u!136 &647034368
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -15503,6 +15537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 928b0802082cc1d45a5d7664f4d31411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _camera: {fileID: 0}
 --- !u!136 &1074878966
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -15802,8 +15837,10 @@ MonoBehaviour:
   _maxBreakTorque: 0
   _maxSteeringAngle: 0
   _maxSpeedDefault: 0
-  _playerActions: 00000000000000000000000000000000
+  PlayerActionsAcceleration: 00000000000000000000000000000000
+  PlayerActionsSteering: 00000000000000000000000000000000
   AccelerationLevel: 0
+  SteeringLevel: 0
   _respawnTime: 0
 --- !u!54 &1102109977
 Rigidbody:
@@ -19732,6 +19769,11 @@ Prefab:
       propertyPath: RespawnPoint
       value: 
       objectReference: {fileID: 292482111}
+    - target: {fileID: 65609092317350992, guid: c2a19190435a06c4ab86e03ee79a05df,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2a19190435a06c4ab86e03ee79a05df, type: 2}
   m_IsPrefabAsset: 0
@@ -25733,6 +25775,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 928b0802082cc1d45a5d7664f4d31411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _camera: {fileID: 0}
 --- !u!136 &1688514508
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -28196,6 +28239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 928b0802082cc1d45a5d7664f4d31411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _camera: {fileID: 0}
 --- !u!136 &1869328606
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -29428,6 +29472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 928b0802082cc1d45a5d7664f4d31411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _camera: {fileID: 0}
 --- !u!136 &1937125396
 CapsuleCollider:
   m_ObjectHideFlags: 0

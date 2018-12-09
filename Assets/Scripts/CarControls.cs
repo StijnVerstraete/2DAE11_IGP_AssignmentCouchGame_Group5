@@ -71,6 +71,8 @@ public class CarControls : MonoBehaviour
         {
             float axisInput = Input.GetAxis("A" + (_controllers[i] + 1) + "_Axis"); //  PlayerPrefs.GetString("Player")
 
+            GlowCharacterIfClickOnButtonA(i); // if you click on button the character is glowing
+
             switch (_playerPositions[_controllers[i]]._position)
             {
                 case Positions.SteerLeft:
@@ -233,5 +235,27 @@ public class CarControls : MonoBehaviour
 
         visualWheel.transform.position = position;
         visualWheel.transform.rotation = rotation;
+    }
+
+    private void GlowCharacterIfClickOnButtonA(int playerIndex) {
+        //use a component Halo to show the players if you are pressing the button or not
+
+        GameObject player = GameObject.Find("Player" + (playerIndex+1));
+
+        Behaviour t = player.GetComponent("Halo") as Behaviour;
+
+        if (Input.GetButtonDown("A" + (_controllers[playerIndex] + 1) + "_XboxButton"))
+        {
+
+            Debug.Log(t.name);
+            t.enabled = true;
+        }
+
+        if (Input.GetButtonUp("A" + (_controllers[playerIndex] + 1) + "_XboxButton"))
+        {
+            t.enabled = false;
+        }
+
+        
     }
 }
