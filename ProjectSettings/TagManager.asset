@@ -9,6 +9,8 @@ TagManager:
   - RespawnPoint
   - PlayerCar
   - TutorialText
+  - SpeedUP
+  - SpeedDown
   layers:
   - Default
   - TransparentFX
