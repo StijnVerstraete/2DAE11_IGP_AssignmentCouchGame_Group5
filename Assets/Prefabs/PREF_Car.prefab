@@ -261,6 +261,7 @@ GameObject:
   - component: {fileID: 33491354430995510}
   - component: {fileID: 23583177187485012}
   - component: {fileID: 65748343739748108}
+  - component: {fileID: 122341137754845642}
   m_Layer: 9
   m_Name: Player4
   m_TagString: Untagged
@@ -358,6 +359,7 @@ GameObject:
   - component: {fileID: 33715376555667148}
   - component: {fileID: 23099775455339598}
   - component: {fileID: 65058076711508082}
+  - component: {fileID: 122577671750482198}
   m_Layer: 9
   m_Name: Player3
   m_TagString: Untagged
@@ -521,7 +523,6 @@ GameObject:
   - component: {fileID: 4604154644985094}
   - component: {fileID: 33188039460854452}
   - component: {fileID: 23909767304992354}
-  - component: {fileID: 64470099234768978}
   m_Layer: 0
   m_Name: Quad
   m_TagString: Untagged
@@ -607,6 +608,7 @@ GameObject:
   - component: {fileID: 33539247422697980}
   - component: {fileID: 23760551569846442}
   - component: {fileID: 65816942689468368}
+  - component: {fileID: 122927624708150278}
   m_Layer: 9
   m_Name: Player2
   m_TagString: Untagged
@@ -640,6 +642,7 @@ GameObject:
   - component: {fileID: 33206384581078932}
   - component: {fileID: 23165921643598632}
   - component: {fileID: 65609092317350992}
+  - component: {fileID: 122468303434434096}
   m_Layer: 9
   m_Name: Player1
   m_TagString: Untagged
@@ -738,7 +741,6 @@ GameObject:
   - component: {fileID: 4238159032644944}
   - component: {fileID: 33792840878761294}
   - component: {fileID: 23127197993849566}
-  - component: {fileID: 64011221345398040}
   m_Layer: 0
   m_Name: Quad (1)
   m_TagString: Untagged
@@ -1030,8 +1032,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1329794082157910}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -158.9, y: 1.8, z: -178.4}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -16.52, z: -6.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4804126002770110}
@@ -2995,34 +2997,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &64011221345398040
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1836522944400800}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!64 &64470099234768978
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1650606394700058}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!65 &65058076711508082
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -3312,6 +3286,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RespawnPoint: {fileID: 0}
+  _respawnCollisionChecker: {fileID: 1709683656943314, guid: 531e5ed17b2415947ae089188a95cca8,
+    type: 2}
   _isOpponent: 0
 --- !u!114 &114043534615901198
 MonoBehaviour:
@@ -3462,7 +3438,55 @@ MonoBehaviour:
   PlayerActionsSteering: 00000000000000000000000000000000
   AccelerationLevel: 0
   SteeringLevel: 0
+  _steerLeft: 0
+  _steerRight: 0
+  _brake: 0
+  _gas: 0
   _respawnTime: 1
+--- !u!122 &122341137754845642
+Halo:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1369418485518342}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4278255613
+  m_Size: 0.3
+--- !u!122 &122468303434434096
+Halo:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1800854869224516}
+  m_Enabled: 0
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294491448
+  m_Size: 0.3
+--- !u!122 &122577671750482198
+Halo:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1428496491345926}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4278200573
+  m_Size: 0.3
+--- !u!122 &122927624708150278
+Halo:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1746842991183046}
+  m_Enabled: 0
+  m_Color:
+    serializedVersion: 2
+    rgba: 4278255416
+  m_Size: 0.3
 --- !u!124 &124670385758909890
 Behaviour:
   m_ObjectHideFlags: 1

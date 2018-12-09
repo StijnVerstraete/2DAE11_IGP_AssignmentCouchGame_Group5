@@ -31,15 +31,17 @@ public class GameModeHandler : MonoBehaviour {
 
                 }break;
         }
-		//set respawn points
-        //enable/disable gameobjects
 	}
 
     void SpawnPlayerCars(int amountOfPlayerCars)
     {
         for (int i = 0; i < amountOfPlayerCars; i++)
         {
+            //set position
             _playerCars.GetChild(i).position = _startPositions.GetChild(i).position;
+            //set respawnpoint
+            _playerCars.GetChild(i).GetComponent<RespawnScript>().RespawnPoint = _startPositions.GetChild(i);
+            //set car active
             _playerCars.GetChild(i).gameObject.SetActive(true);
         }
     }
@@ -48,7 +50,11 @@ public class GameModeHandler : MonoBehaviour {
     {
         for (int i = amountOfPlayerCars; i < amountOfBots; i++)
         {
+            //set position
             _botCars.GetChild(i-amountOfPlayerCars).position = _startPositions.GetChild(i).position;
+            //set respawnpoint
+            _botCars.GetChild(i - amountOfPlayerCars).GetComponent<RespawnScript>().RespawnPoint = _startPositions.GetChild(i);
+            //set car active
             _botCars.GetChild(i-amountOfPlayerCars).gameObject.SetActive(true);
         }
     }
@@ -58,21 +64,5 @@ public class GameModeHandler : MonoBehaviour {
         SpawnPlayerCars(amountOfPlayerCars);
         SpawnBotCars(amountOfPlayerCars,amountOfBots);
     }
-
-    //void SpawnCars()
-    //{
-    //    int arrayIndex=0;
-    //    for (int i = 0; i < _startPositions.Length; i++)
-    //    {
-    //        for (int j = 0; j < length; j++)
-    //        {
-
-    //        }
-    //    }
-    //}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }
