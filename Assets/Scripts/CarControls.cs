@@ -41,7 +41,7 @@ public class CarControls : MonoBehaviour
     public int[] PlayerActionsSteering = new int[4]; //-1 steer left //0 - neutral //1-steerright
     public int AccelerationLevel;
     public int SteeringLevel;
-
+    [SerializeField]
     float _steerLeft = 0, _steerRight = 0, _brake = 0, _gas = 0;
 
     private float _respawnTimer=0;
@@ -160,6 +160,7 @@ public class CarControls : MonoBehaviour
 
     public void FixedUpdate()
     {
+        Debug.Log(_carRigidbody.velocity);
         //for both the front and back axle
         foreach (AxleInfo axleInfo in axleInfos)
         {
@@ -255,7 +256,18 @@ public class CarControls : MonoBehaviour
         {
             t.enabled = false;
         }
+    }
 
-        
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "SpeedUP")
+        {
+            Debug.Log("speed car up");
+        }
+
+        if (other.tag == "SpeedDown")
+        {
+            Debug.Log("speed car down");
+        }
     }
 }
