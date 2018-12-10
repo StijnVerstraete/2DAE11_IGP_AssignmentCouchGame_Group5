@@ -41,24 +41,41 @@ public class PositionHandlerScript : MonoBehaviour {
 
     void Start ()
     {
-        //get used controllers from playerprefs
-        for (int i = 0; i < PlayerPrefs.GetInt("MaxPlayers", 4); i++)
+        ////get used controllers from playerprefs
+        //for (int i = 0; i < PlayerPrefs.GetInt("MaxPlayers", 4); i++)
+        //{
+        //    if (PlayerPrefs.GetInt("Player" + i + "Console", 0) != 0)
+        //    {
+        //        Controllers.Add(PlayerPrefs.GetInt("Player" + i + "Console") - 1);
+        //    }
+        //}
+
+        ////set players to right positions
+        //for (int i = 0; i < Controllers.Count; i++)
+        //{
+        //    PlayerPositions[Controllers[i]]._transform.position = DefaultPositions[Controllers[i]]._transform.position;
+
+        //    //set how many players are on position
+        //    ++DefaultPositions[Controllers[i]]._amountOfPlayers;
+        //}
+    }
+
+    public void AssignControllersToPlayers(params int[] controllers)
+    {
+        
+        for (int i = 0; i < controllers.Length; i++)
         {
-            if (PlayerPrefs.GetInt("Player" + i + "Console", 0) != 0)
-            {
-                Controllers.Add(PlayerPrefs.GetInt("Player" + i + "Console") - 1);
-            }
+            Controllers.Add(controllers[i]);
         }
 
         //set players to right positions
         for (int i = 0; i < Controllers.Count; i++)
         {
-                PlayerPositions[Controllers[i]]._transform.position = DefaultPositions[Controllers[i]]._transform.position;
+            PlayerPositions[Controllers[i]]._transform.position = DefaultPositions[Controllers[i]]._transform.position;
 
-                //set how many players are on position
-                ++DefaultPositions[Controllers[i]]._amountOfPlayers;
+            //set how many players are on position
+            ++DefaultPositions[Controllers[i]]._amountOfPlayers;
         }
-
     }
 
 

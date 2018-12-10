@@ -35,12 +35,17 @@ public class MainMenuScript : MonoBehaviour {
     private int _connectedPlayers = 0;
     [SerializeField] private Button _goButton;
 
-    private GameMode _currentGameMode= GameMode.CoOp;
+    private GameMode _currentGameMode=GameMode.Teams;
     [SerializeField] private Text _gameModeButtonText;
 
     [SerializeField] int _maxAmountOfBots=4;
     private int _amountOfBots=0;
     [SerializeField] private Text _amountOfBotsText;
+
+    [SerializeField] private Transform _coOpCar;
+    [SerializeField] private Transform _teamCars;
+    [SerializeField] private Transform _teamIcons;
+    private bool[] _isPlayerInTeam=new bool[] { false, false, false, false };
 
     [Header("Cursor Variables")]
     [SerializeField] private Canvas _canvas;
@@ -62,6 +67,7 @@ public class MainMenuScript : MonoBehaviour {
         for (int i = 0; i < _hasJoinedPanels.Length; i++)
             _hasJoinedPanels[i].SetActive(false);
 
+        ChangeGameMode();
         _goButton.interactable = false;
         _amountOfBotsText.text = "Bots: " + _amountOfBots;
         _gameModeButtonText.text= _currentGameMode.ToString();
@@ -108,7 +114,7 @@ public class MainMenuScript : MonoBehaviour {
 
                             if (Input.GetButtonDown("A" + _players[i] + "_XboxButton"))
                             {
-                                PressCursor(_cursors[i]);
+                                PressCursor(_cursors[i], _players[i]);
                             }                              
                         }
 
@@ -121,6 +127,25 @@ public class MainMenuScript : MonoBehaviour {
                     else
                     {
                         _goButton.interactable = false;
+                    }
+
+                    if (_currentGameMode == GameMode.Teams)
+                    {
+                        for (int i = 0; i < _isPlayerInTeam.Length; i++)
+                        {
+                            if (_players[i] != 0)
+                            {
+                                if (!_isPlayerInTeam[i])
+                                {
+                                    _goButton.interactable = false;
+                                    break;
+                                }
+                                else
+                                {
+                                    _goButton.interactable = true;
+                                }
+                            }
+                        }
                     }
 
                     //end of PlayerSelectionScreenPhase
@@ -140,7 +165,7 @@ public class MainMenuScript : MonoBehaviour {
                         {
                             if (Input.GetButtonDown("A" + _players[i] + "_XboxButton"))
                             {
-                                PressCursor(_levelCursor);
+                                PressCursor(_levelCursor, _players[i]);
                             }
                         }
 
@@ -150,7 +175,7 @@ public class MainMenuScript : MonoBehaviour {
         }
 	}
 
-    void PressCursor(RectTransform cursor)
+    void PressCursor(RectTransform cursor, int player)
     {
         //Set up the new Pointer Event
         m_PointerEventData = new PointerEventData(m_EventSystem);
@@ -182,6 +207,16 @@ public class MainMenuScript : MonoBehaviour {
                 }
 
             }
+        }
+
+        //check if player presses cursor on car
+        RaycastHit hit;
+        Ray ray = Camera.main.ScreenPointToRay(cursor.anchoredPosition);
+
+        if (Physics.Raycast(ray, out hit))
+        {
+            UpdateTeams(hit.transform, player);
+            Debug.Log("update teams");
         }
     }
 
@@ -255,8 +290,21 @@ public class MainMenuScript : MonoBehaviour {
     public void ChangeGameMode()
     {
         if (_currentGameMode == GameMode.CoOp)
+        {
             _currentGameMode = GameMode.Teams;
-        else _currentGameMode = GameMode.CoOp;
+
+            _coOpCar.gameObject.SetActive(false);
+            _teamCars.gameObject.SetActive(true);
+            _teamIcons.gameObject.SetActive(true);
+            SetDefaultTeams();
+        }
+        else {
+            _currentGameMode = GameMode.CoOp;
+
+            _coOpCar.gameObject.SetActive(true);
+            _teamCars.gameObject.SetActive(false);
+            _teamIcons.gameObject.SetActive(false);
+        }
 
         _gameModeButtonText.text = _currentGameMode.ToString();
     }
@@ -297,6 +345,8 @@ public class MainMenuScript : MonoBehaviour {
                         if (_players[j] == i)
                         {
                             _players[j] = 0;
+                            _teamIcons.GetChild(PlayerPrefs.GetInt("Player" + j + "Team")).GetChild(j).gameObject.SetActive(false);
+                            _isPlayerInTeam[j] = false;
                             _hasJoinedPanels[j].SetActive(false);
                             _cursors[j].gameObject.SetActive(false);
                             _hasControllerJoined[i] = false;
@@ -320,5 +370,37 @@ public class MainMenuScript : MonoBehaviour {
         if (_amountOfBots > 0)
             _amountOfBots--;
         _amountOfBotsText.text = "Bots: " + _amountOfBots;
+    }
+
+    private void UpdateTeams(Transform car, int player)
+    {
+        //for each car
+        for (int i = 0; i < _teamCars.childCount; i++)
+        {
+            //if the car is the right car
+            if(car == _teamCars.GetChild(i))
+            {
+                _isPlayerInTeam[player - 1] = true;
+
+                //update graphics
+                _teamIcons.GetChild(i).GetChild(player-1).gameObject.SetActive(true);
+
+                PlayerPrefs.SetInt("Player" + player + "Team", i);
+            }
+            else
+            {
+                //update graphics
+               _teamIcons.GetChild(i).GetChild(player-1).gameObject.SetActive(false);
+            }
+        }
+    }
+
+    private void SetDefaultTeams()
+    {
+        for (int i = 0; i < _players.Length; i++)
+        {
+            if(_players[i]!=0)
+                UpdateTeams(_teamCars.GetChild(0), i+1);
+        }
     }
 }
