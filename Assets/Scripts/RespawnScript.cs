@@ -5,6 +5,7 @@ using UnityEngine;
 public class RespawnScript : MonoBehaviour {
 
     public Transform RespawnPoint;
+    [SerializeField] private GameObject[] _wheels;
     [SerializeField] private GameObject _respawnCollisionChecker;
     [SerializeField] private bool _isOpponent;
 
@@ -16,27 +17,30 @@ public class RespawnScript : MonoBehaviour {
         transform.position = RespawnPoint.position;
         transform.rotation = RespawnPoint.localRotation;
 
-        gameObject.layer = 14;
+        ChangeLayer(14);
+        if (_respawnCollision != null)
+            GameObject.Destroy(_respawnCollision);
         _respawnCollision = GameObject.Instantiate(_respawnCollisionChecker,transform,false);
         _respawnCollision.transform.rotation = transform.rotation;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "RespawnPoint" && gameObject.tag!="RespawnCollision")
+        if (other.tag == "RespawnPoint")
         {
-            if (_isOpponent && RespawnPoint == other.transform)
-                Respawn();
+            //if (_isOpponent && RespawnPoint == other.transform)
+            //    Respawn();
 
             RespawnPoint = other.transform;
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    public void ChangeLayer(int layer)
     {
-        if(gameObject.tag == "RespawnCollision")
+        gameObject.layer = layer;
+        for (int i = 0; i < _wheels.Length; i++)
         {
-            //object nog verwijderen als er gerespawned wordt
+            _wheels[i].layer = layer;
         }
     }
 }

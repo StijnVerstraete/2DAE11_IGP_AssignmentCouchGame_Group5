@@ -3286,6 +3286,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RespawnPoint: {fileID: 0}
+  _wheels:
+  - {fileID: 1527099463251374}
+  - {fileID: 1020916729882546}
+  - {fileID: 1260074591989984}
+  - {fileID: 1805880161207212}
   _respawnCollisionChecker: {fileID: 1709683656943314, guid: 531e5ed17b2415947ae089188a95cca8,
     type: 2}
   _isOpponent: 0
