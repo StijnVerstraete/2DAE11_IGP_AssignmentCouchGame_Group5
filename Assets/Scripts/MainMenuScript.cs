@@ -115,7 +115,7 @@ public class MainMenuScript : MonoBehaviour {
 
                             if (Input.GetButtonDown("A" + _players[i] + "_XboxButton"))
                             {
-                                PressCursor(_cursors[i], _players[i]);
+                                PressCursor(_cursors[i], i+1);
                             }                              
                         }
 
@@ -166,7 +166,7 @@ public class MainMenuScript : MonoBehaviour {
                         {
                             if (Input.GetButtonDown("A" + _players[i] + "_XboxButton"))
                             {
-                                PressCursor(_levelCursor, _players[i]);
+                                PressCursor(_levelCursor, i+1);
                             }
                         }
 
@@ -217,7 +217,7 @@ public class MainMenuScript : MonoBehaviour {
         if (Physics.Raycast(ray, out hit))
         {
             UpdateTeams(hit.transform, player);
-            Debug.Log("update teams");
+            Debug.Log("update teams, player: "+player);
         }
     }
 
@@ -278,7 +278,7 @@ public class MainMenuScript : MonoBehaviour {
         int _amountOfPLayers=0;
         for (int i = 0; i < _players.Length; i++)
         {
-            PlayerPrefs.SetInt("Player" + i + "Console", _players[i]);
+            PlayerPrefs.SetInt("Player" + (i+1) + "Console", _players[i]);
             if (_players[i] != 0)
                 _amountOfPLayers++;
         }

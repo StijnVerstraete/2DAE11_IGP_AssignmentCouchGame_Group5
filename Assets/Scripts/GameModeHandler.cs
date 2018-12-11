@@ -12,6 +12,7 @@ public class GameModeHandler : MonoBehaviour {
     [SerializeField] private Transform _playerCars;
     [SerializeField] private Transform _botCars;
     [SerializeField] private Transform _startPositions;
+    [SerializeField] private Camera[] _camerasCars;
 
     private GameMode _gameMode;
 
@@ -45,9 +46,9 @@ public class GameModeHandler : MonoBehaviour {
 
                     for (int i = 0; i < PlayerPrefs.GetInt("MaxPlayers"); i++)
                     {
-                        if (PlayerPrefs.GetInt("Player" + i + "Console", 0) != 0)
+                        if (PlayerPrefs.GetInt("Player" + (i+1) + "Console", 0) != 0)
                         {
-                            int team = PlayerPrefs.GetInt("Player" + i + "Team");
+                            int team = PlayerPrefs.GetInt("Player" + (i+1) + "Team");
 
                             if (team == 0)
                                 _team0.Add(i);
@@ -58,6 +59,8 @@ public class GameModeHandler : MonoBehaviour {
                     _playerCars.GetChild(0).GetComponent<PositionHandlerScript>().AssignControllersToPlayers(_team0.ToArray());
                     _playerCars.GetChild(1).GetComponent<PositionHandlerScript>().AssignControllersToPlayers(_team1.ToArray());
 
+                    _camerasCars[0].rect= new Rect(0,0,.5f,1);
+                    _camerasCars[1].rect = new Rect(0.5f, 0, .5f, 1);
                 }
                 break;
         }
