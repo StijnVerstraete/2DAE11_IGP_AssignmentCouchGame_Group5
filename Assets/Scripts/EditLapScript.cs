@@ -34,7 +34,7 @@ public class EditLapScript : MonoBehaviour {
 	void Update () {
         _isSetUpdateLapTrue = SetUpdateLap.GetComponent<SetLapTrue>().IsSetLapTrue;
 
-        if (!Countdown.GetComponent<CountDown>()._showCountdown && !_stopTimer) // start the timer if GO is gone
+        if (!Countdown.GetComponent<CountDown>().ShowCountDown && !_stopTimer) // start the timer if GO is gone
         {
             LapsTimer();
         }

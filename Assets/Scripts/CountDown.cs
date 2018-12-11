@@ -5,16 +5,16 @@ using UnityEngine.UI;
 
 public class CountDown : MonoBehaviour {
 
-
+    public bool ShowCountDown { get; set; }
     // countDown
     public Text CountdownText;
 
     private string _countDownText;
-    public bool _showCountdown = true;
     
 
     // Use this for initialization
     void Start () {
+        ShowCountDown = true;
         StartCoroutine("StartCountdown");
     }
 
@@ -37,7 +37,7 @@ public class CountDown : MonoBehaviour {
         _countDownText = "GO";
         yield return new WaitForSeconds(1);
 
-        _showCountdown = false;
+        ShowCountDown = false;
         _countDownText = "";
         CountdownText.enabled = false;
     }
