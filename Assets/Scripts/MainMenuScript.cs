@@ -326,6 +326,9 @@ public class MainMenuScript : MonoBehaviour {
                             _hasJoinedPanels[j].SetActive(true);
                             //PlayerPrefs.SetInt("Player"+ j+"Controller",i);
 
+                            if (_currentGameMode == GameMode.Teams)
+                                SetTeamPlayer(j);
+
                             _cursors[j].gameObject.SetActive(true);
                             _cursors[j].position = _hasJoinedPanels[j].transform.position;
                             _hasControllerJoined[i] = true;
@@ -345,8 +348,7 @@ public class MainMenuScript : MonoBehaviour {
                         if (_players[j] == i)
                         {
                             _players[j] = 0;
-                            _teamIcons.GetChild(PlayerPrefs.GetInt("Player" + j + "Team")).GetChild(j).gameObject.SetActive(false);
-                            _isPlayerInTeam[j] = false;
+                            RemovePlayerTeam(j);
                             _hasJoinedPanels[j].SetActive(false);
                             _cursors[j].gameObject.SetActive(false);
                             _hasControllerJoined[i] = false;
@@ -402,5 +404,19 @@ public class MainMenuScript : MonoBehaviour {
             if(_players[i]!=0)
                 UpdateTeams(_teamCars.GetChild(0), i+1);
         }
+    }
+
+    void SetTeamPlayer(int player)
+    {
+        if(player<2)
+        UpdateTeams(_teamCars.GetChild(0), player+1);
+        else
+            UpdateTeams(_teamCars.GetChild(1), player+1);
+    }
+
+    void RemovePlayerTeam(int playerIndex)
+    {
+        _teamIcons.GetChild(PlayerPrefs.GetInt("Player" + (playerIndex + 1) + "Team")).GetChild(playerIndex).gameObject.SetActive(false);
+        _isPlayerInTeam[playerIndex] = false;
     }
 }

@@ -15,6 +15,7 @@ public class GameModeHandler : MonoBehaviour {
 
     private GameMode _gameMode;
 
+    private List<int> _players = new List<int>();
     private List<int> _team0= new List<int>();
     private List<int> _team1 = new List<int>();
 
@@ -27,19 +28,32 @@ public class GameModeHandler : MonoBehaviour {
             case GameMode.CoOp:
                 {
                     SpawnCars(1, PlayerPrefs.GetInt("AmountOfBots", 0));
+
+                    for (int i = 0; i < PlayerPrefs.GetInt("MaxPlayers", 4); i++)
+                    {
+                        if (PlayerPrefs.GetInt("Player" + i + "Console", 0) != 0)
+                        {
+                            _players.Add(PlayerPrefs.GetInt("Player" + i + "Console") - 1);
+                        }
+                    }
+                    _playerCars.GetChild(0).GetComponent<PositionHandlerScript>().AssignControllersToPlayers(_players.ToArray());
                 }
                 break;
             case GameMode.Teams:
                 {
                     SpawnCars(2, PlayerPrefs.GetInt("AmountOfBots", 0));
-                    for (int i = 0; i < PlayerPrefs.GetInt("AmountOfPlayers"); i++)
-                    {
-                        int team=PlayerPrefs.GetInt("Player" + i + "Team");
 
-                        if (team == 0)
-                            _team0.Add(i);
-                        if (team == 1)
-                            _team1.Add(i);
+                    for (int i = 0; i < PlayerPrefs.GetInt("MaxPlayers"); i++)
+                    {
+                        if (PlayerPrefs.GetInt("Player" + i + "Console", 0) != 0)
+                        {
+                            int team = PlayerPrefs.GetInt("Player" + i + "Team");
+
+                            if (team == 0)
+                                _team0.Add(i);
+                            if (team == 1)
+                                _team1.Add(i);
+                        }
                     }
                     _playerCars.GetChild(0).GetComponent<PositionHandlerScript>().AssignControllersToPlayers(_team0.ToArray());
                     _playerCars.GetChild(1).GetComponent<PositionHandlerScript>().AssignControllersToPlayers(_team1.ToArray());
