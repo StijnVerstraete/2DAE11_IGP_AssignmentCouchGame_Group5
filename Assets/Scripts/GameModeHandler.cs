@@ -46,14 +46,15 @@ public class GameModeHandler : MonoBehaviour {
 
                     for (int i = 0; i < PlayerPrefs.GetInt("MaxPlayers"); i++)
                     {
-                        if (PlayerPrefs.GetInt("Player" + (i+1) + "Console", 0) != 0)
+                        int controller = PlayerPrefs.GetInt("Player" + (i + 1) + "Console", 0);
+                        if (controller != 0)
                         {
                             int team = PlayerPrefs.GetInt("Player" + (i+1) + "Team");
 
                             if (team == 0)
-                                _team0.Add(i);
+                                _team0.Add(controller);
                             if (team == 1)
-                                _team1.Add(i);
+                                _team1.Add(controller);
                         }
                     }
                     _playerCars.GetChild(0).GetComponent<PositionHandlerScript>().AssignControllersToPlayers(_team0.ToArray());

@@ -66,15 +66,16 @@ public class PositionHandlerScript : MonoBehaviour {
         for (int i = 0; i < controllers.Length; i++)
         {
             Controllers.Add(controllers[i]);
+            Debug.Log(controllers[i]);
         }
 
         //set players to right positions
         for (int i = 0; i < Controllers.Count; i++)
         {
-            PlayerPositions[Controllers[i]]._transform.position = DefaultPositions[Controllers[i]]._transform.position;
+            PlayerPositions[i]._transform.position = DefaultPositions[i]._transform.position;
 
             //set how many players are on position
-            ++DefaultPositions[Controllers[i]]._amountOfPlayers;
+            ++DefaultPositions[i]._amountOfPlayers;
         }
     }
 
@@ -96,10 +97,10 @@ public class PositionHandlerScript : MonoBehaviour {
             for (int i = 0; i < Controllers.Count; i++)
         {
                 //if player is on his position, he can switch
-                if (CheckIfPlayerIsOnRightPosition(Controllers[i]))
+                if (CheckIfPlayerIsOnRightPosition(i))
                 {
                     //Debug.Log("player " + i + " set dest");
-                    SetDestination(Controllers[i]);
+                    SetDestination(i);
                     //SetPosition(i);
                 }
                 else
@@ -108,9 +109,9 @@ public class PositionHandlerScript : MonoBehaviour {
                     for (int j = 0; j < DefaultPositions.Count; j++)
                     {
 
-                        if (PlayerPositions[Controllers[i]]._position == DefaultPositions[j]._position)
+                        if (PlayerPositions[i]._position == DefaultPositions[j]._position)
                         {
-                            PlayerPositions[Controllers[i]]._transform.position = Vector3.MoveTowards(PlayerPositions[Controllers[i]]._transform.position, DefaultPositions[j]._transform.position, _switchSpeed * Time.deltaTime);
+                            PlayerPositions[i]._transform.position = Vector3.MoveTowards(PlayerPositions[i]._transform.position, DefaultPositions[j]._transform.position, _switchSpeed * Time.deltaTime);
                         }
                             
                     }
@@ -132,8 +133,8 @@ public class PositionHandlerScript : MonoBehaviour {
 
     private void SetDestination(int playerNumber)
     {
-        float xAxisInput = Input.GetAxis("J" + (playerNumber + 1) + "_XboxHorizontal");
-        float yAxisInput = Input.GetAxis("J" + (playerNumber + 1) + "_XboxVertical");
+        float xAxisInput = Input.GetAxis("J" + Controllers[playerNumber] + "_XboxHorizontal");
+        float yAxisInput = Input.GetAxis("J" + Controllers[playerNumber] + "_XboxVertical");
 
         //only if player uses joystick
         if (yAxisInput !=0|| xAxisInput != 0)

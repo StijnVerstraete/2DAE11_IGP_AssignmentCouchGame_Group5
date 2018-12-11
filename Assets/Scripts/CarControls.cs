@@ -69,11 +69,11 @@ public class CarControls : MonoBehaviour
 
         for (int i = 0; i < _controllers.Count; i++)
         {
-            float axisInput = Input.GetAxis("A" + (_controllers[i] + 1) + "_Axis"); //  PlayerPrefs.GetString("Player")
+            float axisInput = Input.GetAxis("A" + _controllers[i] + "_Axis"); //  PlayerPrefs.GetString("Player")
 
             GlowCharacterIfClickOnButtonA(i); // if you click on button the character is glowing
 
-            switch (_playerPositions[_controllers[i]]._position)
+            switch (_playerPositions[i]._position)
             {
                 case Positions.SteerLeft:
                     {
@@ -81,13 +81,13 @@ public class CarControls : MonoBehaviour
                         //set playeractions to neutral - audio related
                         if (axisInput != 0)
                         {
-                            PlayerActionsSteering[_controllers[i]] = -1;
+                            PlayerActionsSteering[i] = -1;
                         }
                         else
                         {
-                            PlayerActionsSteering[_controllers[i]] = 0;
+                            PlayerActionsSteering[i] = 0;
                         }
-                        PlayerActionsAcceleration[_controllers[i]] = 0;
+                        PlayerActionsAcceleration[i] = 0;
                     } break;
                 case Positions.SteerRight:
                     {
@@ -95,13 +95,13 @@ public class CarControls : MonoBehaviour
                         //set playeractions to neutral - audio related
                         if (axisInput != 0)
                         {
-                            PlayerActionsSteering[_controllers[i]] = 1;
+                            PlayerActionsSteering[i] = 1;
                         }
                         else
                         {
-                            PlayerActionsSteering[_controllers[i]] = 0;
+                            PlayerActionsSteering[i] = 0;
                         }
-                        PlayerActionsAcceleration[_controllers[i]] = 0;
+                        PlayerActionsAcceleration[i] = 0;
                     } break;
                 case Positions.Brake:
                     {
@@ -109,13 +109,13 @@ public class CarControls : MonoBehaviour
                         //adjust playeractions accordingly - audio related
                         if (axisInput != 0)
                         {
-                            PlayerActionsAcceleration[_controllers[i]] = -1;
+                            PlayerActionsAcceleration[i] = -1;
                         }
                         else
                         {
-                            PlayerActionsAcceleration[_controllers[i]] = 0;
+                            PlayerActionsAcceleration[i] = 0;
                         }
-                        PlayerActionsSteering[_controllers[i]] = 0;
+                        PlayerActionsSteering[i] = 0;
                     } break;
                 case Positions.Gas:
                     {
@@ -123,13 +123,13 @@ public class CarControls : MonoBehaviour
                         //adjust playeractions accordingly - audio related
                         if (axisInput != 0)
                         {
-                            PlayerActionsAcceleration[_controllers[i]] = 1;
+                            PlayerActionsAcceleration[i] = 1;
                         }
                         else
                         {
-                            PlayerActionsAcceleration[_controllers[i]] = 0;
+                            PlayerActionsAcceleration[i] = 0;
                         }
-                        PlayerActionsSteering[_controllers[i]] = 0;
+                        PlayerActionsSteering[i] = 0;
                     } break;
             }
         }
@@ -212,7 +212,7 @@ public class CarControls : MonoBehaviour
     {
         for (int i = 0; i < _controllers.Count; i++)
         {
-            if (!Input.GetButton("B" + (_controllers[i] + 1) + "_XboxButton"))
+            if (!Input.GetButton("B" + _controllers[i] + "_XboxButton"))
                 return false;
         }
         return true;
@@ -240,19 +240,19 @@ public class CarControls : MonoBehaviour
     private void GlowCharacterIfClickOnButtonA(int playerIndex) {
         //use a component Halo to show the players if you are pressing the button or not
 
-        GameObject player = GameObject.Find("Player" + (playerIndex+1));
+        Transform player = _playerPositions[playerIndex]._transform;
 
         Behaviour t = player.GetComponent("Halo") as Behaviour;
 
         Debug.Log("GlowCharacterIfClickOnButtonA");
-        if (Input.GetButtonDown("A" + (_controllers[playerIndex] + 1) + "_XboxButton"))
+        if (Input.GetButtonDown("A" + _controllers[playerIndex] + "_XboxButton"))
         {
 
             Debug.Log(t.name);
             t.enabled = true;
         }
 
-        if (Input.GetButtonUp("A" + (_controllers[playerIndex] + 1) + "_XboxButton"))
+        if (Input.GetButtonUp("A" + _controllers[playerIndex] + "_XboxButton"))
         {
             t.enabled = false;
         }
