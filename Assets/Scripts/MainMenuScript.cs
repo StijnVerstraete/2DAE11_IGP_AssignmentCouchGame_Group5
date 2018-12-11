@@ -32,6 +32,7 @@ public class MainMenuScript : MonoBehaviour {
 
     [SerializeField] private int _maxPlayers=4;
     [SerializeField] private int _minimumConnectedPlayers;
+    [SerializeField] private int _minimumConnectedPlayersPerTeam;
     private int _connectedPlayers = 0;
     [SerializeField] private Button _goButton;
 
@@ -121,17 +122,22 @@ public class MainMenuScript : MonoBehaviour {
 
                     }
 
-                    if (_connectedPlayers >= _minimumConnectedPlayers)
+                    if (_currentGameMode == GameMode.CoOp)
                     {
-                        _goButton.interactable = true;
-                    }
-                    else
-                    {
-                        _goButton.interactable = false;
+                        if (_connectedPlayers >= _minimumConnectedPlayers)
+                        {
+                            _goButton.interactable = true;
+                        }
+                        else
+                        {
+                            _goButton.interactable = false;
+                        }
                     }
 
                     if (_currentGameMode == GameMode.Teams)
                     {
+                        int team0 = 0, team1 = 0;
+
                         for (int i = 0; i < _isPlayerInTeam.Length; i++)
                         {
                             if (_players[i] != 0)
@@ -143,9 +149,17 @@ public class MainMenuScript : MonoBehaviour {
                                 }
                                 else
                                 {
+                                    if (PlayerPrefs.GetInt("Player" + (i + 1) + "Team") == 0)
+                                        team0++;
+                                    else team1++;
                                     _goButton.interactable = true;
                                 }
                             }
+                        }
+
+                        if(team0<_minimumConnectedPlayersPerTeam && team1 < _minimumConnectedPlayersPerTeam)
+                        {
+                            _goButton.interactable = false;
                         }
                     }
 
