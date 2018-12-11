@@ -2458,7 +2458,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: aa0b54c3d336eb543a02a5cc7cbf217e, type: 2}
+  - {fileID: 2100000, guid: 8f6044a76d61b154e816611305438030, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3457,7 +3457,7 @@ Halo:
   m_Enabled: 1
   m_Color:
     serializedVersion: 2
-    rgba: 4278255613
+    rgba: 4294948608
   m_Size: 0.3
 --- !u!122 &122468303434434096
 Halo:
@@ -3468,7 +3468,7 @@ Halo:
   m_Enabled: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4294491448
+    rgba: 4281336063
   m_Size: 0.3
 --- !u!122 &122577671750482198
 Halo:
@@ -3479,7 +3479,7 @@ Halo:
   m_Enabled: 1
   m_Color:
     serializedVersion: 2
-    rgba: 4278200573
+    rgba: 4278254915
   m_Size: 0.3
 --- !u!122 &122927624708150278
 Halo:
@@ -3490,7 +3490,7 @@ Halo:
   m_Enabled: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4278255416
+    rgba: 4278255608
   m_Size: 0.3
 --- !u!124 &124670385758909890
 Behaviour:

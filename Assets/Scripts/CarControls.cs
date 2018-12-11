@@ -244,6 +244,7 @@ public class CarControls : MonoBehaviour
 
         Behaviour t = player.GetComponent("Halo") as Behaviour;
 
+        Debug.Log("GlowCharacterIfClickOnButtonA");
         if (Input.GetButtonDown("A" + (_controllers[playerIndex] + 1) + "_XboxButton"))
         {
 

@@ -51,7 +51,13 @@ public class EditLapScript : MonoBehaviour {
                 _stopTimer = true;
                 //Debug.Log("Show finish screen ");
                 FinishText.text = "You Have Finished !!!";
-                //to do show your laps time
+                /*
+                 * todo
+                 *      show laps times
+                 *      total time
+                 *      position place car 
+                 */
+        
             }
             else
             {
