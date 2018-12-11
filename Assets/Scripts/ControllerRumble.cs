@@ -40,4 +40,16 @@ public class ControllerRumble : MonoBehaviour {
             _rumbleLength = 0.2f;
         }
     }
+    private void OnTriggerEnter(Collision collision)
+    {
+        //rumble
+        if (collision.gameObject.tag == "Rumble")
+        {
+            GamePad.SetVibration(PlayerIndex.One, 5f, 5f);
+            GamePad.SetVibration(PlayerIndex.Two, 5f, 5f);
+            GamePad.SetVibration(PlayerIndex.Three, 5f, 5f);
+            GamePad.SetVibration(PlayerIndex.Four, 5f, 5f);
+            _rumbleLength = 0.2f;
+        }
+    }
 }

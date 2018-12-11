@@ -18,6 +18,7 @@ public class RoadBumpScript : MonoBehaviour {
             {
                 //apply screenshake
                 _camera.GetComponent<ScreenShake>().enabled = true;
+                _camera.GetComponent<ScreenShake>().ShakeDuration = 2;
             }
         }
     }
@@ -27,6 +28,7 @@ public class RoadBumpScript : MonoBehaviour {
         {
             //stop screenshake
             _camera.GetComponent<ScreenShake>().enabled = false;
+            _camera.GetComponent<ScreenShake>().ShakeDuration = 0;
         }
     }
 }
