@@ -6266,6 +6266,7 @@ MonoBehaviour:
   _teamCars: {fileID: 704478540}
   _teamIcons: {fileID: 1674152235}
   _canvas: {fileID: 1537700815}
+  _canvasRect: {fileID: 1537700816}
   _cursors:
   - {fileID: 412795546}
   - {fileID: 1774846397}

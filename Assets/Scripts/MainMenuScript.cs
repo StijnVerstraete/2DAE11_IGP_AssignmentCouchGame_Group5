@@ -49,6 +49,7 @@ public class MainMenuScript : MonoBehaviour {
 
     [Header("Cursor Variables")]
     [SerializeField] private Canvas _canvas;
+    [SerializeField] private RectTransform _canvasRect;
     GraphicRaycaster m_Raycaster;
     PointerEventData m_PointerEventData;
     EventSystem m_EventSystem;
@@ -223,7 +224,8 @@ public class MainMenuScript : MonoBehaviour {
     void MoveCursor(RectTransform cursor, float xAxisInput, float yAxisInput)
     {
         Vector2 temp = cursor.anchoredPosition + new Vector2(xAxisInput, yAxisInput) * Time.deltaTime * _cursorSpeed;
-        cursor.anchoredPosition = new Vector2(Mathf.Clamp(temp.x, 0,_canvas.pixelRect.width-cursor.rect.width / 2), Mathf.Clamp(temp.y, cursor.rect.height / 2, _canvas.pixelRect.height)) ;
+        //cursor.anchoredPosition = new Vector2(Mathf.Clamp(temp.x, 0,_canvas.pixelRect.width-cursor.rect.width / 2), Mathf.Clamp(temp.y, cursor.rect.height / 2, _canvas.pixelRect.height)) ;
+        cursor.anchoredPosition = new Vector2(Mathf.Clamp(temp.x, 0,_canvasRect.rect.width - cursor.rect.width / 2), Mathf.Clamp(temp.y, cursor.rect.height / 2, _canvasRect.rect.height));
     }
 
     void ChangePhase(Phase target)
