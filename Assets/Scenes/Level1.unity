@@ -9764,6 +9764,9 @@ MonoBehaviour:
   _playerCars: {fileID: 1910019007}
   _botCars: {fileID: 1974815861}
   _startPositions: {fileID: 680107202}
+  _camerasCars:
+  - {fileID: 915948736}
+  - {fileID: 1266833271}
 --- !u!1 &680972338
 GameObject:
   m_ObjectHideFlags: 0
@@ -13625,6 +13628,11 @@ Prefab:
 --- !u!4 &915948735 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4254254208732420, guid: c2a19190435a06c4ab86e03ee79a05df,
+    type: 2}
+  m_PrefabInternal: {fileID: 915948734}
+--- !u!20 &915948736 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 20991659878536832, guid: c2a19190435a06c4ab86e03ee79a05df,
     type: 2}
   m_PrefabInternal: {fileID: 915948734}
 --- !u!1 &917993604
@@ -19017,6 +19025,11 @@ Prefab:
 --- !u!4 &1266833270 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4254254208732420, guid: c2a19190435a06c4ab86e03ee79a05df,
+    type: 2}
+  m_PrefabInternal: {fileID: 1266833269}
+--- !u!20 &1266833271 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 20991659878536832, guid: c2a19190435a06c4ab86e03ee79a05df,
     type: 2}
   m_PrefabInternal: {fileID: 1266833269}
 --- !u!1 &1271466775

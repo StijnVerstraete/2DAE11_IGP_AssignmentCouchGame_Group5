@@ -49,6 +49,7 @@ public class MainMenuScript : MonoBehaviour {
 
     [Header("Cursor Variables")]
     [SerializeField] private Canvas _canvas;
+    [SerializeField] private RectTransform _canvasRect;
     GraphicRaycaster m_Raycaster;
     PointerEventData m_PointerEventData;
     EventSystem m_EventSystem;
@@ -114,7 +115,7 @@ public class MainMenuScript : MonoBehaviour {
 
                             if (Input.GetButtonDown("A" + _players[i] + "_XboxButton"))
                             {
-                                PressCursor(_cursors[i], _players[i]);
+                                PressCursor(_cursors[i], i+1);
                             }                              
                         }
 
@@ -165,7 +166,7 @@ public class MainMenuScript : MonoBehaviour {
                         {
                             if (Input.GetButtonDown("A" + _players[i] + "_XboxButton"))
                             {
-                                PressCursor(_levelCursor, _players[i]);
+                                PressCursor(_levelCursor, i+1);
                             }
                         }
 
@@ -216,14 +217,15 @@ public class MainMenuScript : MonoBehaviour {
         if (Physics.Raycast(ray, out hit))
         {
             UpdateTeams(hit.transform, player);
-            Debug.Log("update teams");
+            Debug.Log("update teams, player: "+player);
         }
     }
 
     void MoveCursor(RectTransform cursor, float xAxisInput, float yAxisInput)
     {
         Vector2 temp = cursor.anchoredPosition + new Vector2(xAxisInput, yAxisInput) * Time.deltaTime * _cursorSpeed;
-        cursor.anchoredPosition = new Vector2(Mathf.Clamp(temp.x, 0,_canvas.pixelRect.width-cursor.rect.width / 2), Mathf.Clamp(temp.y, cursor.rect.height / 2, _canvas.pixelRect.height)) ;
+        //cursor.anchoredPosition = new Vector2(Mathf.Clamp(temp.x, 0,_canvas.pixelRect.width-cursor.rect.width / 2), Mathf.Clamp(temp.y, cursor.rect.height / 2, _canvas.pixelRect.height)) ;
+        cursor.anchoredPosition = new Vector2(Mathf.Clamp(temp.x, 0,_canvasRect.rect.width - cursor.rect.width / 2), Mathf.Clamp(temp.y, cursor.rect.height / 2, _canvasRect.rect.height));
     }
 
     void ChangePhase(Phase target)
@@ -276,7 +278,7 @@ public class MainMenuScript : MonoBehaviour {
         int _amountOfPLayers=0;
         for (int i = 0; i < _players.Length; i++)
         {
-            PlayerPrefs.SetInt("Player" + i + "Console", _players[i]);
+            PlayerPrefs.SetInt("Player" + (i+1) + "Console", _players[i]);
             if (_players[i] != 0)
                 _amountOfPLayers++;
         }
