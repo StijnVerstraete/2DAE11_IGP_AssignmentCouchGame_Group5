@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 4258467544309592}
   m_Layer: 12
   m_Name: PREF_RoadBump
-  m_TagString: Untagged
+  m_TagString: Rumble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

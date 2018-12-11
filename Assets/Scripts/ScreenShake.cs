@@ -8,7 +8,7 @@ public class ScreenShake : MonoBehaviour
 {
     [SerializeField]  private Transform _camTransform;
 
-    [SerializeField] private float _shakeDuration;
+    public float ShakeDuration;
 
     private float _shakeAmount = 0.3f;
     private float _decreaseFactor = 1.0f;
@@ -22,15 +22,15 @@ public class ScreenShake : MonoBehaviour
 
     void Update()
     {
-        if (_shakeDuration > 0)
+        if (ShakeDuration > 0)
         {
             _camTransform.localPosition = _originalPos + Random.insideUnitSphere * _shakeAmount;
 
-            _shakeDuration -= Time.deltaTime * _decreaseFactor;
+            ShakeDuration -= Time.deltaTime * _decreaseFactor;
         }
         else
         {
-            _shakeDuration = 0f;
+            ShakeDuration = 0f;
             _camTransform.localPosition = _originalPos;
         }
     }
