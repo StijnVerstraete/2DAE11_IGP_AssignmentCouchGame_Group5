@@ -30,11 +30,11 @@ public class GameModeHandler : MonoBehaviour {
                 {
                     SpawnCars(1, PlayerPrefs.GetInt("AmountOfBots", 0));
 
-                    for (int i = 0; i < PlayerPrefs.GetInt("MaxPlayers", 4); i++)
+                    for (int i = 1; i <= PlayerPrefs.GetInt("MaxPlayers", 4); i++)
                     {
                         if (PlayerPrefs.GetInt("Player" + i + "Console", 0) != 0)
                         {
-                            _players.Add(PlayerPrefs.GetInt("Player" + i + "Console") - 1);
+                            _players.Add(PlayerPrefs.GetInt("Player" + i + "Console"));
                         }
                     }
                     _playerCars.GetChild(0).GetComponent<PositionHandlerScript>().AssignControllersToPlayers(_players.ToArray());
@@ -44,12 +44,12 @@ public class GameModeHandler : MonoBehaviour {
                 {
                     SpawnCars(2, PlayerPrefs.GetInt("AmountOfBots", 0));
 
-                    for (int i = 0; i < PlayerPrefs.GetInt("MaxPlayers"); i++)
+                    for (int i = 1; i <= PlayerPrefs.GetInt("MaxPlayers"); i++)
                     {
-                        int controller = PlayerPrefs.GetInt("Player" + (i + 1) + "Console", 0);
+                        int controller = PlayerPrefs.GetInt("Player" + (i) + "Console", 0);
                         if (controller != 0)
                         {
-                            int team = PlayerPrefs.GetInt("Player" + (i+1) + "Team");
+                            int team = PlayerPrefs.GetInt("Player" + (i) + "Team");
 
                             if (team == 0)
                                 _team0.Add(controller);

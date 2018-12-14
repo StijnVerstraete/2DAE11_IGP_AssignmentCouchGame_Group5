@@ -303,7 +303,7 @@ public class PositionHandlerScript : MonoBehaviour {
         for(int i= 0; i < Controllers.Count;i++)
         {
             int rand = UnityEngine.Random.Range(0, DefaultPositions.Count);
-            SwitchPosition(Controllers[i], PlayerPositions[Controllers[i]]._position, DefaultPositions[rand]._position);
+            SwitchPosition(i, PlayerPositions[i]._position, DefaultPositions[rand]._position);
         }
     }
 }

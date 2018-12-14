@@ -70,7 +70,7 @@ public class CarControls : MonoBehaviour
         for (int i = 0; i < _controllers.Count; i++)
         {
             float axisInput = Input.GetAxis("A" + _controllers[i] + "_Axis"); //  PlayerPrefs.GetString("Player")
-
+            //Debug.Log("controller " + i + ": " + _controllers[i]);
             GlowCharacterIfClickOnButtonA(i); // if you click on button the character is glowing
 
             switch (_playerPositions[i]._position)
@@ -244,7 +244,7 @@ public class CarControls : MonoBehaviour
 
         Behaviour t = player.GetComponent("Halo") as Behaviour;
 
-        Debug.Log("GlowCharacterIfClickOnButtonA");
+        //Debug.Log("GlowCharacterIfClickOnButtonA");
         if (Input.GetButtonDown("A" + _controllers[playerIndex] + "_XboxButton"))
         {
 

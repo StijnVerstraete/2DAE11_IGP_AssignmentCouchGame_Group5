@@ -40,7 +40,7 @@ public class ControllerRumble : MonoBehaviour {
             _rumbleLength = 0.2f;
         }
     }
-    private void OnTriggerEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         //rumble
         if (collision.gameObject.tag == "Rumble")
