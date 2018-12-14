@@ -28,14 +28,22 @@ public class OpponentBehaviour : MonoBehaviour {
 
     private float _respawntimer = 0;
 
+    [SerializeField]
+    private GameObject Countdown;
+
     public void Start()
     {
         _transform = GetComponent<Transform>();
         _respawnScript = GetComponent<RespawnScript>();
+        
     }
 
     public void FixedUpdate()
     {
+
+        if (Countdown.GetComponent<CountDown>().ShowCountDown)
+            return;
+
         RaycastHit hit;
         float _angleRight = 0, _angleLeft = 0;
         Vector3 _hitPointLeft= Vector3.zero, _hitPointRight=Vector3.zero;

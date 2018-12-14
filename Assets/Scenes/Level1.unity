@@ -4465,6 +4465,11 @@ Prefab:
       propertyPath: m_Name
       value: OponentCarTest (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 114067467187105028, guid: 90b7cfb5b1de8de49aad6f0b7f46788c,
+        type: 2}
+      propertyPath: Countdown
+      value: 
+      objectReference: {fileID: 376374999}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90b7cfb5b1de8de49aad6f0b7f46788c, type: 2}
   m_IsPrefabAsset: 0
@@ -5645,7 +5650,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CountdownText: {fileID: 2049195130}
-  _showCountdown: 1
 --- !u!1 &387870871
 GameObject:
   m_ObjectHideFlags: 0
@@ -6544,6 +6548,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114067467187105028, guid: 90b7cfb5b1de8de49aad6f0b7f46788c,
+        type: 2}
+      propertyPath: Countdown
+      value: 
+      objectReference: {fileID: 376374999}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90b7cfb5b1de8de49aad6f0b7f46788c, type: 2}
   m_IsPrefabAsset: 0
@@ -7743,7 +7752,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83dc38007c1a43540a3caa567a50aa53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSetLapTrue: 0
 --- !u!65 &548554685
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10518,6 +10526,11 @@ Prefab:
       propertyPath: m_Name
       value: OponentCarTest (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114067467187105028, guid: 90b7cfb5b1de8de49aad6f0b7f46788c,
+        type: 2}
+      propertyPath: Countdown
+      value: 
+      objectReference: {fileID: 376374999}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90b7cfb5b1de8de49aad6f0b7f46788c, type: 2}
   m_IsPrefabAsset: 0
@@ -13622,6 +13635,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114973687699360108, guid: c2a19190435a06c4ab86e03ee79a05df,
+        type: 2}
+      propertyPath: Countdown
+      value: 
+      objectReference: {fileID: 376374999}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2a19190435a06c4ab86e03ee79a05df, type: 2}
   m_IsPrefabAsset: 0
@@ -19111,6 +19129,11 @@ Prefab:
       propertyPath: m_Name
       value: OponentCarTest (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 114067467187105028, guid: 90b7cfb5b1de8de49aad6f0b7f46788c,
+        type: 2}
+      propertyPath: Countdown
+      value: 
+      objectReference: {fileID: 376374999}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90b7cfb5b1de8de49aad6f0b7f46788c, type: 2}
   m_IsPrefabAsset: 0

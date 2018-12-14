@@ -49,6 +49,9 @@ public class CarControls : MonoBehaviour
     [SerializeField] private float _respawnTime;
 
     private RespawnScript _respawnScript;
+    [SerializeField]
+    private GameObject Countdown;
+    private CountDown _countDownScript;
 
     private List<int> _controllers;
     public void Start()
@@ -60,12 +63,17 @@ public class CarControls : MonoBehaviour
         _carRigidbody = GetComponent<Rigidbody>();
         _respawnScript = GetComponent<RespawnScript>();
 
+        _countDownScript = Countdown.GetComponent<CountDown>();
+
         _maxSpeed = _maxSpeedDefault;
     }
 
     public void Update()
     {
         _steerLeft = 0; _steerRight = 0; _brake = 0; _gas = 0;
+        
+        if (_countDownScript.ShowCountDown) // if countdown is still bussy you cannot use the car
+            return;
 
         for (int i = 0; i < _controllers.Count; i++)
         {

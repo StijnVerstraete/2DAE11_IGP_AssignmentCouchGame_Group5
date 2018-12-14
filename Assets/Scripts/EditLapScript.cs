@@ -23,6 +23,8 @@ public class EditLapScript : MonoBehaviour {
     private bool _stopTimer = false;
 
 
+    private float[] _timeLapsArray = new float[3];
+
     // Use this for initialization
     void Start () {
         
@@ -45,6 +47,8 @@ public class EditLapScript : MonoBehaviour {
         if (_isSetUpdateLapTrue)
         {
             _currentLap++;
+
+            _timeLapsArray[0] = 2.5f;
 
             if (_currentLap > _endLap)
             {
