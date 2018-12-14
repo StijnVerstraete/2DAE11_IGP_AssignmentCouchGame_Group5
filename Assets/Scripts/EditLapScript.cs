@@ -19,11 +19,15 @@ public class EditLapScript : MonoBehaviour {
     public Text LapTimerText;
 
     private float _timer;
-    private int _lap = 0;
+    private float _lapsTimer;
+    //private int _lap = 0;
     private bool _stopTimer = false;
 
 
-    private float[] _timeLapsArray = new float[3];
+    private string[] _timeLapsArray = new string[3];
+    private int _timeLapsIndex = 0;
+
+    private List<string> _carsList = new List<string>();
 
     // Use this for initialization
     void Start () {
@@ -38,29 +42,51 @@ public class EditLapScript : MonoBehaviour {
 
         if (!Countdown.GetComponent<CountDown>().ShowCountDown && !_stopTimer) // start the timer if GO is gone
         {
-            LapsTimer();
+            
+            TotalLapsTimer();
+
+            _lapsTimer += Time.deltaTime;
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (_isSetUpdateLapTrue)
+        string finishedText = "";
+        if (other.tag == "PlayerCar" && _isSetUpdateLapTrue)
         {
             _currentLap++;
 
-            _timeLapsArray[0] = 2.5f;
+            _timeLapsArray[_timeLapsIndex] = LapsTimer();
+
+            _timeLapsIndex++;
+
+            _lapsTimer = 0;
 
             if (_currentLap > _endLap)
             {
                 _stopTimer = true;
                 //Debug.Log("Show finish screen ");
-                FinishText.text = "You Have Finished !!!";
+                finishedText = "You Have Finished !!!";
+                //FinishText.text = "You Have Finished !!!";
                 /*
                  * todo
                  *      show laps times
                  *      total time
                  *      position place car 
                  */
+                Debug.Log(_timeLapsArray.Length);
+                for (int i = 0; i < _timeLapsArray.Length - 1; i++)
+                {
+                    finishedText += "\nlap " + (i + 1) + ": " + _timeLapsArray[i];
+                    //FinishText.text += "/nlap " + (i++) + ": " + _timeLapsArray[i];
+                    //Debug.Log(_timeLapsArray[i]);
+                }
+
+                finishedText += "\nTotal Time: " + LapTimerText.text;
+                //FinishText.text += "/nTotal Time: " + LapTimerText.text;
+                //Debug.Log("total: " + LapTimerText.text);
+                
+                
         
             }
             else
@@ -68,9 +94,31 @@ public class EditLapScript : MonoBehaviour {
                 LapsText.text = _currentLap.ToString();
             }
 
-            
+            // Controls at which position the car is
+            //code can be better;
+            if (_currentLap > _endLap)
+            {
+                _carsList.Add(other.name);
 
-            
+                for (int i = 0; i < _carsList.Count; i++)
+                {
+                    if (_carsList[i].Contains("PREF_Car"))
+                    {
+                        finishedText += "\n You have finished at position " + (i+1);
+                        //Debug.Log("found player car at position" + (i+1));
+                    }
+
+                    if (_carsList[i].Contains("PREF_Car (1)")) //when you play 1 vs 1
+                    {
+                        finishedText += "\n You have finished at position " + (i + 1);
+                       // Debug.Log("found player second car at position" + (i + 1));
+                    }
+                }
+
+                FinishText.text = finishedText;
+            }
+
+
         }
         
     }
@@ -79,9 +127,10 @@ public class EditLapScript : MonoBehaviour {
     {
         _isSetUpdateLapTrue = false;
         SetUpdateLap.GetComponent<SetLapTrue>().IsSetLapTrue = false;
+        Debug.Log("trigger exit");
     }
 
-    private void LapsTimer()
+    private void TotalLapsTimer()
     {
         _timer += Time.deltaTime;
 
@@ -90,5 +139,14 @@ public class EditLapScript : MonoBehaviour {
         string niceTime = string.Format("{0:00}:{1:00}", minutes, seconds);
 
         LapTimerText.text = niceTime;
+    }
+
+    private string LapsTimer()
+    {
+        int minutes = Mathf.FloorToInt(_lapsTimer / 60F);
+        int seconds = Mathf.FloorToInt(_lapsTimer - minutes * 60);
+        string niceTime = string.Format("{0:00}:{1:00}", minutes, seconds);
+
+        return niceTime;
     }
 }

@@ -14,6 +14,9 @@ public class SetLapTrue : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        IsSetLapTrue = true;
+        if (other.tag == "PlayerCar")
+        {
+            IsSetLapTrue = true;
+        }
     }
 }
