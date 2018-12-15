@@ -9,7 +9,6 @@ public class AxleInfo
     public WheelCollider leftWheel;
     public WheelCollider rightWheel;
     public bool isMotor;
-    public bool isBreak;
     public bool isSteering;
 }
 
@@ -20,8 +19,6 @@ public class CarControls : MonoBehaviour
     public List<AxleInfo> axleInfos;
 
     [SerializeField] private float _maxMotorTorque;
-
-    [SerializeField] private float _maxBreakTorque;
 
     [SerializeField] private float _maxSteeringAngle;
 
@@ -145,12 +142,6 @@ public class CarControls : MonoBehaviour
         AccelerationLevel = PlayerActionsAcceleration[0] + PlayerActionsAcceleration[1] + PlayerActionsAcceleration[2] + PlayerActionsAcceleration[3];
         SteeringLevel = PlayerActionsSteering[0] + PlayerActionsSteering[1] + PlayerActionsSteering[2] + PlayerActionsSteering[3];
 
-        //if (Application.isEditor)
-        //{
-        //    _steerRight = _maxSteeringAngle * Input.GetAxis("Horizontal");
-        //    _gas = _maxMotorTorque * Input.GetAxis("Vertical");
-        //}
-
         //if all players are holding "b", start respawntimer
         //when timer hits respawn time, respawn
         if (CheckIfAllPlayersAreHoldingB())
@@ -181,11 +172,7 @@ public class CarControls : MonoBehaviour
                 axleInfo.leftWheel.motorTorque = _gas - _brake;
                 axleInfo.rightWheel.motorTorque = _gas - _brake;
             }
-            //if (axleInfo.isBreak)
-            //{
-            //    axleInfo.leftWheel.brakeTorque = _break;
-            //    axleInfo.rightWheel.brakeTorque = _break;
-            //}
+
             ApplyLocalPositionToVisuals(axleInfo.leftWheel);
             ApplyLocalPositionToVisuals(axleInfo.rightWheel);
         }
@@ -271,11 +258,37 @@ public class CarControls : MonoBehaviour
         if (other.tag == "SpeedUP")
         {
             Debug.Log("speed car up");
+            StartCoroutine(SpeedUp());
         }
 
         if (other.tag == "SpeedDown")
         {
             Debug.Log("speed car down");
+            StartCoroutine(SpeedDown());
         }
+    }
+
+    private IEnumerator SpeedUp()
+    {
+        float time = Time.time;
+        while (Time.time - time < 1.5f)
+        {
+            _maxSpeed = _maxSpeed * 1.4f;
+            _carRigidbody.velocity = _carRigidbody.velocity * 1.4f;
+            yield return null;
+        }
+
+    }
+
+    private IEnumerator SpeedDown()
+    {
+        float time = Time.time;
+        while (Time.time - time < 1.5f)
+        {
+            _maxSpeed = _maxSpeed / 1.05f;
+            _carRigidbody.velocity = _carRigidbody.velocity / 1.05f;
+            yield return null;
+        }
+
     }
 }
