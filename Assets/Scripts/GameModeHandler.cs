@@ -17,8 +17,10 @@ public class GameModeHandler : MonoBehaviour {
     private GameMode _gameMode;
 
     private List<int> _players = new List<int>();
-    private List<int> _team0= new List<int>();
-    private List<int> _team1 = new List<int>();
+    private List<int> _team0Controllers= new List<int>();
+    private List<int> _team1Controllers = new List<int>();
+    private List<int> _team0Players = new List<int>();
+    private List<int> _team1Players = new List<int>();
 
     // Use this for initialization
     void Start () {
@@ -42,23 +44,33 @@ public class GameModeHandler : MonoBehaviour {
                 break;
             case GameMode.Teams:
                 {
+                    //spawn 2 cars and a given amount of bots
                     SpawnCars(2, PlayerPrefs.GetInt("AmountOfBots", 0));
-
+                    //for each possible player
                     for (int i = 1; i <= PlayerPrefs.GetInt("MaxPlayers"); i++)
                     {
-                        int controller = PlayerPrefs.GetInt("Player" + (i) + "Console", 0);
+                        //if player has a controller connected
+                        int controller = PlayerPrefs.GetInt("Player" + (i) + "Console");
                         if (controller != 0)
                         {
                             int team = PlayerPrefs.GetInt("Player" + (i) + "Team");
 
                             if (team == 0)
-                                _team0.Add(controller);
+                            {
+                                _team0Controllers.Add(controller);
+                                _team0Players.Add(i);
+                            }
+
                             if (team == 1)
-                                _team1.Add(controller);
+                            {
+                                _team1Controllers.Add(controller);
+                                _team1Players.Add(i);
+                            }
+                            
                         }
                     }
-                    _playerCars.GetChild(0).GetComponent<PositionHandlerScript>().AssignControllersToPlayers(_team0.ToArray());
-                    _playerCars.GetChild(1).GetComponent<PositionHandlerScript>().AssignControllersToPlayers(_team1.ToArray());
+                    _playerCars.GetChild(0).GetComponent<PositionHandlerScript>().AssignControllersToPlayers(_team0Controllers.ToArray(), _team0Players.ToArray());
+                    _playerCars.GetChild(1).GetComponent<PositionHandlerScript>().AssignControllersToPlayers(_team1Controllers.ToArray(),_team1Players.ToArray());
 
                     _camerasCars[0].rect= new Rect(0,0,.5f,1);
                     _camerasCars[1].rect = new Rect(0.5f, 0, .5f, 1);

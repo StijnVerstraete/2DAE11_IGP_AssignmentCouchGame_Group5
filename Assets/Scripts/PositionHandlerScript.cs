@@ -60,13 +60,12 @@ public class PositionHandlerScript : MonoBehaviour {
         //}
     }
 
-    public void AssignControllersToPlayers(params int[] controllers)
+    public void AssignControllersToPlayers(int[] controllers)
     {
-        
+        //add the controllers
         for (int i = 0; i < controllers.Length; i++)
         {
             Controllers.Add(controllers[i]);
-            Debug.Log(controllers[i]);
         }
 
         //set players to right positions
@@ -79,20 +78,42 @@ public class PositionHandlerScript : MonoBehaviour {
         }
     }
 
+    public void AssignControllersToPlayers(int[] controllers, int[] players)
+    {
+        //add the controllers
+        for (int i = 0; i < controllers.Length; i++)
+        {
+            Controllers.Add(controllers[i]);
+        }
+
+        //remove unwanted players
+        for (int i = PlayerPositions.Count-1; i >=0 ; i--)
+        {
+            bool isPlayerInList = false;
+            for (int j = 0; j < players.Length; j++)
+            {
+                if (players[j]-1 == i)
+                    isPlayerInList = true;
+            }
+
+            if (!isPlayerInList)
+                PlayerPositions.RemoveAt(i);
+            Debug.Log(gameObject.name+ " Player positions: "+ PlayerPositions.Count);
+        }
+
+        //set players to right positions
+        for (int i = 0; i < Controllers.Count; i++)
+        {
+            PlayerPositions[i]._transform.position = DefaultPositions[i]._transform.position;
+
+            //set how many players are on position
+            ++DefaultPositions[i]._amountOfPlayers;
+        }
+    }
 
     // Update is called once per frame
     void Update ()
     {
-        //FOR TESTING PURPOSES
-        if (Application.isEditor && Input.GetButtonDown("Y_XboxButton"))
-        {
-            Controllers = new List<int>();
-            Controllers.Add(0);
-            Controllers.Add(1);
-            Controllers.Add(2);
-            Controllers.Add(3);
-        }
-
             //for every player
             for (int i = 0; i < Controllers.Count; i++)
         {
@@ -193,66 +214,7 @@ public class PositionHandlerScript : MonoBehaviour {
                 }
             }
         }
-       
-        //8-directional code
 
-        //if(angle>337.5f || angle <= 22.5f)
-        //{
-        //    _playersPositions[playerNumber]._positionX = PositionX.Right;
-        //}
-        //else
-        //{
-        //    if (angle > 22.5f && angle <= 67.5f)
-        //    {
-        //        _playersPositions[playerNumber]._positionX = PositionX.Right;
-        //        _playersPositions[playerNumber]._positionY = PositionY.Top;
-        //    }
-        //    else
-        //    {
-        //        if (angle > 67.5f && angle <= 112.5f)
-        //        {
-        //            _playersPositions[playerNumber]._positionY = PositionY.Top;
-        //        }
-        //        else
-        //        {
-        //            if (angle > 112.5f && angle <= 157.5f)
-        //            {
-        //                _playersPositions[playerNumber]._positionX = PositionX.Left;
-        //                _playersPositions[playerNumber]._positionY = PositionY.Top;
-        //            }
-        //            else
-        //            {
-        //                if (angle > 157.5f && angle <= 202.5f)
-        //                {
-        //                    _playersPositions[playerNumber]._positionX = PositionX.Left;
-        //                }
-        //                else
-        //                {
-        //                    if (angle > 202.5f && angle <= 247.5f)
-        //                    {
-        //                        _playersPositions[playerNumber]._positionX = PositionX.Left;
-        //                        _playersPositions[playerNumber]._positionY = PositionY.Bottom;
-        //                    }
-        //                    else
-        //                    {
-        //                        if (angle > 247.5f && angle <= 292.5f)
-        //                        {
-        //                            _playersPositions[playerNumber]._positionY = PositionY.Bottom;
-        //                        }
-        //                        else
-        //                        {
-        //                            if (angle > 292.5f && angle <= 337.5f)
-        //                            {
-        //                                _playersPositions[playerNumber]._positionX = PositionX.Right;
-        //                                _playersPositions[playerNumber]._positionY = PositionY.Top;
-        //                            }
-        //                        }
-        //                    }
-        //                }
-        //            }
-        //        }
-        //    }
-        //}
     }
 
     private void SwitchPosition(int playerNumber, Positions currentPosition, Positions targetPosition)
