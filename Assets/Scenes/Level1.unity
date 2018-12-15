@@ -13586,19 +13586,6 @@ Prefab:
       propertyPath: Countdown
       value: 
       objectReference: {fileID: 376374999}
-    - target: {fileID: 1720482305629034, guid: c2a19190435a06c4ab86e03ee79a05df, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1104075657525104, guid: c2a19190435a06c4ab86e03ee79a05df, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114973687699360108, guid: c2a19190435a06c4ab86e03ee79a05df,
-        type: 2}
-      propertyPath: _maxMotorTorque
-      value: 10000
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2a19190435a06c4ab86e03ee79a05df, type: 2}
   m_IsPrefabAsset: 0
@@ -18998,7 +18985,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1104075657525104, guid: c2a19190435a06c4ab86e03ee79a05df, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114973687699360108, guid: c2a19190435a06c4ab86e03ee79a05df,
         type: 2}
