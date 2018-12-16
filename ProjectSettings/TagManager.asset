@@ -11,6 +11,7 @@ TagManager:
   - TutorialText
   - SpeedUP
   - SpeedDown
+  - Road
   layers:
   - Default
   - TransparentFX
