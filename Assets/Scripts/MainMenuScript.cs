@@ -90,7 +90,7 @@ public class MainMenuScript : MonoBehaviour {
         {
             case Phase.StartScreen:
                 {
-                    for (int i = 1; i <= _players.Length; i++)
+                    for (int i = 1; i <= _maxPlayers; i++)
                     {
                         if(Input.GetButtonDown("A" + i + "_XboxButton"))
                         {
@@ -209,7 +209,7 @@ public class MainMenuScript : MonoBehaviour {
         //For do specific action every result returned
         foreach (RaycastResult result in results)
         {
-            //Debug.Log("Hit " + result.gameObject.name);
+            Debug.Log("Hit " + result.gameObject.name);
 
             //in case of button: click button
             if (result.gameObject.GetComponent<Button>())
@@ -327,7 +327,7 @@ public class MainMenuScript : MonoBehaviour {
 
     void CheckIfPlayerJoinsOrLeaves()
     {
-        for (int i = 1; i <= _players.Length; i++)
+        for (int i = 1; i <= _maxPlayers; i++)
         {
 
             if (Input.GetButtonDown("A" + i + "_XboxButton"))
@@ -347,7 +347,7 @@ public class MainMenuScript : MonoBehaviour {
 
                             _cursors[j].gameObject.SetActive(true);
                             _cursors[j].position = _hasJoinedPanels[j].transform.position;
-                            _hasControllerJoined[i] = true;
+                            _hasControllerJoined[i-1] = true;
                             _connectedPlayers++;
                             break;
                         }
@@ -367,7 +367,7 @@ public class MainMenuScript : MonoBehaviour {
                             RemovePlayerTeam(j);
                             _hasJoinedPanels[j].SetActive(false);
                             _cursors[j].gameObject.SetActive(false);
-                            _hasControllerJoined[i] = false;
+                            _hasControllerJoined[i-1] = false;
                             _connectedPlayers--;
                             break;
                         }
