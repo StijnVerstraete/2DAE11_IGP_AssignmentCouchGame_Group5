@@ -27,8 +27,8 @@ public class RoadBumpScript : MonoBehaviour {
         if (other.tag == "PlayerCar")
         {
             //stop screenshake
-            _camera.GetComponent<ScreenShake>().enabled = false;
             _camera.GetComponent<ScreenShake>().ShakeDuration = 0;
+            _camera.GetComponent<ScreenShake>().enabled = false;
         }
     }
 }
