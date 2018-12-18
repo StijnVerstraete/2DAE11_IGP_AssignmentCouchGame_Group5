@@ -75,7 +75,7 @@ public class EditLapScript : MonoBehaviour {
                  *      position place car 
                  */
                 Debug.Log(_timeLapsArray.Length);
-                for (int i = 0; i < _timeLapsArray.Length - 1; i++)
+                for (int i = 0; i < _timeLapsArray.Length; i++)
                 {
                     finishedText += "\nlap " + (i + 1) + ": " + _timeLapsArray[i];
                     //FinishText.text += "/nlap " + (i++) + ": " + _timeLapsArray[i];
