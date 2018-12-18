@@ -332,7 +332,7 @@ public class MainMenuScript : MonoBehaviour {
 
             if (Input.GetButtonDown("A" + i + "_XboxButton"))
             {
-                if (!_hasControllerJoined[i])
+                if (!_hasControllerJoined[i-1])
                 {
                     for (int j = 0; j < _players.Length; j++)
                     {
@@ -357,7 +357,7 @@ public class MainMenuScript : MonoBehaviour {
 
             if (Input.GetButtonDown("B" + i + "_XboxButton"))
             {
-                if (_hasControllerJoined[i])
+                if (_hasControllerJoined[i-1])
                 {
                     for (int j = 0; j < _players.Length; j++)
                     {
