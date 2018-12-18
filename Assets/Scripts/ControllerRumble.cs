@@ -21,10 +21,14 @@ public class ControllerRumble : MonoBehaviour {
         if (_rumbleLength <=0)
         {
             _rumbleLength = 0;
-            GamePad.SetVibration(PlayerIndex.One, 0f, 0f);
-            GamePad.SetVibration(PlayerIndex.Two, 0f, 0f);
-            GamePad.SetVibration(PlayerIndex.Three, 0f, 0f);
-            GamePad.SetVibration(PlayerIndex.Four, 0f, 0f);
+
+            foreach (int controller in gameObject.GetComponent<PositionHandlerScript>().Controllers)
+            {
+                if (controller == 0) { GamePad.SetVibration(PlayerIndex.One, 0f, 0f); }
+                if (controller == 1) { GamePad.SetVibration(PlayerIndex.Two, 0f, 0f); }
+                if (controller == 2) { GamePad.SetVibration(PlayerIndex.Three, 0f, 0f); }
+                if (controller == 3) { GamePad.SetVibration(PlayerIndex.Four, 0f, 0f); }
+            }
         }
         //Debug.Log(_rumbleLength);
     }
@@ -33,10 +37,13 @@ public class ControllerRumble : MonoBehaviour {
         //rumble
         if (collision.gameObject.tag == "Rumble")
         {
-            GamePad.SetVibration(PlayerIndex.One, 5f, 5f);
-            GamePad.SetVibration(PlayerIndex.Two, 5f, 5f);
-            GamePad.SetVibration(PlayerIndex.Three, 5f, 5f);
-            GamePad.SetVibration(PlayerIndex.Four, 5f, 5f);
+            foreach (int controller in gameObject.GetComponent<PositionHandlerScript>().Controllers)
+            {
+                if (controller == 0) { GamePad.SetVibration(PlayerIndex.One, 5f, 5f); }
+                if (controller == 1) { GamePad.SetVibration(PlayerIndex.Two, 5f, 5f); }
+                if (controller == 2) { GamePad.SetVibration(PlayerIndex.Three, 5f, 5f); }
+                if (controller == 3) { GamePad.SetVibration(PlayerIndex.Four, 5f, 5f); }
+            }
             _rumbleLength = 0.2f;
         }
     }
@@ -45,10 +52,13 @@ public class ControllerRumble : MonoBehaviour {
         //rumble
         if (collision.gameObject.tag == "Rumble")
         {
-            GamePad.SetVibration(PlayerIndex.One, 5f, 5f);
-            GamePad.SetVibration(PlayerIndex.Two, 5f, 5f);
-            GamePad.SetVibration(PlayerIndex.Three, 5f, 5f);
-            GamePad.SetVibration(PlayerIndex.Four, 5f, 5f);
+            foreach (int controller in gameObject.GetComponent<PositionHandlerScript>().Controllers)
+            {
+                if (controller == 0) { GamePad.SetVibration(PlayerIndex.One, 5f, 5f); }
+                else if (controller == 1) { GamePad.SetVibration(PlayerIndex.Two, 5f, 5f); }
+                else if (controller == 2) { GamePad.SetVibration(PlayerIndex.Three, 5f, 5f); }
+                else if (controller == 3) { GamePad.SetVibration(PlayerIndex.Four, 5f, 5f); }
+            }
             _rumbleLength = 0.2f;
         }
     }
