@@ -94,7 +94,7 @@ public class GameModeHandler : MonoBehaviour {
 
     void SpawnBotCars(int amountOfPlayerCars, int amountOfBots)
     {
-        for (int i = amountOfPlayerCars; i < amountOfBots; i++)
+        for (int i = amountOfPlayerCars; i < amountOfBots+amountOfPlayerCars; i++)
         {
             //set position
             _botCars.GetChild(i-amountOfPlayerCars).position = _startPositions.GetChild(i).position;
