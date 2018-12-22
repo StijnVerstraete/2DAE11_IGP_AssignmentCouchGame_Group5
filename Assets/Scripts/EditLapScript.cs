@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class EditLapScript : MonoBehaviour {
@@ -8,12 +9,16 @@ public class EditLapScript : MonoBehaviour {
     
     public Text LapsText;
     public Text FinishText;
+    public Text GoToMenuText;
     public GameObject SetUpdateLap;
     public GameObject Countdown;
 
     private int _currentLap;
     private bool _isSetUpdateLapTrue = false;
+    [SerializeField]
     private int _endLap = 3;
+
+    private bool _isFinished = false;
 
     //lapstimer
     public Text LapTimerText;
@@ -34,6 +39,7 @@ public class EditLapScript : MonoBehaviour {
         
         _currentLap = int.Parse(LapsText.text);
         FinishText.text = "";
+        GoToMenuText.enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -46,6 +52,11 @@ public class EditLapScript : MonoBehaviour {
             TotalLapsTimer();
 
             _lapsTimer += Time.deltaTime;
+        }
+
+        if (_isFinished && Input.GetButtonDown("Start_XboxButton"))
+        {
+            SceneManager.LoadScene("Menu");
         }
     }
 
@@ -62,7 +73,7 @@ public class EditLapScript : MonoBehaviour {
 
             _lapsTimer = 0;
 
-            if (_currentLap > _endLap)
+            if (_currentLap > _endLap) //you are finished
             {
                 _stopTimer = true;
                 //Debug.Log("Show finish screen ");
@@ -74,7 +85,7 @@ public class EditLapScript : MonoBehaviour {
                  *      total time
                  *      position place car 
                  */
-                Debug.Log(_timeLapsArray.Length);
+                
                 for (int i = 0; i < _timeLapsArray.Length; i++)
                 {
                     finishedText += "\nlap " + (i + 1) + ": " + _timeLapsArray[i];
@@ -85,8 +96,9 @@ public class EditLapScript : MonoBehaviour {
                 finishedText += "\nTotal Time: " + LapTimerText.text;
                 //FinishText.text += "/nTotal Time: " + LapTimerText.text;
                 //Debug.Log("total: " + LapTimerText.text);
-                
-                
+
+                GoToMenuText.enabled = true;
+                _isFinished = true;
         
             }
             else
