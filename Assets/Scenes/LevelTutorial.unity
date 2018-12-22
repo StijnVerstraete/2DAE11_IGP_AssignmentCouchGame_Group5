@@ -310,25 +310,30 @@ Prefab:
         type: 2}
       propertyPath: CountdownText
       value: 
-      objectReference: {fileID: 610625835}
+      objectReference: {fileID: 0}
     - target: {fileID: 114088181954291254, guid: 015d91db2b4a4e14a92410439efa475d,
         type: 2}
       propertyPath: LapsText
       value: 
-      objectReference: {fileID: 610625837}
+      objectReference: {fileID: 610625834}
     - target: {fileID: 114088181954291254, guid: 015d91db2b4a4e14a92410439efa475d,
         type: 2}
       propertyPath: FinishText
       value: 
-      objectReference: {fileID: 610625836}
+      objectReference: {fileID: 0}
     - target: {fileID: 114088181954291254, guid: 015d91db2b4a4e14a92410439efa475d,
         type: 2}
       propertyPath: LapTimerText
       value: 
-      objectReference: {fileID: 610625838}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 015d91db2b4a4e14a92410439efa475d, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &66704459 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1492445211357022, guid: 015d91db2b4a4e14a92410439efa475d,
+    type: 2}
+  m_PrefabInternal: {fileID: 66704458}
 --- !u!1001 &78125205
 Prefab:
   m_ObjectHideFlags: 0
@@ -2656,35 +2661,17 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b4cbf5d3e9d31649a7b89cd2b5c2b91, type: 2}
   m_IsPrefabAsset: 0
---- !u!224 &610625834 stripped
+--- !u!114 &610625834 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114834791683887644, guid: 7b4cbf5d3e9d31649a7b89cd2b5c2b91,
+    type: 2}
+  m_PrefabInternal: {fileID: 610625833}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!224 &610625835 stripped
 RectTransform:
-  m_CorrespondingSourceObject: {fileID: 224979031840549562, guid: 7b4cbf5d3e9d31649a7b89cd2b5c2b91,
+  m_CorrespondingSourceObject: {fileID: 224338338620126220, guid: 7b4cbf5d3e9d31649a7b89cd2b5c2b91,
     type: 2}
   m_PrefabInternal: {fileID: 610625833}
---- !u!114 &610625835 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114943258162820334, guid: 7b4cbf5d3e9d31649a7b89cd2b5c2b91,
-    type: 2}
-  m_PrefabInternal: {fileID: 610625833}
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
---- !u!114 &610625836 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114274248369982418, guid: 7b4cbf5d3e9d31649a7b89cd2b5c2b91,
-    type: 2}
-  m_PrefabInternal: {fileID: 610625833}
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
---- !u!114 &610625837 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114838372106935070, guid: 7b4cbf5d3e9d31649a7b89cd2b5c2b91,
-    type: 2}
-  m_PrefabInternal: {fileID: 610625833}
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
---- !u!114 &610625838 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114853310481395058, guid: 7b4cbf5d3e9d31649a7b89cd2b5c2b91,
-    type: 2}
-  m_PrefabInternal: {fileID: 610625833}
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &629407209
 Prefab:
   m_ObjectHideFlags: 0
@@ -3012,7 +2999,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 316967143}
-  - {fileID: 610625834}
+  - {fileID: 610625835}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7893,6 +7880,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 114162976232331730, guid: 756836ebe15b68a4ca8f0156584362b9,
+        type: 2}
+      propertyPath: Countdown
+      value: 
+      objectReference: {fileID: 66704459}
+    - target: {fileID: 114083793792883836, guid: 756836ebe15b68a4ca8f0156584362b9,
+        type: 2}
+      propertyPath: Countdown
+      value: 
+      objectReference: {fileID: 66704459}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 756836ebe15b68a4ca8f0156584362b9, type: 2}
   m_IsPrefabAsset: 0
