@@ -12,11 +12,15 @@ public class EditLapScript : MonoBehaviour {
     public Text GoToMenuText;
     public GameObject SetUpdateLap;
     public GameObject Countdown;
+    public GameObject PanelSplit;
 
     private int _currentLap;
     private bool _isSetUpdateLapTrue = false;
     [SerializeField]
     private int _endLap = 3;
+
+    [SerializeField]
+    private string _carName;
 
     private bool _isFinished = false;
 
@@ -34,13 +38,29 @@ public class EditLapScript : MonoBehaviour {
 
     private List<string> _carsList = new List<string>();
 
+    private GameMode _gameMode;
+   
+
     // Use this for initialization
     void Start () {
         
         _currentLap = int.Parse(LapsText.text);
         FinishText.text = "";
         GoToMenuText.enabled = false;
-	}
+
+        _gameMode = (GameMode)System.Enum.Parse(typeof(GameMode), PlayerPrefs.GetString("GameMode", "Team"));
+        
+        if (_gameMode.Equals(GameMode.Teams))
+        {
+            PanelSplit.SetActive(true);
+        }
+        else
+        {
+            PanelSplit.SetActive(false);
+        }
+
+        
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -62,8 +82,13 @@ public class EditLapScript : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("TRAADASFASDSASADFA");
+        Debug.Log(other.name);
+        Debug.Log(_carName);
+        Debug.Log("TRAADASFASDSASADFA");
+
         string finishedText = "";
-        if (other.tag == "PlayerCar" && _isSetUpdateLapTrue)
+        if (other.name.Contains(_carName) && _isSetUpdateLapTrue)
         {
             _currentLap++;
 
@@ -114,32 +139,29 @@ public class EditLapScript : MonoBehaviour {
 
                 for (int i = 0; i < _carsList.Count; i++)
                 {
-                    if (_carsList[i].Contains("PREF_Car"))
+                    if (_carsList[i].Contains(_carName))
                     {
                         finishedText += "\n You have finished at position " + (i+1);
                         //Debug.Log("found player car at position" + (i+1));
-                    }
-
-                    if (_carsList[i].Contains("PREF_Car (1)")) //when you play 1 vs 1
-                    {
-                        finishedText += "\n You have finished at position " + (i + 1);
-                       // Debug.Log("found player second car at position" + (i + 1));
                     }
                 }
 
                 FinishText.text = finishedText;
             }
-
-
+            
         }
         
     }
+    
 
     private void OnTriggerExit(Collider other)
     {
-        _isSetUpdateLapTrue = false;
-        SetUpdateLap.GetComponent<SetLapTrue>().IsSetLapTrue = false;
-        Debug.Log("trigger exit");
+        if (other.name.Contains(_carName))
+        {
+            _isSetUpdateLapTrue = false;
+            SetUpdateLap.GetComponent<SetLapTrue>().IsSetLapTrue = false;
+            Debug.Log("trigger exit");
+        }
     }
 
     private void TotalLapsTimer()
