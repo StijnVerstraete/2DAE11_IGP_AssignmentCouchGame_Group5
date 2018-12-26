@@ -315,8 +315,8 @@ public class CarControls : MonoBehaviour
         float time = Time.time;
         while (Time.time - time < 1.5f)
         {
-            _maxSpeed = _maxSpeed * 1.4f;
-            _carRigidbody.velocity = _carRigidbody.velocity * 1.4f;
+            _maxSpeed = _maxSpeed * 1.05f;
+            _carRigidbody.velocity = _carRigidbody.velocity * 1.05f;
             yield return null;
         }
 

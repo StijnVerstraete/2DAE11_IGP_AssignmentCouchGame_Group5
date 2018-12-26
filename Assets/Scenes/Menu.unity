@@ -296,6 +296,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 23333024181232882, guid: 40781497a0419fe4fa7ff8023c9e5ec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7d45a07d55fa60441bc5caeed5b26302, type: 2}
+    - target: {fileID: 23343557728930294, guid: 40781497a0419fe4fa7ff8023c9e5ec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7d45a07d55fa60441bc5caeed5b26302, type: 2}
+    - target: {fileID: 23162793253335622, guid: 40781497a0419fe4fa7ff8023c9e5ec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7d45a07d55fa60441bc5caeed5b26302, type: 2}
+    - target: {fileID: 23735975050743386, guid: 40781497a0419fe4fa7ff8023c9e5ec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7d45a07d55fa60441bc5caeed5b26302, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40781497a0419fe4fa7ff8023c9e5ec5, type: 2}
   m_IsPrefabAsset: 0
@@ -1460,7 +1480,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: a578a94398284894a8514eda297b6d99, type: 2}
+  - {fileID: 2100000, guid: ee7163c7bf156294fbebf055a0e3ff1f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2310,6 +2330,26 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 23343557728930294, guid: 40781497a0419fe4fa7ff8023c9e5ec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7d45a07d55fa60441bc5caeed5b26302, type: 2}
+    - target: {fileID: 23333024181232882, guid: 40781497a0419fe4fa7ff8023c9e5ec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7d45a07d55fa60441bc5caeed5b26302, type: 2}
+    - target: {fileID: 23735975050743386, guid: 40781497a0419fe4fa7ff8023c9e5ec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7d45a07d55fa60441bc5caeed5b26302, type: 2}
+    - target: {fileID: 23162793253335622, guid: 40781497a0419fe4fa7ff8023c9e5ec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7d45a07d55fa60441bc5caeed5b26302, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40781497a0419fe4fa7ff8023c9e5ec5, type: 2}
   m_IsPrefabAsset: 0
@@ -2781,7 +2821,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: d1fb1ec1b0b342640b7a76c724eecd54, type: 2}
+  - {fileID: 2100000, guid: 8b818fcad5579d84d8eb3d0dd6de7dd8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4900,7 +4940,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 2e1f91022d8659146b9c5f87594b598d, type: 2}
+  - {fileID: 2100000, guid: 83b99342ad6b0c945b3ba1eef6bc8d79, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5767,7 +5807,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: a578a94398284894a8514eda297b6d99, type: 2}
+  - {fileID: 2100000, guid: ee7163c7bf156294fbebf055a0e3ff1f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5839,7 +5879,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 2e1f91022d8659146b9c5f87594b598d, type: 2}
+  - {fileID: 2100000, guid: 83b99342ad6b0c945b3ba1eef6bc8d79, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6702,7 +6742,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: d1fb1ec1b0b342640b7a76c724eecd54, type: 2}
+  - {fileID: 2100000, guid: 8b818fcad5579d84d8eb3d0dd6de7dd8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7437,6 +7477,30 @@ Prefab:
     - target: {fileID: 4989631247000018, guid: 40781497a0419fe4fa7ff8023c9e5ec5, type: 2}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23343557728930294, guid: 40781497a0419fe4fa7ff8023c9e5ec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7d45a07d55fa60441bc5caeed5b26302, type: 2}
+    - target: {fileID: 23333024181232882, guid: 40781497a0419fe4fa7ff8023c9e5ec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7d45a07d55fa60441bc5caeed5b26302, type: 2}
+    - target: {fileID: 23735975050743386, guid: 40781497a0419fe4fa7ff8023c9e5ec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7d45a07d55fa60441bc5caeed5b26302, type: 2}
+    - target: {fileID: 23162793253335622, guid: 40781497a0419fe4fa7ff8023c9e5ec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7d45a07d55fa60441bc5caeed5b26302, type: 2}
+    - target: {fileID: 1686407809978388, guid: 40781497a0419fe4fa7ff8023c9e5ec5, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40781497a0419fe4fa7ff8023c9e5ec5, type: 2}
@@ -8175,7 +8239,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2125635032
 RectTransform:
   m_ObjectHideFlags: 0
