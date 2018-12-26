@@ -13062,22 +13062,22 @@ Prefab:
         type: 2}
       propertyPath: Countdown
       value: 
-      objectReference: {fileID: 1424317247}
+      objectReference: {fileID: 777920512}
     - target: {fileID: 114981306307476372, guid: 5a19de307165db442b8d18f54dcd1730,
         type: 2}
       propertyPath: Countdown
       value: 
-      objectReference: {fileID: 1424317247}
+      objectReference: {fileID: 777920512}
     - target: {fileID: 114116003341417334, guid: 5a19de307165db442b8d18f54dcd1730,
         type: 2}
       propertyPath: Countdown
       value: 
-      objectReference: {fileID: 1424317247}
+      objectReference: {fileID: 777920512}
     - target: {fileID: 114332616781847454, guid: 5a19de307165db442b8d18f54dcd1730,
         type: 2}
       propertyPath: Countdown
       value: 
-      objectReference: {fileID: 1424317247}
+      objectReference: {fileID: 777920512}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a19de307165db442b8d18f54dcd1730, type: 2}
   m_IsPrefabAsset: 0
@@ -25297,27 +25297,27 @@ Prefab:
       objectReference: {fileID: 1985036270}
     - target: {fileID: 4510738209275614, guid: 3eddd08296b3b4e4596374279867ec40, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.6000004
+      value: 3.1000004
       objectReference: {fileID: 0}
     - target: {fileID: 4823546130968002, guid: 3eddd08296b3b4e4596374279867ec40, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.6
+      value: 3.1
       objectReference: {fileID: 0}
     - target: {fileID: 4571379910165844, guid: 3eddd08296b3b4e4596374279867ec40, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.6000004
+      value: 3.1000004
       objectReference: {fileID: 0}
     - target: {fileID: 4024102550377270, guid: 3eddd08296b3b4e4596374279867ec40, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.6000004
+      value: 3.1000004
       objectReference: {fileID: 0}
     - target: {fileID: 4617314528195954, guid: 3eddd08296b3b4e4596374279867ec40, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.6000004
+      value: 3.1000004
       objectReference: {fileID: 0}
     - target: {fileID: 4293010560373612, guid: 3eddd08296b3b4e4596374279867ec40, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.6000004
+      value: 3.1000004
       objectReference: {fileID: 0}
     - target: {fileID: 4510738209275614, guid: 3eddd08296b3b4e4596374279867ec40, type: 2}
       propertyPath: m_LocalPosition.x
@@ -27779,11 +27779,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 7148f6db4f012404d836202c81288682,
     type: 3}
   m_PrefabInternal: {fileID: 1285978533}
---- !u!1 &1424317247 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1655721570979960, guid: 7b4cbf5d3e9d31649a7b89cd2b5c2b91,
-    type: 2}
-  m_PrefabInternal: {fileID: 192646754}
 --- !u!4 &1426476800 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4980837997140300, guid: 00611faa5dd6aab4f8f17afd4cb138fc,
@@ -37722,6 +37717,11 @@ Prefab:
       propertyPath: _sourceID
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114901524207760434, guid: 756836ebe15b68a4ca8f0156584362b9,
+        type: 2}
+      propertyPath: Countdown
+      value: 
+      objectReference: {fileID: 777920512}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 756836ebe15b68a4ca8f0156584362b9, type: 2}
   m_IsPrefabAsset: 0

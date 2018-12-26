@@ -369,7 +369,7 @@ Prefab:
         type: 2}
       propertyPath: FinishText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 610625836}
     - target: {fileID: 114088181954291254, guid: 015d91db2b4a4e14a92410439efa475d,
         type: 2}
       propertyPath: LapTimerText
@@ -1677,6 +1677,26 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 83b99342ad6b0c945b3ba1eef6bc8d79, type: 2}
+    - target: {fileID: 114981306307476372, guid: 5a19de307165db442b8d18f54dcd1730,
+        type: 2}
+      propertyPath: Countdown
+      value: 
+      objectReference: {fileID: 66704459}
+    - target: {fileID: 114286474850918476, guid: 5a19de307165db442b8d18f54dcd1730,
+        type: 2}
+      propertyPath: Countdown
+      value: 
+      objectReference: {fileID: 66704459}
+    - target: {fileID: 114332616781847454, guid: 5a19de307165db442b8d18f54dcd1730,
+        type: 2}
+      propertyPath: Countdown
+      value: 
+      objectReference: {fileID: 66704459}
+    - target: {fileID: 114116003341417334, guid: 5a19de307165db442b8d18f54dcd1730,
+        type: 2}
+      propertyPath: Countdown
+      value: 
+      objectReference: {fileID: 66704459}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a19de307165db442b8d18f54dcd1730, type: 2}
   m_IsPrefabAsset: 0
@@ -2632,6 +2652,12 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 224338338620126220, guid: 7b4cbf5d3e9d31649a7b89cd2b5c2b91,
     type: 2}
   m_PrefabInternal: {fileID: 610625833}
+--- !u!114 &610625836 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114805275120487470, guid: 7b4cbf5d3e9d31649a7b89cd2b5c2b91,
+    type: 2}
+  m_PrefabInternal: {fileID: 610625833}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &629407209
 Prefab:
   m_ObjectHideFlags: 0
@@ -8901,6 +8927,11 @@ Prefab:
       propertyPath: _sourceID
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114901524207760434, guid: 756836ebe15b68a4ca8f0156584362b9,
+        type: 2}
+      propertyPath: Countdown
+      value: 
+      objectReference: {fileID: 66704459}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 756836ebe15b68a4ca8f0156584362b9, type: 2}
   m_IsPrefabAsset: 0
