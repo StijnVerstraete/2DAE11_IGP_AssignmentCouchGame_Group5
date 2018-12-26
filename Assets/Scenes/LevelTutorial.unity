@@ -1464,17 +1464,17 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 316967142}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.24842478, y: 0.17481652, z: 0.24842478}
+  m_LocalPosition: {x: 0, y: 0, z: 3.0912}
+  m_LocalScale: {x: 0.63240206, y: 0.44502133, z: 0.63240206}
   m_Children:
   - {fileID: 521632758}
   m_Father: {fileID: 701664502}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.3703015, y: 0.7898268}
-  m_AnchorMax: {x: 0.6211324, y: 1}
-  m_AnchoredPosition: {x: 5.5, y: -5}
-  m_SizeDelta: {x: 957, y: 502}
+  m_AnchorMin: {x: 0.256, y: 0.6924444}
+  m_AnchorMax: {x: 0.7365209, y: 1}
+  m_AnchoredPosition: {x: 4.5, y: 1}
+  m_SizeDelta: {x: 515, y: 397}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &316967144
 MonoBehaviour:
@@ -2143,15 +2143,15 @@ RectTransform:
   m_GameObject: {fileID: 521632757}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -16.101454}
-  m_LocalScale: {x: 4.0253634, y: 5.720283, z: 4.0253634}
+  m_LocalScale: {x: 3.4392087, y: 4.8873215, z: 3.4392087}
   m_Children: []
   m_Father: {fileID: 316967143}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.42065075, y: 0.8024252}
   m_AnchorMax: {x: 0.5773493, y: 0.9607245}
-  m_AnchoredPosition: {x: 0.03944397, y: -250.88419}
-  m_SizeDelta: {x: -0.04876709, y: -0.07281494}
+  m_AnchoredPosition: {x: -6, y: -267.60822}
+  m_SizeDelta: {x: 182.43503, y: 33.38356}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &521632759
 MonoBehaviour:
@@ -2165,7 +2165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.2308099, g: 0.22948559, b: 0.254717, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2174,11 +2174,11 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: b4c2c00fa26755d48854c575788842ef, type: 3}
-    m_FontSize: 20
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 0
-    m_MaxSize: 50
+    m_MaxSize: 140
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -8938,7 +8938,7 @@ Light:
     m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.284
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2

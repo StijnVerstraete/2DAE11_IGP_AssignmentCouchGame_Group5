@@ -37,6 +37,7 @@ public class TutorialMessage : MonoBehaviour {
             _textObject.gameObject.SetActive(false);
             _textObject.gameObject.SetActive(false);
             ShowText = false;
+            _panel.SetActive(false);
         }
     }
 
