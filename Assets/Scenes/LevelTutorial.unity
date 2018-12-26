@@ -8886,6 +8886,16 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8b818fcad5579d84d8eb3d0dd6de7dd8, type: 2}
+    - target: {fileID: 82010292359302524, guid: 756836ebe15b68a4ca8f0156584362b9,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5a19de5c6dc12e14c9430907a3ab66b2, type: 3}
+    - target: {fileID: 82106306383970234, guid: 756836ebe15b68a4ca8f0156584362b9,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5a19de5c6dc12e14c9430907a3ab66b2, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 756836ebe15b68a4ca8f0156584362b9, type: 2}
   m_IsPrefabAsset: 0

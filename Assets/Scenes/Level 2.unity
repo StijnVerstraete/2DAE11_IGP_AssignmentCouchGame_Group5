@@ -30756,6 +30756,11 @@ Prefab:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 114126860663619990, guid: 25185e7c9284743408a88947e665c24b,
+        type: 2}
+      propertyPath: _camera
+      value: 
+      objectReference: {fileID: 528876208}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25185e7c9284743408a88947e665c24b, type: 2}
   m_IsPrefabAsset: 0
@@ -37697,6 +37702,21 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ee7163c7bf156294fbebf055a0e3ff1f, type: 2}
+    - target: {fileID: 82106306383970234, guid: 756836ebe15b68a4ca8f0156584362b9,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 82053558906943170, guid: 756836ebe15b68a4ca8f0156584362b9,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 07df92e109a09934f9a5429fc3ea79ac, type: 3}
+    - target: {fileID: 82463832323458694, guid: 756836ebe15b68a4ca8f0156584362b9,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 07df92e109a09934f9a5429fc3ea79ac, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 756836ebe15b68a4ca8f0156584362b9, type: 2}
   m_IsPrefabAsset: 0
