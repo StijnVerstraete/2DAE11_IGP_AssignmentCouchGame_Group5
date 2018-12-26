@@ -16,6 +16,7 @@ public class RoadBumpScript : MonoBehaviour {
             
             if (collision.tag == "PlayerCar")
             {
+                _camera = collision.transform.Find("Edge Detection Camera").gameObject;
                 //apply screenshake
                 _camera.GetComponent<ScreenShake>().enabled = true;
                 _camera.GetComponent<ScreenShake>().ShakeDuration = 2;
@@ -28,7 +29,6 @@ public class RoadBumpScript : MonoBehaviour {
         {
             //stop screenshake
             _camera.GetComponent<ScreenShake>().ShakeDuration = 0;
-            _camera.GetComponent<ScreenShake>().enabled = false;
         }
     }
 }

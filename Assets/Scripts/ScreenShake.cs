@@ -32,6 +32,7 @@ public class ScreenShake : MonoBehaviour
         {
             ShakeDuration = 0f;
             _camTransform.localPosition = _originalPos;
+            enabled = false;
         }
     }
 }
