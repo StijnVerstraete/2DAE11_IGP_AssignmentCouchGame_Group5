@@ -25289,7 +25289,7 @@ Prefab:
         type: 2}
       propertyPath: _camerasCars.Array.data[0]
       value: 
-      objectReference: {fileID: 1985036271}
+      objectReference: {fileID: 0}
     - target: {fileID: 114785552366242434, guid: 3eddd08296b3b4e4596374279867ec40,
         type: 2}
       propertyPath: _camerasCars.Array.data[1]
@@ -37717,17 +37717,17 @@ Prefab:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 07df92e109a09934f9a5429fc3ea79ac, type: 3}
+    - target: {fileID: 114582571898250086, guid: 756836ebe15b68a4ca8f0156584362b9,
+        type: 2}
+      propertyPath: _sourceID
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 756836ebe15b68a4ca8f0156584362b9, type: 2}
   m_IsPrefabAsset: 0
 --- !u!20 &1985036270 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 20577873608310094, guid: 756836ebe15b68a4ca8f0156584362b9,
-    type: 2}
-  m_PrefabInternal: {fileID: 1985036269}
---- !u!20 &1985036271 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 20178167833154570, guid: 756836ebe15b68a4ca8f0156584362b9,
     type: 2}
   m_PrefabInternal: {fileID: 1985036269}
 --- !u!4 &1985036272 stripped
