@@ -24,6 +24,8 @@ public class CarControls : MonoBehaviour
 
     [SerializeField] private float _maxSpeedDefault;
 
+    [SerializeField] private float _midAirRotationSpeed;
+
     private float _maxSpeed;
 
     private Rigidbody _carRigidbody;
@@ -40,6 +42,7 @@ public class CarControls : MonoBehaviour
     public int SteeringLevel;
     [SerializeField]
     float _steerLeft = 0, _steerRight = 0, _brake = 0, _gas = 0;
+    private bool _anywheelsGrounded;
 
     private float _respawnTimer=0;
 
@@ -67,6 +70,7 @@ public class CarControls : MonoBehaviour
 
     public void Update()
     {
+        _anywheelsGrounded = CheckIfAnyWheelsAreGrounded();
         _steerLeft = 0; _steerRight = 0; _brake = 0; _gas = 0;
         
         if (_countDownScript.ShowCountDown) // if countdown is still bussy you cannot use the car
@@ -74,7 +78,9 @@ public class CarControls : MonoBehaviour
 
         for (int i = 0; i < _controllers.Count; i++)
         {
-            float axisInput = Input.GetAxis("A" + _controllers[i] + "_Axis"); //  PlayerPrefs.GetString("Player")
+            //STEERING + GAS & BREAK
+
+            float axisInput = Input.GetAxis("A" + _controllers[i] + "_Axis");
             //Debug.Log("controller " + i + ": " + _controllers[i]);
             GlowCharacterIfClickOnButtonA(i); // if you click on button the character is glowing
 
@@ -137,11 +143,35 @@ public class CarControls : MonoBehaviour
                         PlayerActionsSteering[i] = 0;
                     } break;
             }
+
+            //MID-AIR ROTATING
+
+            if (!_anywheelsGrounded)
+            {
+                float RightAxisInputX = Input.GetAxis("J" + _controllers[i] + "_RightHorizontal");
+                float RightAxisInputY = Input.GetAxis("J" + _controllers[i] + "_RightVertical");
+
+                    //get current rotation of car
+                    Vector3 tempRotation = transform.eulerAngles;
+
+                //lerp to rotation of ground
+                tempRotation.x += -(_midAirRotationSpeed/_controllers.Count) * RightAxisInputY * Time.deltaTime;
+                tempRotation.z += -(_midAirRotationSpeed / _controllers.Count)* RightAxisInputX * Time.deltaTime;
+
+                //set rotation
+                transform.rotation = Quaternion.Euler(tempRotation);
+
+            }
+
         }
         //calculate acceleration level - audio related
         AccelerationLevel = PlayerActionsAcceleration[0] + PlayerActionsAcceleration[1] + PlayerActionsAcceleration[2] + PlayerActionsAcceleration[3];
         SteeringLevel = PlayerActionsSteering[0] + PlayerActionsSteering[1] + PlayerActionsSteering[2] + PlayerActionsSteering[3];
 
+
+
+
+        //RESPAWNING
         //if all players are holding "b", start respawntimer
         //when timer hits respawn time, respawn
         if (CheckIfAllPlayersAreHoldingB())
@@ -211,6 +241,18 @@ public class CarControls : MonoBehaviour
                 return false;
         }
         return true;
+    }
+
+    bool CheckIfAnyWheelsAreGrounded()
+    {
+        foreach (AxleInfo axleInfo in axleInfos)
+        {
+            if (axleInfo.leftWheel.isGrounded)
+                return true;
+            if (axleInfo.rightWheel.isGrounded)
+                return true;
+        }
+        return false;
     }
 
     // finds the corresponding visual wheel

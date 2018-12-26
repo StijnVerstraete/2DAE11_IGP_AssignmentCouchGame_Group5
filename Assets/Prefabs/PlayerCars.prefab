@@ -6813,6 +6813,7 @@ MonoBehaviour:
   _maxMotorTorque: 10000
   _maxSteeringAngle: 15
   _maxSpeedDefault: 30
+  _midAirRotationSpeed: 15
   PlayerActionsAcceleration: 00000000000000000000000000000000
   PlayerActionsSteering: 00000000000000000000000000000000
   AccelerationLevel: 0
@@ -6886,6 +6887,7 @@ MonoBehaviour:
   _maxMotorTorque: 10000
   _maxSteeringAngle: 15
   _maxSpeedDefault: 30
+  _midAirRotationSpeed: 15
   PlayerActionsAcceleration: 00000000000000000000000000000000
   PlayerActionsSteering: 00000000000000000000000000000000
   AccelerationLevel: 0
