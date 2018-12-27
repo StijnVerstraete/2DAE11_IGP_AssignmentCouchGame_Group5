@@ -49,15 +49,19 @@ public class EditLapScript : MonoBehaviour {
         GoToMenuText.enabled = false;
 
         _gameMode = (GameMode)System.Enum.Parse(typeof(GameMode), PlayerPrefs.GetString("GameMode", "Team"));
+
+        if (PanelSplit != null)
+        {
+            if (_gameMode.Equals(GameMode.Teams))
+            {
+                PanelSplit.SetActive(true);
+            }
+            else
+            {
+                PanelSplit.SetActive(false);
+            }
+        }
         
-        if (_gameMode.Equals(GameMode.Teams))
-        {
-            PanelSplit.SetActive(true);
-        }
-        else
-        {
-            PanelSplit.SetActive(false);
-        }
 
         
     }
