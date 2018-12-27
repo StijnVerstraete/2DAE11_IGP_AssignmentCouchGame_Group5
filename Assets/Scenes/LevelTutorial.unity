@@ -385,6 +385,11 @@ Prefab:
       propertyPath: SetUpdateLap
       value: 
       objectReference: {fileID: 151777382}
+    - target: {fileID: 114088181954291254, guid: 015d91db2b4a4e14a92410439efa475d,
+        type: 2}
+      propertyPath: _carName
+      value: PREF_Car
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 015d91db2b4a4e14a92410439efa475d, type: 2}
   m_IsPrefabAsset: 0
