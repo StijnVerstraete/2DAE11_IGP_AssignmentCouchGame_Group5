@@ -8916,7 +8916,7 @@ Prefab:
         type: 2}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 5a19de5c6dc12e14c9430907a3ab66b2, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 82106306383970234, guid: 756836ebe15b68a4ca8f0156584362b9,
         type: 2}
       propertyPath: m_audioClip
@@ -8932,7 +8932,18 @@ Prefab:
       propertyPath: Countdown
       value: 
       objectReference: {fileID: 66704459}
-    m_RemovedComponents: []
+    - target: {fileID: 82933672323837212, guid: 756836ebe15b68a4ca8f0156584362b9,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 82810705417082712, guid: 756836ebe15b68a4ca8f0156584362b9,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5a19de5c6dc12e14c9430907a3ab66b2, type: 3}
+    m_RemovedComponents:
+    - {fileID: 82053558906943170, guid: 756836ebe15b68a4ca8f0156584362b9, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 756836ebe15b68a4ca8f0156584362b9, type: 2}
   m_IsPrefabAsset: 0
 --- !u!20 &1757188267 stripped

@@ -37722,6 +37722,11 @@ Prefab:
       propertyPath: Countdown
       value: 
       objectReference: {fileID: 777920512}
+    - target: {fileID: 82810705417082712, guid: 756836ebe15b68a4ca8f0156584362b9,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 07df92e109a09934f9a5429fc3ea79ac, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 756836ebe15b68a4ca8f0156584362b9, type: 2}
   m_IsPrefabAsset: 0
