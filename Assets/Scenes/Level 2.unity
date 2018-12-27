@@ -24839,7 +24839,7 @@ Prefab:
         type: 2}
       propertyPath: _camerasCars.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1985036271}
     - target: {fileID: 114785552366242434, guid: 3eddd08296b3b4e4596374279867ec40,
         type: 2}
       propertyPath: _camerasCars.Array.data[1]
@@ -37125,6 +37125,11 @@ Prefab:
 --- !u!20 &1985036270 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 20577873608310094, guid: 756836ebe15b68a4ca8f0156584362b9,
+    type: 2}
+  m_PrefabInternal: {fileID: 1985036269}
+--- !u!20 &1985036271 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 20730484868970582, guid: 756836ebe15b68a4ca8f0156584362b9,
     type: 2}
   m_PrefabInternal: {fileID: 1985036269}
 --- !u!4 &1985036272 stripped
