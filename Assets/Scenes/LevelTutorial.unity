@@ -3653,7 +3653,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4828853230921606, guid: e8fdb677bf84f9e43a6c670debc7bc7c, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3.8
+      value: 2.23
       objectReference: {fileID: 0}
     - target: {fileID: 4828853230921606, guid: e8fdb677bf84f9e43a6c670debc7bc7c, type: 2}
       propertyPath: m_LocalPosition.z
@@ -4699,7 +4699,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4828853230921606, guid: e8fdb677bf84f9e43a6c670debc7bc7c, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3.8
+      value: 2.19
       objectReference: {fileID: 0}
     - target: {fileID: 4828853230921606, guid: e8fdb677bf84f9e43a6c670debc7bc7c, type: 2}
       propertyPath: m_LocalPosition.z
@@ -8946,6 +8946,20 @@ Prefab:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 5a19de5c6dc12e14c9430907a3ab66b2, type: 3}
+    - target: {fileID: 20577873608310094, guid: 756836ebe15b68a4ca8f0156584362b9,
+        type: 2}
+      propertyPath: far clip plane
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 20730484868970582, guid: 756836ebe15b68a4ca8f0156584362b9,
+        type: 2}
+      propertyPath: far clip plane
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1900173077633912, guid: 756836ebe15b68a4ca8f0156584362b9, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 82053558906943170, guid: 756836ebe15b68a4ca8f0156584362b9, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 756836ebe15b68a4ca8f0156584362b9, type: 2}
@@ -9670,7 +9684,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4828853230921606, guid: e8fdb677bf84f9e43a6c670debc7bc7c, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3.8
+      value: 2.09
       objectReference: {fileID: 0}
     - target: {fileID: 4828853230921606, guid: e8fdb677bf84f9e43a6c670debc7bc7c, type: 2}
       propertyPath: m_LocalPosition.z
