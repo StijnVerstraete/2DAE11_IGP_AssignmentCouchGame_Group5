@@ -313,7 +313,7 @@ public class CarControls : MonoBehaviour
     private IEnumerator SpeedUp()
     {
         float time = Time.time;
-        while (Time.time - time < 1.5f)
+        while (Time.time - time < 1f)
         {
             _maxSpeed = _maxSpeed * 1.05f;
             _carRigidbody.velocity = _carRigidbody.velocity * 1.05f;
@@ -325,7 +325,7 @@ public class CarControls : MonoBehaviour
     private IEnumerator SpeedDown()
     {
         float time = Time.time;
-        while (Time.time - time < 1.5f)
+        while (Time.time - time < .4f)
         {
             _maxSpeed = _maxSpeed / 1.05f;
             _carRigidbody.velocity = _carRigidbody.velocity / 1.05f;
