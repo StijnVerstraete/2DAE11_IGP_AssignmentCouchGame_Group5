@@ -380,6 +380,11 @@ Prefab:
       propertyPath: GoToMenuText
       value: 
       objectReference: {fileID: 720422706}
+    - target: {fileID: 114088181954291254, guid: 015d91db2b4a4e14a92410439efa475d,
+        type: 2}
+      propertyPath: SetUpdateLap
+      value: 
+      objectReference: {fileID: 151777382}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 015d91db2b4a4e14a92410439efa475d, type: 2}
   m_IsPrefabAsset: 0
@@ -693,6 +698,22 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00611faa5dd6aab4f8f17afd4cb138fc, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &151777382 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1018656047949328, guid: ef9e6a197a57544488b2d20906a824f1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1609996362}
+--- !u!114 &151777384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 151777382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83dc38007c1a43540a3caa567a50aa53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &159703892
 Prefab:
   m_ObjectHideFlags: 0
