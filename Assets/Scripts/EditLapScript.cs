@@ -10,6 +10,7 @@ public class EditLapScript : MonoBehaviour {
     public Text LapsText;
     public Text FinishText;
     public Text GoToMenuText;
+    public Text LeftSplitFinishText;
     public GameObject SetUpdateLap;
     public GameObject Countdown;
     public GameObject PanelSplit;
@@ -86,13 +87,8 @@ public class EditLapScript : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("TRAADASFASDSASADFA");
-        Debug.Log(other.name);
-        Debug.Log(_carName);
-        Debug.Log("TRAADASFASDSASADFA");
-
         string finishedText = "";
-        if (other.name.Contains(_carName) && _isSetUpdateLapTrue)
+        if (other.name == _carName && _isSetUpdateLapTrue)
         {
             _currentLap++;
 
@@ -143,14 +139,31 @@ public class EditLapScript : MonoBehaviour {
 
                 for (int i = 0; i < _carsList.Count; i++)
                 {
-                    if (_carsList[i].Contains(_carName))
+                    if (_carsList[i] == _carName)
                     {
                         finishedText += "\n You have finished at position " + (i+1);
                         //Debug.Log("found player car at position" + (i+1));
                     }
                 }
 
-                FinishText.text = finishedText;
+                if (_gameMode.Equals(GameMode.Teams))
+                {
+                    if (LeftSplitFinishText != null)
+                    {
+                        LeftSplitFinishText.text = finishedText;
+                        FinishText.text = "";
+                    }
+                    else
+                    {
+                        FinishText.text = finishedText;
+                    }
+                }
+                else
+                {
+                    FinishText.text = finishedText;
+                }
+
+                
             }
             
         }
@@ -160,7 +173,7 @@ public class EditLapScript : MonoBehaviour {
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.name.Contains(_carName))
+        if (other.name == _carName)
         {
             _isSetUpdateLapTrue = false;
             SetUpdateLap.GetComponent<SetLapTrue>().IsSetLapTrue = false;

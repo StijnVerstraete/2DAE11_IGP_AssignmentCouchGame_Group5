@@ -8,6 +8,7 @@ public class CountDown : MonoBehaviour {
     public bool ShowCountDown { get; set; }
     // countDown
     public Text CountdownText;
+    public GameObject BackgroundPanel;
 
     private string _countDownText;
     
@@ -40,5 +41,6 @@ public class CountDown : MonoBehaviour {
         ShowCountDown = false;
         _countDownText = "";
         CountdownText.enabled = false;
+        BackgroundPanel.SetActive(false);
     }
 }
