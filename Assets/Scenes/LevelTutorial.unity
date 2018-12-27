@@ -750,6 +750,11 @@ Prefab:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 114205317810914134, guid: dd1c1586a76385244a11eed07c53a6f3,
+        type: 2}
+      propertyPath: _instructionText
+      value: Cones slow you down!
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd1c1586a76385244a11eed07c53a6f3, type: 2}
   m_IsPrefabAsset: 0
@@ -2970,7 +2975,7 @@ Prefab:
     - target: {fileID: 114205317810914134, guid: dd1c1586a76385244a11eed07c53a6f3,
         type: 2}
       propertyPath: _instructionText
-      value: 'Roadbumps shake you around: your positions in the car might change!'
+      value: Roadbumps shake you around!
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd1c1586a76385244a11eed07c53a6f3, type: 2}
@@ -8452,8 +8457,7 @@ Prefab:
     - target: {fileID: 114205317810914134, guid: dd1c1586a76385244a11eed07c53a6f3,
         type: 2}
       propertyPath: _instructionText
-      value: Accelerators and deaccelerators can speed you up/slow you down. Use them
-        wisely!
+      value: Use accelerators wisely!
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd1c1586a76385244a11eed07c53a6f3, type: 2}
