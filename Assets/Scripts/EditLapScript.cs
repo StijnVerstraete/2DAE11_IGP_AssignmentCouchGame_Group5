@@ -14,6 +14,9 @@ public class EditLapScript : MonoBehaviour {
     public GameObject SetUpdateLap;
     public GameObject Countdown;
     public GameObject PanelSplit;
+    public GameObject PanelBackgroundFinished;
+    public GameObject PanelBackgroundFinishedLeft;
+    public GameObject PanelBackgroundFinishedRight;
 
     private int _currentLap;
     private bool _isSetUpdateLapTrue = false;
@@ -48,8 +51,11 @@ public class EditLapScript : MonoBehaviour {
         _currentLap = int.Parse(LapsText.text);
         FinishText.text = "";
         GoToMenuText.enabled = false;
+        PanelBackgroundFinished.SetActive(false);
+        PanelBackgroundFinishedLeft.SetActive(false);
+         PanelBackgroundFinishedRight.SetActive(false);
 
-        _gameMode = (GameMode)System.Enum.Parse(typeof(GameMode), PlayerPrefs.GetString("GameMode", "Team"));
+    _gameMode = (GameMode)System.Enum.Parse(typeof(GameMode), PlayerPrefs.GetString("GameMode", "Team"));
 
         if (PanelSplit != null)
         {
@@ -135,35 +141,38 @@ public class EditLapScript : MonoBehaviour {
             //code can be better;
             if (_currentLap > _endLap)
             {
-                _carsList.Add(other.name);
+                // Doesn't work good
 
-                for (int i = 0; i < _carsList.Count; i++)
-                {
-                    if (_carsList[i] == _carName)
-                    {
-                        finishedText += "\n You have finished at position " + (i+1);
-                        //Debug.Log("found player car at position" + (i+1));
-                    }
-                }
+                //_carsList.Add(other.name);
+
+                //for (int i = 0; i < _carsList.Count; i++)
+                //{
+                //    if (_carsList[i] == _carName)
+                //    {
+                //        finishedText += "\n You have finished at position " + (i+1);
+                //        //Debug.Log("found player car at position" + (i+1));
+                //    }
+                //}
 
                 if (_gameMode.Equals(GameMode.Teams))
                 {
                     if (LeftSplitFinishText != null)
                     {
+                        PanelBackgroundFinishedLeft.SetActive(true);
                         LeftSplitFinishText.text = finishedText;
                         FinishText.text = "";
                     }
                     else
                     {
+                        PanelBackgroundFinishedRight.SetActive(true);
                         FinishText.text = finishedText;
                     }
                 }
                 else
                 {
+                    PanelBackgroundFinished.SetActive(true);
                     FinishText.text = finishedText;
                 }
-
-                
             }
             
         }

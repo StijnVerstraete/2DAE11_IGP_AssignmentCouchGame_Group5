@@ -1818,10 +1818,11 @@ MonoBehaviour:
   LapsText: {fileID: 418201041}
   FinishText: {fileID: 2129427043}
   GoToMenuText: {fileID: 1354677749}
+  LeftSplitFinishText: {fileID: 0}
   SetUpdateLap: {fileID: 1382650687}
   Countdown: {fileID: 376374999}
   PanelSplit: {fileID: 830528260}
-  _endLap: 3
+  _endLap: 2
   _carName: PREF_Car (1)
   LapTimerText: {fileID: 746736551}
 --- !u!65 &117629571
@@ -2813,6 +2814,31 @@ Prefab:
     - target: {fileID: 1007737563001318, guid: 7b4cbf5d3e9d31649a7b89cd2b5c2b91, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224747071366199184, guid: 7b4cbf5d3e9d31649a7b89cd2b5c2b91,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 224169782602322370, guid: 7b4cbf5d3e9d31649a7b89cd2b5c2b91,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224147844033606994, guid: 7b4cbf5d3e9d31649a7b89cd2b5c2b91,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 224098226224209890, guid: 7b4cbf5d3e9d31649a7b89cd2b5c2b91,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114659344267949266, guid: 7b4cbf5d3e9d31649a7b89cd2b5c2b91,
+        type: 2}
+      propertyPath: m_Text
+      value: / 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b4cbf5d3e9d31649a7b89cd2b5c2b91, type: 2}
@@ -6570,10 +6596,11 @@ MonoBehaviour:
   LapsText: {fileID: 1162393883}
   FinishText: {fileID: 906216908}
   GoToMenuText: {fileID: 1354677749}
+  LeftSplitFinishText: {fileID: 0}
   SetUpdateLap: {fileID: 1382650687}
   Countdown: {fileID: 376374999}
   PanelSplit: {fileID: 830528260}
-  _endLap: 3
+  _endLap: 2
   _carName: PREF_Car
   LapTimerText: {fileID: 1033831057}
 --- !u!65 &333713091
@@ -7123,6 +7150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CountdownText: {fileID: 2049195130}
+  BackgroundPanel: {fileID: 1667254299}
 --- !u!4 &376375001
 Transform:
   m_ObjectHideFlags: 0
@@ -11747,6 +11775,11 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114651909927085608, guid: 0694d87cf724b9e45974e3475da90c31,
+        type: 2}
+      propertyPath: m_Text
+      value: / 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0694d87cf724b9e45974e3475da90c31, type: 2}
@@ -32192,6 +32225,75 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1659808606}
   m_Mesh: {fileID: 4300000, guid: 82879256d47374f48b12446b36602b71, type: 3}
+--- !u!1 &1667254299
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1667254302}
+  - component: {fileID: 1667254301}
+  - component: {fileID: 1667254300}
+  m_Layer: 5
+  m_Name: PanelBackground
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1667254300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1667254299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1667254301
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1667254299}
+  m_CullTransparentMesh: 0
+--- !u!224 &1667254302
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1667254299}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 840699850}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 3.3249512, y: 54.5}
+  m_SizeDelta: {x: -1539.8499, y: -844.80005}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1668580977
 Prefab:
   m_ObjectHideFlags: 0
