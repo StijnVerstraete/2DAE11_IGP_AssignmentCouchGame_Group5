@@ -11,6 +11,23 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1492445211357022}
   m_IsPrefabAsset: 1
+--- !u!1 &1330580467053592
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4386582351548606}
+  - component: {fileID: 65661371641076894}
+  - component: {fileID: 114088181954291254}
+  m_Layer: 0
+  m_Name: UpdateLap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1492445211357022
 GameObject:
   m_ObjectHideFlags: 0
@@ -36,14 +53,27 @@ GameObject:
   m_Component:
   - component: {fileID: 4799832832776486}
   - component: {fileID: 65252050186743176}
-  - component: {fileID: 114088181954291254}
+  - component: {fileID: 114608375649311560}
   m_Layer: 0
-  m_Name: UpdateLap
+  m_Name: UpdateSplitScreenLap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4386582351548606
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1330580467053592}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 5.1800003}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4493463757676014}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4493463757676014
 Transform:
   m_ObjectHideFlags: 1
@@ -55,6 +85,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4799832832776486}
+  - {fileID: 4386582351548606}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -64,8 +95,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1684732557804248}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 5.18}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 5.1800003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4493463757676014}
@@ -83,7 +114,43 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 38.232414, y: 13.226223, z: 2.0223937}
   m_Center: {x: 6.1110954, y: -3.7000408, z: -6.0937643}
+--- !u!65 &65661371641076894
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1330580467053592}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 38.232414, y: 13.226223, z: 2.0223937}
+  m_Center: {x: 6.1110954, y: -3.7000408, z: -6.0937643}
 --- !u!114 &114088181954291254
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1330580467053592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9cccd59936cc3b48973934817e85d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LapsText: {fileID: 0}
+  FinishText: {fileID: 0}
+  GoToMenuText: {fileID: 0}
+  LeftSplitFinishText: {fileID: 0}
+  SetUpdateLap: {fileID: 0}
+  Countdown: {fileID: 1492445211357022}
+  PanelSplit: {fileID: 0}
+  PanelBackgroundFinished: {fileID: 0}
+  PanelBackgroundFinishedLeft: {fileID: 0}
+  PanelBackgroundFinishedRight: {fileID: 0}
+  _endLap: 2
+  _carName: PREF_Car
+  LapTimerText: {fileID: 0}
+--- !u!114 &114608375649311560
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -96,8 +163,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LapsText: {fileID: 0}
   FinishText: {fileID: 0}
+  GoToMenuText: {fileID: 0}
+  LeftSplitFinishText: {fileID: 0}
   SetUpdateLap: {fileID: 0}
   Countdown: {fileID: 1492445211357022}
+  PanelSplit: {fileID: 0}
+  PanelBackgroundFinished: {fileID: 0}
+  PanelBackgroundFinishedLeft: {fileID: 0}
+  PanelBackgroundFinishedRight: {fileID: 0}
+  _endLap: 2
+  _carName: PREF_Car (1)
   LapTimerText: {fileID: 0}
 --- !u!114 &114643540370305726
 MonoBehaviour:
@@ -111,3 +186,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CountdownText: {fileID: 0}
+  BackgroundPanel: {fileID: 0}

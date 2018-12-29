@@ -93,6 +93,8 @@ public class EditLapScript : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(_isSetUpdateLapTrue);
+        Debug.Log(other.name + " | " + _carName);
         string finishedText = "";
         if (other.name == _carName && _isSetUpdateLapTrue)
         {
@@ -186,7 +188,7 @@ public class EditLapScript : MonoBehaviour {
         {
             _isSetUpdateLapTrue = false;
             SetUpdateLap.GetComponent<SetLapTrue>().IsSetLapTrue = false;
-            Debug.Log("trigger exit");
+            //Debug.Log("trigger exit");
         }
     }
 
