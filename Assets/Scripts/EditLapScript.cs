@@ -21,7 +21,7 @@ public class EditLapScript : MonoBehaviour {
     private int _currentLap;
     private bool _isSetUpdateLapTrue = false;
     [SerializeField]
-    private int _endLap = 3;
+    private int _endLap;
 
     [SerializeField]
     private string _carName;
@@ -37,7 +37,7 @@ public class EditLapScript : MonoBehaviour {
     private bool _stopTimer = false;
 
 
-    private string[] _timeLapsArray = new string[3];
+    private string[] _timeLapsArray;
     private int _timeLapsIndex = 0;
 
     private List<string> _carsList = new List<string>();
@@ -47,7 +47,7 @@ public class EditLapScript : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        
+        _timeLapsArray = new string[_endLap];
         _currentLap = int.Parse(LapsText.text);
         FinishText.text = "";
         GoToMenuText.enabled = false;
