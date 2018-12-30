@@ -316,126 +316,53 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: f93cdd84814c14846817b833f4e50d19, type: 3}
---- !u!1001 &66704458
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4493463757676014, guid: 015d91db2b4a4e14a92410439efa475d, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -168.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4493463757676014, guid: 015d91db2b4a4e14a92410439efa475d, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 11.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4493463757676014, guid: 015d91db2b4a4e14a92410439efa475d, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -167.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4493463757676014, guid: 015d91db2b4a4e14a92410439efa475d, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4493463757676014, guid: 015d91db2b4a4e14a92410439efa475d, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4493463757676014, guid: 015d91db2b4a4e14a92410439efa475d, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4493463757676014, guid: 015d91db2b4a4e14a92410439efa475d, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4493463757676014, guid: 015d91db2b4a4e14a92410439efa475d, type: 2}
-      propertyPath: m_RootOrder
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 114643540370305726, guid: 015d91db2b4a4e14a92410439efa475d,
-        type: 2}
-      propertyPath: CountdownText
-      value: 
-      objectReference: {fileID: 245398331}
-    - target: {fileID: 114088181954291254, guid: 015d91db2b4a4e14a92410439efa475d,
-        type: 2}
-      propertyPath: LapsText
-      value: 
-      objectReference: {fileID: 610625834}
-    - target: {fileID: 114088181954291254, guid: 015d91db2b4a4e14a92410439efa475d,
-        type: 2}
-      propertyPath: FinishText
-      value: 
-      objectReference: {fileID: 610625836}
-    - target: {fileID: 114088181954291254, guid: 015d91db2b4a4e14a92410439efa475d,
-        type: 2}
-      propertyPath: LapTimerText
-      value: 
-      objectReference: {fileID: 114766670}
-    - target: {fileID: 114088181954291254, guid: 015d91db2b4a4e14a92410439efa475d,
-        type: 2}
-      propertyPath: GoToMenuText
-      value: 
-      objectReference: {fileID: 720422706}
-    - target: {fileID: 114088181954291254, guid: 015d91db2b4a4e14a92410439efa475d,
-        type: 2}
-      propertyPath: SetUpdateLap
-      value: 
-      objectReference: {fileID: 151777382}
-    - target: {fileID: 114088181954291254, guid: 015d91db2b4a4e14a92410439efa475d,
-        type: 2}
-      propertyPath: _carName
-      value: PREF_Car
-      objectReference: {fileID: 0}
-    - target: {fileID: 4799832832776486, guid: 015d91db2b4a4e14a92410439efa475d, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114088181954291254, guid: 015d91db2b4a4e14a92410439efa475d,
-        type: 2}
-      propertyPath: LeftSplitFinishText
-      value: 
-      objectReference: {fileID: 1500622803}
-    - target: {fileID: 114643540370305726, guid: 015d91db2b4a4e14a92410439efa475d,
-        type: 2}
-      propertyPath: BackgroundPanel
-      value: 
-      objectReference: {fileID: 492806110}
-    - target: {fileID: 114088181954291254, guid: 015d91db2b4a4e14a92410439efa475d,
-        type: 2}
-      propertyPath: PanelBackgroundFinishedRight
-      value: 
-      objectReference: {fileID: 343222139}
-    - target: {fileID: 114088181954291254, guid: 015d91db2b4a4e14a92410439efa475d,
-        type: 2}
-      propertyPath: PanelBackgroundFinishedLeft
-      value: 
-      objectReference: {fileID: 1005643294}
-    - target: {fileID: 114088181954291254, guid: 015d91db2b4a4e14a92410439efa475d,
-        type: 2}
-      propertyPath: PanelBackgroundFinished
-      value: 
-      objectReference: {fileID: 802689973}
-    - target: {fileID: 1684732557804248, guid: 015d91db2b4a4e14a92410439efa475d, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 015d91db2b4a4e14a92410439efa475d, type: 2}
-  m_IsPrefabAsset: 0
---- !u!1 &66704459 stripped
+--- !u!1 &66704459
 GameObject:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 1492445211357022, guid: 015d91db2b4a4e14a92410439efa475d,
     type: 2}
-  m_PrefabInternal: {fileID: 66704458}
---- !u!4 &66704460 stripped
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 66704460}
+  - component: {fileID: 66704461}
+  m_Layer: 0
+  m_Name: LapsTriggers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &66704460
 Transform:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 4493463757676014, guid: 015d91db2b4a4e14a92410439efa475d,
     type: 2}
-  m_PrefabInternal: {fileID: 66704458}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 66704459}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -168.5, y: 11.3, z: -167.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2030878686}
+  - {fileID: 1754118561}
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &66704461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114643540370305726, guid: 015d91db2b4a4e14a92410439efa475d,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 66704459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fad640e6e177e24a8062dfe7f7f0de8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CountdownText: {fileID: 245398331}
+  BackgroundPanel: {fileID: 492806110}
 --- !u!4 &78488339 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4983262912059632, guid: 280501710be74b04883b9557cd01a868,
@@ -8866,6 +8793,76 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: f93728180ef580b4a934fc40eb8824c0,
     type: 3}
   m_PrefabInternal: {fileID: 975005675}
+--- !u!1 &1754118560
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1330580467053592, guid: 015d91db2b4a4e14a92410439efa475d,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1754118561}
+  - component: {fileID: 1754118563}
+  - component: {fileID: 1754118562}
+  m_Layer: 0
+  m_Name: UpdateLap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1754118561
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4386582351548606, guid: 015d91db2b4a4e14a92410439efa475d,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1754118560}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 5.1800003}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 66704460}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1754118562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114088181954291254, guid: 015d91db2b4a4e14a92410439efa475d,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1754118560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9cccd59936cc3b48973934817e85d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LapsText: {fileID: 610625834}
+  FinishText: {fileID: 610625836}
+  GoToMenuText: {fileID: 720422706}
+  LeftSplitFinishText: {fileID: 1500622803}
+  SetUpdateLap: {fileID: 151777382}
+  Countdown: {fileID: 66704459}
+  PanelSplit: {fileID: 0}
+  PanelBackgroundFinished: {fileID: 802689973}
+  PanelBackgroundFinishedLeft: {fileID: 1005643294}
+  PanelBackgroundFinishedRight: {fileID: 343222139}
+  _endLap: 2
+  _carName: PREF_Car
+  LapTimerText: {fileID: 114766670}
+--- !u!65 &1754118563
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 65661371641076894, guid: 015d91db2b4a4e14a92410439efa475d,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1754118560}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 38.232414, y: 13.226223, z: 2.0223937}
+  m_Center: {x: 6.1110954, y: -3.7000408, z: -6.0937643}
 --- !u!1001 &1757188266
 Prefab:
   m_ObjectHideFlags: 0
@@ -10129,7 +10126,7 @@ GameObject:
   - component: {fileID: 2030878688}
   - component: {fileID: 2030878687}
   m_Layer: 0
-  m_Name: UpdateSplitLap
+  m_Name: UpdateSplitScreenLap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
