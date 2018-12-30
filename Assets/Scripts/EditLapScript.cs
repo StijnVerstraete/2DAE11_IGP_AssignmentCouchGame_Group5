@@ -93,8 +93,6 @@ public class EditLapScript : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(_isSetUpdateLapTrue);
-        Debug.Log(other.name + " | " + _carName);
         string finishedText = "";
         if (other.name == _carName && _isSetUpdateLapTrue)
         {
