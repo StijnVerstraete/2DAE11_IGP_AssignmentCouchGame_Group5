@@ -8847,7 +8847,7 @@ MonoBehaviour:
   PanelBackgroundFinished: {fileID: 802689973}
   PanelBackgroundFinishedLeft: {fileID: 1005643294}
   PanelBackgroundFinishedRight: {fileID: 343222139}
-  _endLap: 2
+  _endLap: 3
   _carName: PREF_Car
   LapTimerText: {fileID: 114766670}
 --- !u!65 &1754118563
