@@ -64,6 +64,8 @@ public class MainMenuScript : MonoBehaviour {
     // Use this for initialization
     void Start () {
         PlayerPrefs.SetInt("MaxPlayers", _maxPlayers);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Locked;
 
         //player selection screen
         for (int i = 0; i < _hasJoinedPanels.Length; i++)

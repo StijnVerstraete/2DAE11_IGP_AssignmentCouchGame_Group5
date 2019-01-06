@@ -6822,7 +6822,9 @@ MonoBehaviour:
   _steerRight: 0
   _brake: 0
   _gas: 0
-  _respawnTime: 1
+  _respawnTime: 0.8
+  _respawnPanel: {fileID: 0}
+  _respawnBar: {fileID: 0}
   Countdown: {fileID: 0}
 --- !u!114 &114113224934959280
 MonoBehaviour:
@@ -6953,6 +6955,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: bfa1db66a5f3ec049a320052e77802dc, type: 3}
   - {fileID: 8300000, guid: fe9c71cc25845774586ee75af7a2cd8d, type: 3}
   - {fileID: 8300000, guid: 7e4af6476e02a124c949a5aee178a640, type: 3}
+  _gameMode: 0
+  _sourceID: 0
 --- !u!114 &114409065633300222
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7041,6 +7045,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: bfa1db66a5f3ec049a320052e77802dc, type: 3}
   - {fileID: 8300000, guid: fe9c71cc25845774586ee75af7a2cd8d, type: 3}
   - {fileID: 8300000, guid: 7e4af6476e02a124c949a5aee178a640, type: 3}
+  _gameMode: 0
+  _sourceID: 0
 --- !u!114 &114595080871307306
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7143,7 +7149,9 @@ MonoBehaviour:
   _steerRight: 0
   _brake: 0
   _gas: 0
-  _respawnTime: 1
+  _respawnTime: 0.8
+  _respawnPanel: {fileID: 0}
+  _respawnBar: {fileID: 0}
   Countdown: {fileID: 0}
 --- !u!122 &122127580523749928
 Halo:

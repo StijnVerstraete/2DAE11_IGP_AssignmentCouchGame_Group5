@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class AxleInfo
@@ -47,6 +48,8 @@ public class CarControls : MonoBehaviour
     private float _respawnTimer=0;
 
     [SerializeField] private float _respawnTime;
+    [SerializeField] private GameObject _respawnPanel;
+    [SerializeField] private Slider _respawnBar;
 
     private RespawnScript _respawnScript;
     [SerializeField]
@@ -180,6 +183,17 @@ public class CarControls : MonoBehaviour
 
 
         //RESPAWNING
+        //if any player is holding "b" show respawnbar
+        if (CheckIfAnyPlayerIsHoldingB())
+        {
+            _respawnPanel.SetActive(true);
+        }
+        else
+        {
+            _respawnPanel.SetActive(false);
+
+        }
+
         //if all players are holding "b", start respawntimer
         //when timer hits respawn time, respawn
         if (CheckIfAllPlayersAreHoldingB())
@@ -192,7 +206,11 @@ public class CarControls : MonoBehaviour
                 _respawnTimer = 0;
             }
         }
-        else _respawnTimer = 0;
+        else
+        {
+            _respawnTimer = 0;
+        }
+        _respawnBar.value = _respawnTimer / _respawnTime;
     }
 
     public void FixedUpdate()
@@ -249,6 +267,16 @@ public class CarControls : MonoBehaviour
                 return false;
         }
         return true;
+    }
+
+    private bool CheckIfAnyPlayerIsHoldingB()
+    {
+        for (int i = 0; i < _controllers.Count; i++)
+        {
+            if (Input.GetButton("B" + _controllers[i] + "_XboxButton"))
+                return true;
+        }
+        return false;
     }
 
     bool CheckIfAnyWheelsAreGrounded()
