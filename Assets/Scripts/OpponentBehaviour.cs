@@ -35,7 +35,6 @@ public class OpponentBehaviour : MonoBehaviour {
     {
         _transform = GetComponent<Transform>();
         _respawnScript = GetComponent<RespawnScript>();
-        
     }
 
     public void FixedUpdate()

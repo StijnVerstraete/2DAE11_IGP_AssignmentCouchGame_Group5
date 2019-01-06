@@ -39,25 +39,12 @@ public class PositionHandlerScript : MonoBehaviour {
 
     public  List<int> Controllers= new List<int>();
 
+    private Transform _canvas;
+    private PauseMenuScript _pauseMenu;
     void Start ()
     {
-        ////get used controllers from playerprefs
-        //for (int i = 0; i < PlayerPrefs.GetInt("MaxPlayers", 4); i++)
-        //{
-        //    if (PlayerPrefs.GetInt("Player" + i + "Console", 0) != 0)
-        //    {
-        //        Controllers.Add(PlayerPrefs.GetInt("Player" + i + "Console") - 1);
-        //    }
-        //}
-
-        ////set players to right positions
-        //for (int i = 0; i < Controllers.Count; i++)
-        //{
-        //    PlayerPositions[Controllers[i]]._transform.position = DefaultPositions[Controllers[i]]._transform.position;
-
-        //    //set how many players are on position
-        //    ++DefaultPositions[Controllers[i]]._amountOfPlayers;
-        //}
+        _canvas = GameObject.Find("Canvas").transform;
+        _pauseMenu = _canvas.GetComponent<PauseMenuScript>();
     }
 
     public void AssignControllersToPlayers(int[] controllers)
@@ -114,6 +101,8 @@ public class PositionHandlerScript : MonoBehaviour {
     // Update is called once per frame
     void Update ()
     {
+        if (_pauseMenu.IsPaused) return;
+
             //for every player
             for (int i = 0; i < Controllers.Count; i++)
         {

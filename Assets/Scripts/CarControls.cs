@@ -54,7 +54,10 @@ public class CarControls : MonoBehaviour
     private CountDown _countDownScript;
 
     private List<int> _controllers;
-    public void Start()
+
+    private Transform _canvas;
+    private PauseMenuScript _pauseMenu;
+    void Start()
     {
         _positionHandler = GetComponent<PositionHandlerScript>();
         _controllers = _positionHandler.Controllers;
@@ -66,10 +69,15 @@ public class CarControls : MonoBehaviour
         _countDownScript = Countdown.GetComponent<CountDown>();
 
         _maxSpeed = _maxSpeedDefault;
+
+        _canvas = GameObject.Find("Canvas").transform;
+        _pauseMenu = _canvas.GetComponent<PauseMenuScript>();
     }
 
     public void Update()
     {
+        if (_pauseMenu.IsPaused) return;
+
         _anywheelsGrounded = CheckIfAnyWheelsAreGrounded();
         _steerLeft = 0; _steerRight = 0; _brake = 0; _gas = 0;
         
