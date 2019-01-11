@@ -11772,8 +11772,8 @@ MonoBehaviour:
   - {fileID: 831051709}
   - {fileID: 1733166481}
   _maxPlayers: 4
-  _minimumConnectedPlayers: 1
-  _minimumConnectedPlayersPerTeam: 0
+  _minimumConnectedPlayers: 2
+  _minimumConnectedPlayersPerTeam: 2
   _goButton: {fileID: 310092172}
   _gameModeButtonText: {fileID: 1042871429}
   _maxAmountOfBots: 4

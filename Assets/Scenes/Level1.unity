@@ -4296,7 +4296,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4072587535798296, guid: 176fb702c65d065458acd81c764cc2af, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -4.6499996
+      value: -6.93
       objectReference: {fileID: 0}
     - target: {fileID: 4072587535798296, guid: 176fb702c65d065458acd81c764cc2af, type: 2}
       propertyPath: m_LocalPosition.z
@@ -20081,7 +20081,7 @@ Light:
     m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.22
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -35563,7 +35563,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4072587535798296, guid: 176fb702c65d065458acd81c764cc2af, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -4.6499996
+      value: -6.9300003
       objectReference: {fileID: 0}
     - target: {fileID: 4072587535798296, guid: 176fb702c65d065458acd81c764cc2af, type: 2}
       propertyPath: m_LocalPosition.z
